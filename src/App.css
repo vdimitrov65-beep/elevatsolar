@@ -68,8 +68,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   
-  filter: brightness(1.3);
-
+  
   display: flex;
   align-items: center;
 }
@@ -158,4 +157,210 @@ section p {
 .lang {
   display: flex;
   gap: 10px;
+}
+
+.siteHeader{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(11,18,32,0.72);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.siteHeaderInner{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.siteBrand{
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.siteBrandTitle{
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.siteBrandSub{
+  font-size: 13px;
+  opacity: 0.8;
+  margin-top: 4px;
+}
+
+.siteNav{
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.siteNav a{
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  opacity: 0.92;
+}
+
+.siteNav a:hover{
+  opacity: 1;
+}
+
+.siteLang{
+  display: flex;
+  gap: 10px;
+}
+
+.siteLang button{
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.18);
+  color: white;
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.pageSection{
+  padding: 88px 40px;
+}
+
+.sectionInner{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cardsGrid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.cardBox{
+  background: #fff;
+  border: 1px solid rgba(10,20,40,0.08);
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 10px 24px rgba(10,20,40,0.05);
+  min-height: 180px;
+}
+
+.cardBox h3{
+  margin: 0 0 16px 0;
+  font-size: 24px;
+  color: #0b1220;
+}
+
+.cardBox p{
+  margin: 0;
+  color: #516074;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.projectsGrid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.projectBox{
+  background: #fff;
+  border: 1px solid rgba(10,20,40,0.08);
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 10px 24px rgba(10,20,40,0.05);
+  min-height: 180px;
+}
+
+.projectBox h3{
+  margin: 0 0 14px 0;
+  font-size: 24px;
+  color: #0b1220;
+}
+
+.projectBox p{
+  margin: 0;
+  color: #516074;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.contactWrap{
+  background: #fff;
+  border: 1px solid rgba(10,20,40,0.08);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 10px 24px rgba(10,20,40,0.05);
+  margin-top: 24px;
+}
+
+.contactBtn{
+  display: inline-block;
+  margin-top: 18px;
+  background: #0b1220;
+  color: #fff;
+  text-decoration: none;
+  padding: 14px 22px;
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+@media (max-width: 980px){
+  .cardsGrid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .projectsGrid{
+    grid-template-columns: 1fr;
+  }
+
+  .siteHeaderInner{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px){
+  .cardsGrid{
+    grid-template-columns: 1fr;
+  }
+
+  .pageSection{
+    padding: 64px 24px;
+  }
+
+  .siteHeaderInner{
+    padding: 14px 24px;
+  }
+
+  .siteNav{
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+}
+.cardsGrid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.cardBox{
+  background: #fff;
+  border: 1px solid rgba(10,20,40,0.08);
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 10px 24px rgba(10,20,40,0.05);
 }
