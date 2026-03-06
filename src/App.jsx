@@ -3,105 +3,104 @@ import Hero from "./components/Hero";
 export default function App() {
   return (
     <>
+    <header className="siteHeader">
+  <div className="siteHeaderInner">
+    <div className="siteBrand">
+      <div className="siteBrandTitle">Elevat Solar</div>
+      <div className="siteBrandSub">PV Engineering • EPC • Inspections</div>
+    </div>
+
+    <nav className="siteNav">
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div className="siteLang">
+      <button>BG</button>
+      <button>EN</button>
+    </div>
+  </div>
+</header>
       <Hero />
 
-      <section style={{ padding: "80px 40px", background: "#fff" }}>
-        <h2 style={{ fontSize: "36px", marginBottom: "16px", color: "#0b1220" }}>
-          What We Do
-        </h2>
-        <p style={{ fontSize: "18px", color: "#516074", maxWidth: "800px" }}>
-          We help solar developers, EPCs and investors optimise CAPEX, reduce
-          technical risk and improve project delivery.
-        </p>
+      <section id="services" className="pageSection" style={{ background: "#fff" }}>
+  <div className="sectionInner">
+    <h2 style={{ fontSize: "36px", marginBottom: "16px", color: "#0b1220" }}>
+      What We Do
+    </h2>
+    <p style={{ fontSize: "18px", color: "#516074", maxWidth: "800px" }}>
+      We help solar developers, EPCs and investors optimise CAPEX, reduce
+      technical risk and improve project delivery.
+    </p>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-            gap: "20px",
-            marginTop: "32px",
-          }}
-        >
-          <div style={cardStyle}>
-            <h3>CAPEX Optimisation</h3>
-            <p>Identify savings across BoQ, procurement and technical scope.</p>
-          </div>
+    <div className="cardsGrid">
+      <div className="cardBox">
+        <h3>CAPEX Optimisation</h3>
+        <p>Identify savings across BoQ, procurement and technical scope.</p>
+      </div>
 
-          <div style={cardStyle}>
-            <h3>BoQ Audit</h3>
-            <p>Review quantities, pricing logic and hidden cost overruns.</p>
-          </div>
+      <div className="cardBox">
+        <h3>BoQ Audit</h3>
+        <p>Review quantities, pricing logic and hidden cost overruns.</p>
+      </div>
 
-          <div style={cardStyle}>
-            <h3>Construction Planning</h3>
-            <p>Improve buildability, sequencing and installation productivity.</p>
-          </div>
+      <div className="cardBox">
+        <h3>Construction Planning</h3>
+        <p>Improve buildability, sequencing and installation productivity.</p>
+      </div>
 
-          <div style={cardStyle}>
-            <h3>Project Risk Review</h3>
-            <p>Spot execution risks early and reduce expensive mistakes.</p>
-          </div>
-        </div>
-      </section>
+      <div className="cardBox">
+        <h3>Project Risk Review</h3>
+        <p>Spot execution risks early and reduce expensive mistakes.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <section style={{ padding: "80px 40px", background: "#f7f9fc" }}>
-        <h2 style={{ fontSize: "36px", marginBottom: "16px", color: "#0b1220" }}>
-          Projects
-        </h2>
-        <p style={{ fontSize: "18px", color: "#516074", maxWidth: "800px" }}>
-          Selected utility-scale PV and commercial solar advisory work.
-        </p>
+      <section id="projects" className="pageSection" style={{ background: "#f7f9fc" }}>
+  <div className="sectionInner">
+    <h2 style={{ fontSize: "36px", marginBottom: "16px", color: "#0b1220" }}>
+      Projects
+    </h2>
+    <p style={{ fontSize: "18px", color: "#516074", maxWidth: "800px" }}>
+      Selected utility-scale PV and commercial solar advisory work.
+    </p>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            gap: "20px",
-            marginTop: "32px",
-          }}
-        >
-          <div style={projectCardStyle}>
-            <h3>Utility-Scale PV Advisory</h3>
-            <p>Technical review, CAPEX benchmarking and delivery support.</p>
-          </div>
+    <div className="projectsGrid">
+      <div className="projectBox">
+        <h3>Utility-Scale PV Advisory</h3>
+        <p>Technical review, CAPEX benchmarking and delivery support.</p>
+      </div>
 
-          <div style={projectCardStyle}>
-            <h3>Industrial Rooftop Solar</h3>
-            <p>Engineering review and optimisation for commercial assets.</p>
-          </div>
+      <div className="projectBox">
+        <h3>Industrial Rooftop Solar</h3>
+        <p>Engineering review and optimisation for commercial assets.</p>
+      </div>
 
-          <div style={projectCardStyle}>
-            <h3>EPC Scope Support</h3>
-            <p>Scope clarification, value engineering and execution planning.</p>
-          </div>
-        </div>
-      </section>
+      <div className="projectBox">
+        <h3>EPC Scope Support</h3>
+        <p>Scope clarification, value engineering and execution planning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+      <section id="contact" className="pageSection" style={{ background: "#fff" }}>
+  <div className="sectionInner">
+    <h2 style={{ fontSize: "36px", marginBottom: "16px", color: "#0b1220" }}>
+      Contact
+    </h2>
+    <p style={{ fontSize: "18px", color: "#516074", maxWidth: "800px" }}>
+      Tell us about your solar project and we will review the right scope.
+    </p>
 
-      <section style={{ padding: "80px 40px", background: "#fff" }}>
-        <h2 style={{ fontSize: "36px", marginBottom: "16px", color: "#0b1220" }}>
-          Contact
-        </h2>
-        <p style={{ fontSize: "18px", color: "#516074", maxWidth: "800px" }}>
-          Tell us about your solar project and we will review the right scope.
-        </p>
-
-        <div style={{ marginTop: "24px" }}>
-          <a
-            href="mailto:info@elevatsolar.com"
-            style={{
-              display: "inline-block",
-              padding: "14px 22px",
-              background: "#0b1220",
-              color: "#fff",
-              textDecoration: "none",
-              borderRadius: "10px",
-              fontWeight: 600,
-            }}
-          >
-            Contact Us
-          </a>
-        </div>
-      </section>
+    <div className="contactWrap">
+      <a className="contactBtn" href="mailto:info@elevatsolar.com">
+        Contact Us
+      </a>
+    </div>
+  </div>
+</section>
     </>
   );
 }
