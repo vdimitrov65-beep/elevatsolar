@@ -2,10 +2,11 @@ export default function Hero() {
   return (
     <section
       style={{
-        height: "80vh",
+        height: "95vh",
         backgroundImage: "url('/hero.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
+        filter: "brightness(1.3)",
         position: "relative",
         display: "flex",
         alignItems: "center",
