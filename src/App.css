@@ -363,4 +363,15 @@ section p {
   border-radius: 18px;
   padding: 28px;
   box-shadow: 0 10px 24px rgba(10,20,40,0.05);
+  }
+  .cardBox h3{
+ font-size:20px;
+ margin-bottom:10px;
+ color:#0b1220;
+}
+
+.cardBox p{
+ color:#516074;
+ line-height:1.6;
+ font-size:15px;
 }
