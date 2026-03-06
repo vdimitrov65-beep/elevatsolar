@@ -1,109 +1,124 @@
-import "./App.css";
-import { useState } from "react";
-import { content } from "./content";
 import Hero from "./components/Hero";
 
 export default function App() {
-  const [lang, setLang] = useState("bg");
-  const t = content[lang];
+  return (
+    <>
+      <Hero />
 
- return (
-  <div className="page">
-    <header className="header">
-      <div className="brand">
-        <div className="logo">ES</div>
-        
-        <div>
-          <div className="brandName">Elevat Solar</div>
-          <div className="brandTag">
-            PV Engineering • EPC • Inspections
+      <section style={{ padding: "80px 40px", background: "#fff" }}>
+        <h2 style={{ fontSize: "36px", marginBottom: "16px", color: "#0b1220" }}>
+          What We Do
+        </h2>
+        <p style={{ fontSize: "18px", color: "#516074", maxWidth: "800px" }}>
+          We help solar developers, EPCs and investors optimise CAPEX, reduce
+          technical risk and improve project delivery.
+        </p>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+            gap: "20px",
+            marginTop: "32px",
+          }}
+        >
+          <div style={cardStyle}>
+            <h3>CAPEX Optimisation</h3>
+            <p>Identify savings across BoQ, procurement and technical scope.</p>
+          </div>
+
+          <div style={cardStyle}>
+            <h3>BoQ Audit</h3>
+            <p>Review quantities, pricing logic and hidden cost overruns.</p>
+          </div>
+
+          <div style={cardStyle}>
+            <h3>Construction Planning</h3>
+            <p>Improve buildability, sequencing and installation productivity.</p>
+          </div>
+
+          <div style={cardStyle}>
+            <h3>Project Risk Review</h3>
+            <p>Spot execution risks early and reduce expensive mistakes.</p>
           </div>
         </div>
-      </div>
+      </section>
 
-      <nav className="nav">
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact" className="btn">Contact</a>
-      </nav>
+      <section style={{ padding: "80px 40px", background: "#f7f9fc" }}>
+        <h2 style={{ fontSize: "36px", marginBottom: "16px", color: "#0b1220" }}>
+          Projects
+        </h2>
+        <p style={{ fontSize: "18px", color: "#516074", maxWidth: "800px" }}>
+          Selected utility-scale PV and commercial solar advisory work.
+        </p>
 
-      <div className="lang">
-        <button onClick={() => setLang("bg")}>BG</button>
-        <button onClick={() => setLang("en")}>EN</button>
-      </div>
-    </header>
-<section style={{
-  height: "80vh",
-  backgroundImage: "url('/hero.jpg')",
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-  position: "relative",
-  display: "flex",
-  alignItems: "center",
-  color: "white",
-  
-}}>
-  <div style={{ position: "absolute", inset: 0, backgroundColor: "rgba(0,0,0,0.55)" }} />
-  <div style={{ position: "relative", padding: "0 40px" }}>
-    <h1 style={{ fontSize: "56px" }}>Your Solar CAPEX. Optimised.</h1>
-    <p style={{ fontSize: "20px", marginTop: "20px", maxWidth: "600px" }}>
-      Engineering-first PV delivery. Technical optimisation. Bankable results.
-    </p>
-  </div>
-</section>
-<section style={{ padding: "80px 40px", background: "#f5f5f5" }}>
-  <h2 style={{ fontSize: "36px", marginBottom: "40px" }}>
-    What We Do
-  </h2>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            gap: "20px",
+            marginTop: "32px",
+          }}
+        >
+          <div style={projectCardStyle}>
+            <h3>Utility-Scale PV Advisory</h3>
+            <p>Technical review, CAPEX benchmarking and delivery support.</p>
+          </div>
 
-  <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "40px" }}>
-    <div>
-      <h3>PV Engineering</h3>
-      <p>Technical optimisation of utility-scale photovoltaic projects.</p>
-    </div>
+          <div style={projectCardStyle}>
+            <h3>Industrial Rooftop Solar</h3>
+            <p>Engineering review and optimisation for commercial assets.</p>
+          </div>
 
-    <div>
-      <h3>EPC Support</h3>
-      <p>Design review, DC/AC optimisation and site supervision.</p>
-    </div>
+          <div style={projectCardStyle}>
+            <h3>EPC Scope Support</h3>
+            <p>Scope clarification, value engineering and execution planning.</p>
+          </div>
+        </div>
+      </section>
 
-    <div>
-      <h3>Project Delivery</h3>
-      <p>From concept to grid connection with engineering-first approach.</p>
-    </div>
-  </div>
-</section>   
-<section style={{ padding: "80px 40px", backgroundColor: "#ffffff" }}>
-  <h2 style={{ fontSize: "36px", marginBottom: "30px", color: "#0f172a" }}>
-    Projects
-  </h2>
+      <section style={{ padding: "80px 40px", background: "#fff" }}>
+        <h2 style={{ fontSize: "36px", marginBottom: "16px", color: "#0b1220" }}>
+          Contact
+        </h2>
+        <p style={{ fontSize: "18px", color: "#516074", maxWidth: "800px" }}>
+          Tell us about your solar project and we will review the right scope.
+        </p>
 
-  <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "24px" }}>
-    <div style={{ border: "1px solid #e5e7eb", borderRadius: "14px", padding: "20px" }}>
-      <div style={{ fontWeight: 700, marginBottom: "8px" }}>Utility-scale PV</div>
-      <div style={{ color: "#475569", lineHeight: "1.6" }}>
-        250 MW portfolio (70 MW + 180 MW) — engineering, optimisation and delivery support.
-      </div>
-    </div>
+        <div style={{ marginTop: "24px" }}>
+          <a
+            href="mailto:info@elevatsolar.com"
+            style={{
+              display: "inline-block",
+              padding: "14px 22px",
+              background: "#0b1220",
+              color: "#fff",
+              textDecoration: "none",
+              borderRadius: "10px",
+              fontWeight: 600,
+            }}
+          >
+            Contact Us
+          </a>
+        </div>
+      </section>
+    </>
+  );
+}
 
-    <div style={{ border: "1px solid #e5e7eb", borderRadius: "14px", padding: "20px" }}>
-      <div style={{ fontWeight: 700, marginBottom: "8px" }}>Inspections & QA</div>
-      <div style={{ color: "#475569", lineHeight: "1.6" }}>
-        Site inspections, cable management checks, connector quality, thermal diagnostics.
-      </div>
-    </div>
+const cardStyle = {
+  background: "#ffffff",
+  padding: "24px",
+  borderRadius: "16px",
+  boxShadow: "0 8px 24px rgba(0,0,0,0.06)",
+  color: "#0b1220",
+};
 
-    <div style={{ border: "1px solid #e5e7eb", borderRadius: "14px", padding: "20px" }}>
-      <div style={{ fontWeight: 700, marginBottom: "8px" }}>EPC Technical Support</div>
-      <div style={{ color: "#475569", lineHeight: "1.6" }}>
-        Design review, DC/AC ratio optimisation, BoQ sanity checks, commissioning readiness.
-      </div>
-    </div>
-  </div>
-</section>  
-
-
-  </div>
-);
-} 
- 
+const projectCardStyle = {
+  background: "#ffffff",
+  padding: "24px",
+  borderRadius: "16px",
+  border: "1px solid rgba(10,20,40,0.08)",
+  boxShadow: "0 6px 20px rgba(0,0,0,0.04)",
+  color: "#0b1220",
+};
