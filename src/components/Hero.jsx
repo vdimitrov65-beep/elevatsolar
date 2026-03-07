@@ -61,8 +61,7 @@ export default function Hero() {
               maxWidth: "12ch",
             }}
           >
-          Independent Solar Engineering
-for Developers and Investors
+          Independent Solar Engineering for Developers, EPCs and Investors
           </h1>
 
           <p
@@ -74,8 +73,7 @@ for Developers and Investors
               color: "rgba(255,255,255,0.88)",
             }}
           >
-CAPEX optimisation, BoQ audits, construction logic and project
-risk review for utility-scale and C&I solar projects
+CAPEX optimisation, technical review, EPC scope supportand project, risk reduction for utility-scale and C&I solar projects
           </p>
 
           <div
