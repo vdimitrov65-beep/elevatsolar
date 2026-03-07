@@ -1,7 +1,9 @@
+import { useState } from "react";
 import "./App.css";
 import Hero from "./components/Hero";
 
 export default function App() {
+  const [lang, setLang] = useState("en");
   return (
     <>
       <header className="siteHeader">
@@ -17,13 +19,13 @@ export default function App() {
           </nav>
 
           <div className="siteLang">
-            <button>BG</button>
-            <button>EN</button>
+            <button onClick={() => setLang("bg")}>BG</button>
+            <button onClick={() => setLang("en")}>EN</button>
           </div>
         </div>
       </header>
 
-      <Hero />
+      <Hero lang={lang} />
 
       <section id="services" className="pageSection">
         <div className="sectionInner">
