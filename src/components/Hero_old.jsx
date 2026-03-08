@@ -6,10 +6,7 @@ export default function Hero({ lang }) {
         display: "flex",
         alignItems: "center",
         padding: "120px 40px 80px",
-        backgroundImage:
-          "linear-gradient(rgba(11,18,32,0.55), rgba(11,18,32,0.05)), url('/hero.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
+        background: "#0b1220",
         color: "#ffffff",
       }}
     >
