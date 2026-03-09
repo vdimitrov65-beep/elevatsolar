@@ -23,7 +23,7 @@ export default function Hero({ lang }) {
           }}
         >
           {lang === "bg"
-            ? "Независими инженерни услуги в областта на слънчевата енергия за разработчици, EPC изпълнители и инвеститори"
+            ? "Независими инженерни услуги за девелопъри, EPC и инвеститори"
             : "Independent Solar Engineering for Developers, EPCs and Investors"}
         </h1>
 

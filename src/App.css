@@ -290,8 +290,3 @@ html { scroll-behavior: smooth; }
   .siteHeaderInner { padding: 20px; }
   .siteLang { display: none; }
 }
-```
-
-Готово! Сега в терминала:
-```
-git add . && git commit -m "mobile optimization" && git push
