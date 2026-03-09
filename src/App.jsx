@@ -198,6 +198,27 @@ export default function App() {
   </div>
 </section>
 
+<section style={{ padding: "60px 20px", background: "#EFF2F7" }}>
+  <div dangerouslySetInnerHTML={{ __html: `
+    <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+    <div class="sib-form" style="text-align:center; background-color:#EFF2F7;">
+      <div id="sib-form-container" class="sib-form-container">
+        <div id="sib-container" class="sib-container--large sib-container--vertical" style="text-align:center; background-color:rgba(255,255,255,1); max-width:540px; border-radius:3px; border-width:1px; border-color:#C0CCD9; border-style:solid; margin:0 auto;">
+          <form id="sib-form" method="POST" action="https://e5a3aca6.sibforms.com/serve/MUIFAGl6jZRusfmZKbTl9o-b_SPdLh6sO3poXKCLSH6tcgH62ll7r8ZV8VvCDpAy1wuqh2HlZJfNaMH7KvPXMRUPf_VgkOjq143QmaYpCEDL730q1L4NOd76MnQd0i-30bervCd8a0rn1HcGbKToPR8nvriIGuulu0f0OpvB57THmb4-SPs2v0TvhaHupMRuTkZL6gnHfHNHx-rWcg==">
+            <div style="padding:8px 0;"><p style="font-size:32px;font-weight:700;font-family:Helvetica,sans-serif;color:#3C4858;">Monthly Solar Market Brief</p></div>
+            <div style="padding:8px 0;"><p style="font-size:16px;font-family:Helvetica,sans-serif;color:#3C4858;">Solar market news for Bulgaria, Romania and SEE — once a month.</p></div>
+            <div style="padding:8px 0;"><input type="text" name="EMAIL" placeholder="Your email" required style="width:90%;padding:12px;border:1px solid #C0CCD9;border-radius:3px;font-size:16px;"></div>
+            <div style="padding:8px 0;"><button type="submit" style="background:#0b1220;color:#fff;border:none;padding:14px 40px;font-size:16px;font-weight:700;border-radius:3px;cursor:pointer;width:90%;">Subscribe</button></div>
+            <input type="text" name="email_address_check" value="" style="display:none">
+            <input type="hidden" name="locale" value="en">
+            <input type="hidden" name="html_type" value="simple">
+          </form>
+        </div>
+      </div>
+    </div>
+  `}} />
+</section>
+
       <footer className="footer">
         <div className="sectionInner">
           <p>Elevat Solar</p>
