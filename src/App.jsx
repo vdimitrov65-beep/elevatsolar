@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Hero from "./components/Hero";
+import NewsletterForm from "./NewsLetterForm";
 
 export default function App() {
   const [lang, setLang] = useState("en");
@@ -185,6 +186,17 @@ export default function App() {
           </div>
         </div>
       </section>
+      <section id="newsletter" className="pageSection" style={{background:"#0b1220"}}>
+  <div className="sectionInner">
+    <h2 style={{fontSize:"clamp(28px,4vw,48px)",marginBottom:"16px",marginTop:0,color:"#fff"}}>
+      {lang === "bg" ? "Месечен бюлетин за соларния пазар" : "Monthly Solar Market Brief"}
+    </h2>
+    <p style={{fontSize:"clamp(16px,2vw,20px)",maxWidth:"620px",lineHeight:1.6,color:"rgba(255,255,255,0.75)",margin:"0 0 32px"}}>
+      {lang === "bg" ? "Новини и анализи за соларния пазар в България, Румъния и ЮИЕ — директно в имейла ти, веднъж месечно." : "Solar market news and analysis for Bulgaria, Romania and SEE — delivered to your inbox once a month."}
+    </p>
+    <NewsletterForm lang={lang} />
+  </div>
+</section>
 
       <footer className="footer">
         <div className="sectionInner">
