@@ -8,12 +8,11 @@ export default function NewsletterForm({ lang }) {
   const handleSubmit = async () => {
     if (!email) return;
     try {
-      const res = await fetch("https://api.brevo.com/v3/contacts", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "api-key": import.meta.env.VITE_BREVO_API_KEY,
-        },
+      const res = await fetch("/api/subscribe", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
         body: JSON.stringify({
           email,
           attributes: { FIRSTNAME: name },
