@@ -22,6 +22,7 @@ module.exports = async function handler(req, res) {
     res.status(200).json({ success: true });
   } else {
     const err = await response.json();
-    res.status(400).json({ error: err });
+console.log("Brevo error:", JSON.stringify(err));
+res.status(400).json({ error: err });
   }
 };
