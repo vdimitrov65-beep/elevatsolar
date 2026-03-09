@@ -170,7 +170,7 @@ export default function App() {
             <p>{lang === "bg" ? "Управляващ консултант – Elevat Solar Consulting" : "Managing Consultant – Elevat Solar Consulting"}</p>
           <p><a href="mailto:office@elevatsolar.eu">office@elevatsolar.eu</a></p>
 <p><a href="https://linkedin.com/in/venelindimitrov" target="_blank" rel="noreferrer">linkedin.com/in/venelindimitrov</a></p>
-<p>София, ж.к. Яворов, бл.73, ап. 4, п.к.1110</p>
+<p>{lang === "bg" ? "София, ж.к. Яворов, бл.73, ап. 4, п.к.1110" : "Sofia, Yavorov district, bl.73, ap.4, 1110"}</p>
 <p><a href="tel:+359888220330">+359 888 220 330</a></p> 
           </div>
           <p style={{ fontSize: "clamp(16px, 2vw, 20px)", maxWidth: "720px", lineHeight: 1.6, color: "#4b5563", marginTop: "24px" }}>
