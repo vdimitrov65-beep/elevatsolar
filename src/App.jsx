@@ -187,8 +187,7 @@ export default function App() {
         </div>
       </section>
     
-<section style={{ padding: "60px 20px", background: "#EFF2F7" }}>
-  <div dangerouslySetInnerHTML={{ __html: `
+<section style={{ padding: "60px 20px", background: "#EFF2F7", display:"flex", justifyContent:"center", alignItems:"center" }}>  <div dangerouslySetInnerHTML={{ __html: `
     <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
     <div class="sib-form" style="text-align:center; background-color:#EFF2F7;">
       <div id="sib-form-container" class="sib-form-container">
@@ -208,13 +207,22 @@ export default function App() {
   `}} />
 </section>
 
-      <footer className="footer">
-        <div className="sectionInner">
-          <p>Elevat Solar</p>
-          <p>PV Engineering • EPC • Inspections</p>
-          <p>Utility-scale and C&I solar advisory</p>
-        </div>
-      </footer>
-    </>
-  );
-}
+     <footer style={{background:"#0b1220",padding:"48px 20px",marginTop:0}}>
+  <div style={{maxWidth:"960px",margin:"0 auto",display:"flex",flexWrap:"wrap",gap:"32px",justifyContent:"space-between",alignItems:"flex-start"}}>
+    <div>
+      <div style={{color:"#fff",fontWeight:700,fontSize:"1.1rem",marginBottom:"8px"}}>ELEVAT SOLAR</div>
+      <div style={{color:"rgba(255,255,255,0.5)",fontSize:"0.85rem",lineHeight:1.8}}>
+        Independent Solar Engineering Advisory<br/>
+        Bulgaria · Romania · Southeast Europe
+      </div>
+    </div>
+    <div style={{color:"rgba(255,255,255,0.5)",fontSize:"0.85rem",lineHeight:1.8}}>
+      <a href="mailto:office@elevatsolar.eu" style={{color:"#e89a1d",textDecoration:"none"}}>office@elevatsolar.eu</a><br/>
+      <a href="tel:+359888220330" style={{color:"rgba(255,255,255,0.5)",textDecoration:"none"}}>+359 888 220 330</a><br/>
+      <a href="https://linkedin.com/in/venelindimitrov" target="_blank" rel="noreferrer" style={{color:"rgba(255,255,255,0.5)",textDecoration:"none"}}>LinkedIn</a>
+    </div>
+    <div style={{color:"rgba(255,255,255,0.3)",fontSize:"0.8rem",alignSelf:"flex-end"}}>
+      © 2026 Elevat Solar OOD. All rights reserved.
+    </div>
+  </div>
+</footer>
