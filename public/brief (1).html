@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Green Energy Brief #1 · March 2026 · Elevat Solar</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q5HHP98NM4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q5HHP98NM4');
+  </script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q5HHP98NM4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q5HHP98NM4');
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background: #f8f7f2;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      background: #0b1220;
+      padding: 16px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a.brand {
+      color: #e89a1d;
+      font-family: Arial, sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+    nav a.home {
+      color: rgba(255,255,255,0.6);
+      font-family: Arial, sans-serif;
+      font-size: 0.85rem;
+      text-decoration: none;
+    }
+    nav a.home:hover { color: #fff; }
+
+    /* WRAPPER */
+    .wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* INTRO BLOCK */
+    .intro {
+      border-left: 4px solid #ea580c;
+      padding-left: 24px;
+      margin-bottom: 48px;
+    }
+    .intro .meta {
+      font-family: Arial, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #ea580c;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .intro h1 {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 700;
+      color: #0b1220;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    .intro p {
+      font-size: 1.05rem;
+      color: #3a3a3a;
+      max-width: 680px;
+      margin-bottom: 14px;
+    }
+
+    /* INFOGRAPHIC SECTION */
+    .infographic {
+      background: #fff;
+      border-radius: 12px;
+      padding: 36px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+      margin-bottom: 48px;
+    }
+    .infographic-header {
+      margin-bottom: 8px;
+    }
+    .infographic-header h2 {
+      font-size: 1.25rem;
+      color: #0b1220;
+      font-weight: 700;
+    }
+    .infographic-subtitle {
+      font-family: Arial, sans-serif;
+      font-size: 0.78rem;
+      color: #888;
+      margin-bottom: 24px;
+      letter-spacing: 0.5px;
+    }
+
+    /* LEGEND */
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 28px;
+      font-family: Arial, sans-serif;
+      font-size: 0.78rem;
+      color: #555;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .legend-bar {
+      width: 4px;
+      height: 14px;
+      border-radius: 2px;
+    }
+
+    /* CARDS GRID */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .card {
+      border-left: 4px solid #ea580c;
+      background: #f8f7f2;
+      border-radius: 8px;
+      padding: 16px;
+      position: relative;
+      cursor: default;
+      transition: box-shadow 0.2s;
+    }
+    .card.western-balkans {
+      border-left-color: #2563eb;
+    }
+    .card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
+
+    .card-flag {
+      font-size: 1.4rem;
+      margin-bottom: 4px;
+    }
+    .card-country {
+      font-family: Arial, sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: #0b1220;
+      margin-bottom: 10px;
+    }
+
+    .card-pv {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: #ea580c;
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+    .card-pv-label {
+      font-family: Arial, sans-serif;
+      font-size: 0.7rem;
+      color: #888;
+      margin-bottom: 10px;
+    }
+
+    .card-secondary {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .card-secondary-item .value {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #0b1220;
+    }
+    .card-secondary-item .label {
+      font-family: Arial, sans-serif;
+      font-size: 0.65rem;
+      color: #888;
+    }
+
+    /* BESS BADGE */
+    .bess-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      font-family: Arial, sans-serif;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      padding: 3px 7px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .bess-active { background: #f0fdf4; color: #16a34a; }
+    .bess-blocked { background: #fffbeb; color: #d97706; }
+    .bess-early { background: #eff6ff; color: #2563eb; }
+    .bess-none { background: #f9fafb; color: #9ca3af; }
+
+    /* HOVER DETAIL */
+    .bess-detail {
+      display: none;
+      font-family: Arial, sans-serif;
+      font-size: 0.72rem;
+      color: #555;
+      border-top: 1px solid #e5e5e5;
+      padding-top: 8px;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+    .card:hover .bess-detail {
+      display: block;
+    }
+
+    /* FOOTER DISCLAIMER */
+    .disclaimer {
+      font-family: Arial, sans-serif;
+      font-size: 0.72rem;
+      color: #aaa;
+      border-top: 1px solid #e5e5e5;
+      padding-top: 16px;
+      margin-top: 24px;
+    }
+
+    /* EDITORIAL */
+    .editorial {
+      max-width: 700px;
+      margin-bottom: 48px;
+    }
+    .editorial h3 {
+      font-size: 1.1rem;
+      color: #0b1220;
+      margin-bottom: 10px;
+    }
+    .editorial p {
+      font-size: 1rem;
+      color: #3a3a3a;
+      margin-bottom: 14px;
+    }
+
+    /* SUBSCRIBE */
+    .subscribe-block {
+      background: #0b1220;
+      border-radius: 12px;
+      padding: 36px;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .subscribe-block h3 {
+      color: #fff;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+    .subscribe-block p {
+      color: rgba(255,255,255,0.6);
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+    .subscribe-block a {
+      background: #e89a1d;
+      color: #0b1220;
+      font-family: Arial, sans-serif;
+      font-weight: 700;
+      padding: 12px 32px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    /* SITE FOOTER */
+    footer {
+      background: #0b1220;
+      padding: 32px 40px;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+    }
+    footer a { color: #e89a1d; text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .cards-grid { grid-template-columns: 1fr 1fr; }
+      nav { padding: 12px 20px; }
+      .wrapper { padding: 32px 16px 60px; }
+      .infographic { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div style="display:flex;align-items:center;gap:0;">
+    <a class="brand" href="https://elevatsolar.eu">ELEVAT SOLAR</a>
+    <span style="color:rgba(255,255,255,0.3);margin:0 12px;font-family:Arial,sans-serif;">|</span>
+    <span style="color:rgba(255,255,255,0.85);font-family:Arial,sans-serif;font-size:0.9rem;font-weight:600;letter-spacing:0.5px;">GREEN ENERGY BRIEF #1</span>
+    <span style="color:rgba(255,255,255,0.4);font-family:Arial,sans-serif;font-size:0.85rem;margin-left:12px;">· March 2026</span>
+  </div>
+  <a class="home" href="https://elevatsolar.eu">← Back to site</a>
+</nav>
+
+<div class="wrapper">
+
+  <!-- INTRO -->
+  <div class="intro">
+    <h1>Green Energy in SEE — Baseline</h1>
+    <p>Green Energy Brief is a monthly newsletter by Elevat Solar Consulting, dedicated to renewable energy markets in Southeast Europe. We track installed capacity, grid access, BESS development and policy shifts across 8 countries in the region.</p>
+    <p>Written for developers, investors and EPC companies operating or planning to operate in SEE. Free of charge, no paywalls.</p>
+  </div>
+
+  <!-- EDITORIAL -->
+  <div class="editorial">
+    <h3>Why a baseline?</h3>
+    <p>Before tracking change, you need to know where things stand. This first Brief establishes the baseline — installed PV, wind and hydro capacity across the region, and the current state of battery storage deployment in each country.</p>
+    <p>The picture is uneven. Greece has crossed 12 GW of PV. Romania and Bulgaria are not far behind. The Western Balkans are just getting started. BESS is active in some markets and completely absent in others. This is where Southeast Europe stands in March 2026.</p>
+    <h3 style="margin-top:24px;">Why we publish this</h3>
+    <p>We produce Green Energy Brief because we believe that accelerating the clean energy transition in Southeast Europe matters — for the industry, for the region, and for the kind of environment we all want to live in. Transparent, accessible data is a small but real contribution to that goal.</p>
+    <p style="font-size:0.88rem;color:#888;font-family:Arial,sans-serif;border-left:3px solid #e5e5e5;padding-left:12px;margin-top:8px;">We apologise in advance for any inaccuracies in the data presented. We do our best to source reliable figures, but energy statistics across SEE markets are not always consistent. If you spot an error, please write to us at <a href="/cdn-cgi/l/email-protection#d2bdb4b4bbb1b792b7beb7a4b3a6a1bdbeb3a0fcb7a7" style="color:#ea580c;"><span class="__cf_email__" data-cfemail="b7d8d1d1ded4d2f7d2dbd2c1d6c3c4d8dbd6c599d2c2">[email&#160;protected]</span></a> — we will correct it in the next issue.</p>
+  </div>
+
+  <!-- INFOGRAPHIC -->
+  <div class="infographic">
+    <div class="infographic-header">
+      <h2>Renewable Energy Capacity — Southeast Europe</h2>
+    </div>
+    <div class="infographic-subtitle">Installed capacity · 8 countries · PV · Wind · Hydro · BESS status — March 2026</div>
+
+    <!-- LEGEND -->
+    <div class="legend">
+      <div class="legend-item"><div class="legend-bar" style="background:#ea580c;"></div> EU member</div>
+      <div class="legend-item"><div class="legend-bar" style="background:#2563eb;"></div> Western Balkans</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#16a34a;"></div> BESS Active</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#d97706;"></div> BESS Blocked</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#2563eb;"></div> BESS Early</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#9ca3af;"></div> No BESS</div>
+    </div>
+
+    <!-- CARDS -->
+    <div class="cards-grid">
+
+      <!-- Greece -->
+      <div class="card">
+        <span class="bess-badge bess-blocked">Blocked</span>
+        <div class="card-flag">🇬🇷</div>
+        <div class="card-country">Greece</div>
+        <div class="card-pv">12.2 GW</div>
+        <div class="card-pv-label">PV installed</div>
+        <div class="card-secondary">
+          <div class="card-secondary-item"><div class="value">5.8 GW</div><div class="label">Wind</div></div>
+          <div class="card-secondary-item"><div class="value">3.2 GW</div><div class="label">Hydro</div></div>
+        </div>
+        <div class="bess-detail">900 MW tendered, 0 MW connected. Grid connection bottleneck blocking deployment.</div>
+      </div>
+
+      <!-- Romania -->
+      <div class="card">
+        <span class="bess-badge bess-active">Active</span>
+        <div class="card-flag">🇷🇴</div>
+        <div class="card-country">Romania</div>
+        <div class="card-pv">7.8 GW</div>
+        <div class="card-pv-label">PV installed</div>
+        <div class="card-secondary">
+          <div class="card-secondary-item"><div class="value">3.8 GW</div><div class="label">Wind</div></div>
+          <div class="card-secondary-item"><div class="value">6.5 GW</div><div class="label">Hydro</div></div>
+        </div>
+        <div class="bess-detail">CfD scheme active. First utility-scale BESS projects in development.</div>
+      </div>
+
+      <!-- Bulgaria -->
+      <div class="card">
+        <span class="bess-badge bess-active">Active</span>
+        <div class="card-flag">🇧🇬</div>
+        <div class="card-country">Bulgaria</div>
+        <div class="card-pv">6.0 GW</div>
+        <div class="card-pv-label">PV installed</div>
+        <div class="card-secondary">
+          <div class="card-secondary-item"><div class="value">0.7 GW</div><div class="label">Wind</div></div>
+          <div class="card-secondary-item"><div class="value">3.2 GW</div><div class="label">Hydro</div></div>
+        </div>
+        <div class="bess-detail">13.7 GWh tendered under RESTORE 1 &amp; 2. Large pipeline in development.</div>
+      </div>
+
+      <!-- N. Macedonia -->
+      <div class="card western-balkans">
+        <span class="bess-badge bess-early">Early</span>
+        <div class="card-flag">🇲🇰</div>
+        <div class="card-country">N. Macedonia</div>
+        <div class="card-pv">1.0 GW</div>
+        <div class="card-pv-label">PV installed</div>
+        <div class="card-secondary">
+          <div class="card-secondary-item"><div class="value">50 MW</div><div class="label">Wind</div></div>
+          <div class="card-secondary-item"><div class="value">0.68 GW</div><div class="label">Hydro</div></div>
+        </div>
+        <div class="bess-detail">New energy storage law passed in 2025. First projects expected 2026–2027.</div>
+      </div>
+
+      <!-- Serbia -->
+      <div class="card western-balkans">
+        <span class="bess-badge bess-early">Early</span>
+        <div class="card-flag">🇷🇸</div>
+        <div class="card-country">Serbia</div>
+        <div class="card-pv">320 MW</div>
+        <div class="card-pv-label">PV installed</div>
+        <div class="card-secondary">
+          <div class="card-secondary-item"><div class="value">0.81 GW</div><div class="label">Wind</div></div>
+          <div class="card-secondary-item"><div class="value">2.8 GW</div><div class="label">Hydro</div></div>
+        </div>
+        <div class="bess-detail">Target: 1 GW PV+BESS hybrid by 2028. Regulatory framework in development.</div>
+      </div>
+
+      <!-- Bosnia -->
+      <div class="card western-balkans">
+        <span class="bess-badge bess-none">No BESS</span>
+        <div class="card-flag">🇧🇦</div>
+        <div class="card-country">Bosnia</div>
+        <div class="card-pv">210 MW</div>
+        <div class="card-pv-label">PV installed</div>
+        <div class="card-secondary">
+          <div class="card-secondary-item"><div class="value">0.6 GW</div><div class="label">Wind</div></div>
+          <div class="card-secondary-item"><div class="value">2.2 GW</div><div class="label">Hydro</div></div>
+        </div>
+        <div class="bess-detail">No BESS policy or procurement. Coal dependency remains high.</div>
+      </div>
+
+      <!-- Montenegro -->
+      <div class="card western-balkans">
+        <span class="bess-badge bess-none">No BESS</span>
+        <div class="card-flag">🇲🇪</div>
+        <div class="card-country">Montenegro</div>
+        <div class="card-pv">30 MW</div>
+        <div class="card-pv-label">PV installed</div>
+        <div class="card-secondary">
+          <div class="card-secondary-item"><div class="value">120 MW</div><div class="label">Wind</div></div>
+          <div class="card-secondary-item"><div class="value">0.66 GW</div><div class="label">Hydro</div></div>
+        </div>
+        <div class="bess-detail">Small market. Hydro-dominant. No BESS framework in place.</div>
+      </div>
+
+      <!-- Kosovo -->
+      <div class="card western-balkans">
+        <span class="bess-badge bess-none">No BESS</span>
+        <div class="card-flag">🇽🇰</div>
+        <div class="card-country">Kosovo</div>
+        <div class="card-pv">20 MW</div>
+        <div class="card-pv-label">PV installed</div>
+        <div class="card-secondary">
+          <div class="card-secondary-item"><div class="value">—</div><div class="label">Wind</div></div>
+          <div class="card-secondary-item"><div class="value">0.3 GW</div><div class="label">Hydro</div></div>
+        </div>
+        <div class="bess-detail">Earliest stage market. Lignite coal still dominant. PV just beginning.</div>
+      </div>
+
+    </div>
+
+    <div class="disclaimer">
+      Data sourced from IRENA, ENTSO-E, WindEurope, Helapco, RES Serbia · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e48b82828d8781a4818881928590978b888596ca8191">[email&#160;protected]</a> · © Elevat Solar 2026
+    </div>
+  </div>
+
+  <!-- SUBSCRIBE -->
+  <div class="subscribe-block">
+    <h3>Get Green Energy Brief every month</h3>
+    <p>Solar market data and analysis for Southeast Europe — free, once a month.</p>
+    <a href="ht
