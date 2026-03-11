@@ -1,1 +1,5 @@
-{"rewrites":[{"source":"/brief","destination":"/brief.html"}]}
+{
+  "rewrites": [
+    { "source": "/((?!brief.html).*)", "destination": "/index.html" }
+  ]
+}
