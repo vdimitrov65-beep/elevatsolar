@@ -290,3 +290,7 @@ html { scroll-behavior: smooth; }
   .siteHeaderInner { padding: 20px; }
   .siteLang { display: none; }
 }
+.sib-form {
+  display: flex;
+  justify-content: center;
+}
