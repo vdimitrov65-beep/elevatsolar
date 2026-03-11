@@ -294,3 +294,11 @@ html { scroll-behavior: smooth; }
   display: flex;
   justify-content: center;
 }
+.contactInfo {
+  text-align: center;
+}
+
+.contactForm {
+  max-width: 560px;
+  margin: 0 auto;
+}
