@@ -13,12 +13,20 @@ if (window.location.pathname === '/brief') {
 }
   return (
     <>
-      <header className="siteHeader">
-        <div className="siteHeaderInner">
-          <div className="siteBrand">
-            <div className="siteBrandText">
-              {lang === "bg" ? "ЕЛЕВАТ СОЛАР" : "ELEVAT SOLAR"}
-            </div>
+     <div className="siteBrand">
+  <a href="/" style={{display:"flex",alignItems:"center",gap:"10px",textDecoration:"none"}}>
+    <svg width="22" height="34" viewBox="0 0 28 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="14" y="0"  width="12" height="12" rx="2" fill="#e89a1d"/>
+      <rect x="0"  y="14" width="12" height="12" rx="2" fill="#e89a1d"/>
+      <rect x="14" y="14" width="12" height="12" rx="2" fill="#e89a1d"/>
+      <rect x="0"  y="28" width="12" height="12" rx="2" fill="#e89a1d"/>
+      <rect x="14" y="28" width="12" height="12" rx="2" fill="#e89a1d"/>
+    </svg>
+    <span className="siteBrandText">
+      {lang === "bg" ? "ЕЛЕВАТ СОЛАР" : "ELEVAT SOLAR"}
+    </span>
+  </a>
+</div>
           </div>
 
           <nav className="siteNav">
