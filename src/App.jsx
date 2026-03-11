@@ -14,7 +14,7 @@ if (window.location.pathname === '/brief') {
   return (
     <>
      <div className="siteBrand">
-  <a href="/" style={{display:"flex",alignItems:"center",gap:"10px",textDecoration:"none"}}>
+ <a href="/">
     <svg width="22" height="34" viewBox="0 0 28 42" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect x="14" y="0"  width="12" height="12" rx="2" fill="#e89a1d"/>
       <rect x="0"  y="14" width="12" height="12" rx="2" fill="#e89a1d"/>
