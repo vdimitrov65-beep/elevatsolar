@@ -302,4 +302,5 @@ html { scroll-behavior: smooth; }
 .contactForm {
   max-width: 560px;
   margin: 0 auto;
+  text-align:center;
 }
