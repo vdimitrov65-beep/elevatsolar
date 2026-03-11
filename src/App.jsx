@@ -161,31 +161,31 @@ export default function App() {
         </div>
       </section>
 
-      <section id="contact" className="pageSection">
-        <div className="sectionInner">
-          <h2 style={{ fontSize: "clamp(28px, 4vw, 48px)", marginBottom: "16px", marginTop: 0 }}>
-            {lang === "bg" ? "Заяви преглед на соларен проект" : "Request a Solar Project Review"}
-          </h2>
-          <div className="contactInfo">
-            <p><strong>Venelin Dimitrov</strong></p>
-            <p>{lang === "bg" ? "Управляващ консултант – Elevat Solar Consulting" : "Managing Consultant – Elevat Solar Consulting"}</p>
-          <p><a href="mailto:office@elevatsolar.eu">office@elevatsolar.eu</a></p>
-<p><a href="https://linkedin.com/in/venelindimitrov" target="_blank" rel="noreferrer">linkedin.com/in/venelindimitrov</a></p>
-<p>{lang === "bg" ? "София, ж.к. Яворов, бл.73, ап. 4, п.к.1110" : "Sofia, Yavorov district, bl.73, ap.4, 1110"}</p>
-<p><a href="tel:+359888220330">+359 888 220 330</a></p> 
-          </div>
-          <p style={{ fontSize: "clamp(16px, 2vw, 20px)", maxWidth: "720px", lineHeight: 1.6, color: "#4b5563", marginTop: "24px" }}>
-            {lang === "bg" ? "Разкажете ни за вашия соларен проект и ще прегледаме обхвата, проектната логика и потенциала за оптимизация на CAPEX." : "Tell us about your solar project and we will review scope, design logic and CAPEX optimisation potential."}
-          </p>
-          <div className="contactForm">
-            <input placeholder={lang === "bg" ? "Име" : "Name"} />
-            <input placeholder={lang === "bg" ? "Имейл" : "Email"} type="email" />
-            <input placeholder={lang === "bg" ? "Размер на проекта (MW)" : "Project size (MW)"} />
-            <textarea placeholder={lang === "bg" ? "Описание на проекта" : "Project description"} />
-            <button type="button">{lang === "bg" ? "Изпрати запитване" : "Send Request"}</button>
-          </div>
-        </div>
-      </section>
+     <section id="contact" className="pageSection">
+  <div className="sectionInner" style={{textAlign:"center"}}>
+    <h2 style={{ fontSize: "clamp(28px, 4vw, 48px)", marginBottom: "16px", marginTop: 0 }}>
+      {lang === "bg" ? "Заяви преглед на соларен проект" : "Request a Solar Project Review"}
+    </h2>
+    <div className="contactInfo">
+      <p><strong>Venelin Dimitrov</strong></p>
+      <p>{lang === "bg" ? "Управляващ консултант – Elevat Solar Consulting" : "Managing Consultant – Elevat Solar Consulting"}</p>
+      <p><a href="mailto:office@elevatsolar.eu">office@elevatsolar.eu</a></p>
+      <p><a href="https://linkedin.com/in/venelindimitrov" target="_blank" rel="noreferrer">linkedin.com/in/venelindimitrov</a></p>
+      <p>{lang === "bg" ? "София, ж.к. Яворов, бл.73, ап. 4, п.к.1110" : "Sofia, Yavorov district, bl.73, ap.4, 1110"}</p>
+      <p><a href="tel:+359888220330">+359 888 220 330</a></p>
+    </div>
+    <p style={{ fontSize: "clamp(16px, 2vw, 20px)", maxWidth: "720px", lineHeight: 1.6, color: "#4b5563", margin: "24px auto" }}>
+      {lang === "bg" ? "Разкажете ни за вашия соларен проект и ще прегледаме обхвата, проектната логика и потенциала за оптимизация на CAPEX." : "Tell us about your solar project and we will review scope, design logic and CAPEX optimisation potential."}
+    </p>
+    <div className="contactForm">
+      <input placeholder={lang === "bg" ? "Име" : "Name"} />
+      <input placeholder={lang === "bg" ? "Имейл" : "Email"} type="email" />
+      <input placeholder={lang === "bg" ? "Размер на проекта (MW)" : "Project size (MW)"} />
+      <textarea placeholder={lang === "bg" ? "Описание на проекта" : "Project description"} />
+      <button type="button">{lang === "bg" ? "Изпрати запитване" : "Send Request"}</button>
+    </div>
+  </div>
+</section>
     
 <section style={{ padding: "60px 20px", background: "#EFF2F7", display:"flex", justifyContent:"center", alignItems:"center" }}>  <div dangerouslySetInnerHTML={{ __html: `
     <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
