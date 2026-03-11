@@ -8,7 +8,9 @@ export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const closeMenu = () => setMenuOpen(false);
-
+if (window.location.pathname === '/brief') {
+  window.location.href = '/brief.html';
+}
   return (
     <>
       <header className="siteHeader">
