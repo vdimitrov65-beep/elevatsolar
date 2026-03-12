@@ -10,7 +10,7 @@ export default function App() {
   const closeMenu = () => setMenuOpen(false);
 if (window.location.pathname === '/brief') {
   window.location.href = '/brief.html';
-}ь
+}
   return (
     <>
       <header className="siteHeader">
