@@ -55,7 +55,7 @@ if (window.location.pathname === '/brief') {
         </div>
       </div>
 
-      <Hero lang={lang} />
+     <div style={{marginTop:"64px"}}><Hero lang={lang} /></div>
 
       <section id="services" className="pageSection">
         <div className="sectionInner">
