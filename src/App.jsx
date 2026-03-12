@@ -27,7 +27,7 @@ if (window.location.pathname === '/brief') {
     </span>
   </a>
 </div>
-          </div>
+        
 
           <nav className="siteNav">
             <a href="#services">{lang === "bg" ? "Услуги" : "Services"}</a>
