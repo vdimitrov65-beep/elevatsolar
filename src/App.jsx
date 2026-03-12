@@ -12,8 +12,7 @@ if (window.location.pathname === '/brief') {
   window.location.href = '/brief.html';
 }
   return (
-    <>
-   <header className="siteHeader" style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"12px 24px",background:"#0b1220"}}>
+    <><header className="siteHeader" style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"12px 24px",background:"transparent"}}>
         <div className="siteBrand">
       
          <a href="/" style={{display:"flex",alignItems:"center",gap:"8px",textDecoration:"none"}}> 
