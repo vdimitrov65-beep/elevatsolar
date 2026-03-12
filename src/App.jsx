@@ -1,241 +1,454 @@
-import { useState } from "react";
-import "./App.css";
-import Hero from "./components/Hero";
-import NewsletterForm from "./NewsLetterForm";
+/* ============================================
+   ELEVAT SOLAR — Design System 2026
+   Refined B2B Engineering Advisory Aesthetic
+   ============================================ */
 
-export default function App() {
-  const [lang, setLang] = useState("en");
-  const [menuOpen, setMenuOpen] = useState(false);
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap');
 
-  const closeMenu = () => setMenuOpen(false);
-if (window.location.pathname === '/brief') {
-  window.location.href = '/brief.html';
+/* ── Tokens ── */
+:root {
+  --navy:       #0b1220;
+  --navy-80:    rgba(11,18,32,0.80);
+  --navy-40:    rgba(11,18,32,0.40);
+  --orange:     #e89a1d;
+  --orange-dim: #c47e10;
+  --cream:      #f5f4ef;
+  --mid:        #6b7280;
+  --border:     rgba(11,18,32,0.10);
+  --white:      #ffffff;
+
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:  cubic-bezier(0.7, 0, 0.84, 0);
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
+  --shadow-hover: 0 8px 32px rgba(0,0,0,0.12);
 }
-  return (
-    <><header className="siteHeader" style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"12px 24px",background:"transparent"}}>
-        <div className="siteBrand">
-      
-         <a href="/" style={{display:"flex",alignItems:"center",gap:"8px",textDecoration:"none"}}> 
-            <svg width="22" height="34" viewBox="0 0 28 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="14" y="0"  width="12" height="12" rx="2" fill="#e89a1d"/>
-              <rect x="0"  y="14" width="12" height="12" rx="2" fill="#e89a1d"/>
-              <rect x="14" y="14" width="12" height="12" rx="2" fill="#e89a1d"/>
-              <rect x="0"  y="28" width="12" height="12" rx="2" fill="#e89a1d"/>
-              <rect x="14" y="28" width="12" height="12" rx="2" fill="#e89a1d"/>
-            </svg>
-            <span className="siteBrandText">
-              {lang === "bg" ? "ЕЛЕВАТ СОЛАР" : "ELEVAT SOLAR"}
-            </span>
-          </a>
-        </div>
 
-        <nav className="siteNav">
-          <a href="#services">{lang === "bg" ? "Услуги" : "Services"}</a>
-          <a href="#projects">{lang === "bg" ? "Проекти" : "Projects"}</a>
-          <a href="#contact">{lang === "bg" ? "Контакт" : "Contact"}</a>
-        </nav>
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-        <div className="siteLang">
-          <button onClick={() => setLang("bg")} style={{ fontWeight: lang === "bg" ? "700" : "400", opacity: lang === "bg" ? 1 : 0.6 }}>BG</button>
-          <button onClick={() => setLang("en")} style={{ fontWeight: lang === "en" ? "700" : "400", opacity: lang === "en" ? 1 : 0.6 }}>EN</button>
-        </div>
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 
-        <button className={`hamburger${menuOpen ? " open" : ""}`} onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
-          <span /><span /><span />
-        </button>
-      </header>
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--navy);
+  background: var(--white);
+  overflow-x: hidden;
+}
 
-      <div className={`mobileNav${menuOpen ? " open" : ""}`}>
-        <a href="#services" onClick={closeMenu}>{lang === "bg" ? "Услуги" : "Services"}</a>
-        <a href="#projects" onClick={closeMenu}>{lang === "bg" ? "Проекти" : "Projects"}</a>
-        <a href="#contact" onClick={closeMenu}>{lang === "bg" ? "Контакт" : "Contact"}</a>
-        <div className="mobileLang">
-          <button onClick={() => { setLang("bg"); closeMenu(); }} style={{ fontWeight: lang === "bg" ? "700" : "400" }}>BG</button>
-          <button onClick={() => { setLang("en"); closeMenu(); }} style={{ fontWeight: lang === "en" ? "700" : "400" }}>EN</button>
-        </div>
-      </div>
+a { color: inherit; text-decoration: none; }
 
-      <Hero lang={lang} />
+/* ── Header ── */
+.siteHeader {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  height: 64px;
+  background: rgba(11,18,32,0.72);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  transition: background 0.3s var(--ease-out);
+}
 
-      <section id="services" className="pageSection">
-        <div className="sectionInner">
-          <h2 style={{ fontSize: "clamp(28px, 4vw, 48px)", marginBottom: "16px", marginTop: 0 }}>
-            {lang === "bg" ? "Какво правим" : "What We Do"}
-          </h2>
-          <p style={{ fontSize: "clamp(16px, 2vw, 20px)", maxWidth: "720px", lineHeight: 1.6, color: "#4b5563", margin: 0 }}>
-            {lang === "bg" ? "Elevat Solar подкрепя инвеститори и разработчици с инженерно ориентирани консултантски услуги за utility-scale соларни проекти, оптимизация на CAPEX, BoQ одити, строителна логика и намаляване на проектния риск." : "Elevat Solar supports developers and investors with engineering-first consultancy for utility-scale solar projects, CAPEX optimisation, BoQ audits, construction logic and project risk reduction."}
-          </p>
-          <div className="cardsGrid">
-            <div className="cardBox">
-              <h3>{lang === "bg" ? "Оптимизация на CAPEX" : "CAPEX Optimisation"}</h3>
-              <p>{lang === "bg" ? "Идентифициране на инженерни и снабдителни подобрения, които намаляват общия CAPEX на соларния проект." : "Identify engineering and procurement improvements that reduce total solar project CAPEX."}</p>
-            </div>
-            <div className="cardBox">
-              <h3>{lang === "bg" ? "BoQ одит" : "BoQ Audit"}</h3>
-              <p>{lang === "bg" ? "Независим преглед на EPC количествените сметки и сравнение с реални проекти." : "Independent review EPC bills of quantities and benchmark against real projects."}</p>
-            </div>
-            <div className="cardBox">
-              <h3>{lang === "bg" ? "Строително планиране" : "Construction Planning"}</h3>
-              <p>{lang === "bg" ? "Подобряване на производителността на монтажа чрез по-добра последователност и организация на изпълнението." : "Improve installation productivity through better sequencing and installation productivity."}</p>
-            </div>
-            <div className="cardBox">
-              <h3>{lang === "bg" ? "Преглед на проектния риск" : "Project Risk Review"}</h3>
-              <p>{lang === "bg" ? "Идентифициране на рисковете по изпълнението на ранен етап и намаляване на скъпоструващи строителни грешки." : "Identify execution risks early and reduce costly construction mistakes."}</p>
-            </div>
-          </div>
-        </div>
-      </section>
+.siteHeader.scrolled {
+  background: rgba(11,18,32,0.95);
+}
 
-      <section id="projects" className="pageSection">
-        <div className="sectionInner">
-          <h2 style={{ fontSize: "clamp(28px, 4vw, 48px)", marginBottom: "16px", marginTop: 0 }}>
-            {lang === "bg" ? "Проекти" : "Projects"}
-          </h2>
-          <p style={{ fontSize: "clamp(16px, 2vw, 20px)", maxWidth: "720px", lineHeight: 1.6, color: "#4b5563", margin: 0 }}>
-            {lang === "bg" ? "Подбрани проекти и консултантска работа в utility-scale и търговския соларен сектор." : "Selected utility-scale PV and commercial solar advisory work."}
-          </p>
-          <div className="cardsGrid cardsGrid--3col">
-            <div className="cardBox">
-              <h3>{lang === "bg" ? "Консултиране за utility-scale PV (100 MW)" : "Utility-Scale PV Advisory (100 MW)"}</h3>
-              <p>{lang === "bg" ? "Техническо консултиране, CAPEX бенчмаркинг и инженерен преглед за големи utility-scale соларни проекти." : "Technical advisory, CAPEX benchmarking and engineering review for large utility-scale solar projects."}</p>
-            </div>
-            <div className="cardBox">
-              <h3>{lang === "bg" ? "Портфолио от индустриални покривни системи (5 MW)" : "Industrial Rooftop Portfolio (5 MW)"}</h3>
-              <p>{lang === "bg" ? "Инженерна оптимизация и CAPEX преглед за търговски и индустриални покривни PV портфейли." : "Engineering optimisation and CAPEX review for commercial and industrial rooftop PV portfolios."}</p>
-            </div>
-            <div className="cardBox">
-              <h3>{lang === "bg" ? "Подкрепа по EPC обхват" : "EPC Scope Support"}</h3>
-              <p>{lang === "bg" ? "Независим преглед на EPC обхвата за 250 MW соларен проект в развитие." : "Independent EPC Scope Review 250 MW Solar Development."}</p>
-            </div>
-          </div>
-        </div>
-      </section>
+/* ── Brand ── */
+.siteBrand a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-      <section id="markets" className="pageSection">
-        <div className="sectionInner">
-          <h2 style={{ fontSize: "clamp(28px, 4vw, 48px)", marginBottom: "16px", marginTop: 0 }}>
-            {lang === "bg" ? "Пазари" : "Markets"}
-          </h2>
-          <p style={{ fontSize: "clamp(16px, 2vw, 20px)", maxWidth: "720px", lineHeight: 1.6, color: "#4b5563", margin: 0 }}>
-            {lang === "bg" ? "Инженерно консултиране за соларни проекти в България, Румъния и Югоизточна Европа." : "Solar engineering advisory across Bulgaria, Romania and Southeast Europe."}
-          </p>
-          <div className="cardsGrid cardsGrid--3col">
-            <div className="cardBox">
-              <h3>{lang === "bg" ? "България" : "Bulgaria"}</h3>
-              <p>{lang === "bg" ? "Инженерно консултиране за utility-scale PV и оптимизация на индустриални покривни системи." : "Utility-scale PV engineering advisory and industrial rooftop optimisation."}</p>
-            </div>
-            <div className="cardBox">
-              <h3>{lang === "bg" ? "Румъния" : "Romania"}</h3>
-              <p>{lang === "bg" ? "Оптимизация на CAPEX и техническо консултиране за големи соларни проекти в развитие." : "CAPEX optimisation and technical advisory for large solar developments."}</p>
-            </div>
-            <div className="cardBox">
-              <h3>{lang === "bg" ? "Югоизточна Европа" : "Southeast Europe"}</h3>
-              <p>{lang === "bg" ? "Независим инженерен преглед и подкрепа при определяне на EPC обхвата за регионални проекти." : "Independent engineering review and EPC scope support for regional projects."}</p>
-            </div>
-          </div>
-        </div>
-      </section>
+.siteBrand svg {
+  flex-shrink: 0;
+  transition: transform 0.3s var(--ease-out);
+}
 
-      <section id="why" className="pageSection">
-        <div className="sectionInner">
-          <h2 style={{ fontSize: "clamp(28px, 4vw, 48px)", marginBottom: "16px", marginTop: 0 }}>
-            {lang === "bg" ? "Защо Elevat Solar" : "Why Elevat Solar"}
-          </h2>
-          <p style={{ fontSize: "clamp(16px, 2vw, 20px)", maxWidth: "720px", lineHeight: 1.6, color: "#4b5563", margin: 0 }}>
-            {lang === "bg" ? "Независим инженерен подход, насочен към намаляване на CAPEX, подобряване на изпълнимостта и ограничаване на риска при реализация." : "Independent engineering focused on reducing CAPEX, improving buildability and lowering execution risk."}
-          </p>
-          <div className="statsRow">
-            <div><strong>250+ MW</strong><br />{lang === "bg" ? "прегледани" : "reviewed"}</div>
-            <div><strong>{lang === "bg" ? "3 държави" : "3 countries"}</strong><br />{lang === "bg" ? "България, Румъния, ЮИЕ" : "Bulgaria, Romania, SEE"}</div>
-            <div><strong>Utility-scale & C&I</strong><br />engineering support</div>
-          </div>
-          <div className="cardsGrid">
-            <div className="cardBox">
-              <h3>{lang === "bg" ? "Инженерен подход на първо място" : "Engineering-First Approach"}</h3>
-              <p>{lang === "bg" ? "Техническа логика преди решенията за доставки или строителство." : "Technical logic before procurement or construction decisions."}</p>
-            </div>
-            <div className="cardBox">
-              <h3>Utility-Scale Experience</h3>
-              <p>Real project execution knowledge from large solar developments.</p>
-            </div>
-            <div className="cardBox">
-              <h3>{lang === "bg" ? "Оптимизация на CAPEX" : "CAPEX Optimisation"}</h3>
-              <p>{lang === "bg" ? "Идентифициране на проектни и снабдителни подобрения, които намаляват цената на проекта." : "Identify design and procurement improvements that reduce project cost."}</p>
-            </div>
-            <div className="cardBox">
-              <h3>{lang === "bg" ? "Независим преглед" : "Independent Review"}</h3>
-              <p>{lang === "bg" ? "Обективна техническа оценка за разработчици, инвеститори и EPC компании." : "Objective technical assessment for developers, investors and EPCs."}</p>
-            </div>
-          </div>
-        </div>
-      </section>
+.siteBrand a:hover svg {
+  transform: scale(1.08);
+}
 
-      <section id="contact" className="pageSection">
-        <div className="sectionInner" style={{textAlign:"center"}}>
-          <h2 style={{ fontSize: "clamp(28px, 4vw, 48px)", marginBottom: "16px", marginTop: 0 }}>
-            {lang === "bg" ? "Заяви преглед на соларен проект" : "Request a Solar Project Review"}
-          </h2>
-          <div className="contactInfo">
-            <p><strong>Venelin Dimitrov</strong></p>
-            <p>{lang === "bg" ? "Управляващ консултант – Elevat Solar Consulting" : "Managing Consultant – Elevat Solar Consulting"}</p>
-            <p><a href="mailto:office@elevatsolar.eu">office@elevatsolar.eu</a></p>
-            <p><a href="https://linkedin.com/in/venelindimitrov" target="_blank" rel="noreferrer">linkedin.com/in/venelindimitrov</a></p>
-            <p>{lang === "bg" ? "София, ж.к. Яворов, бл.73, ап. 4, п.к.1110" : "Sofia, Yavorov district, bl.73, ap.4, 1110"}</p>
-            <p><a href="tel:+359888220330">+359 888 220 330</a></p>
-          </div>
-          <p style={{ fontSize: "clamp(16px, 2vw, 20px)", maxWidth: "720px", lineHeight: 1.6, color: "#4b5563", margin: "24px auto" }}>
-            {lang === "bg" ? "Разкажете ни за вашия соларен проект и ще прегледаме обхвата, проектната логика и потенциала за оптимизация на CAPEX." : "Tell us about your solar project and we will review scope, design logic and CAPEX optimisation potential."}
-          </p>
-          <div className="contactForm">
-            <input placeholder={lang === "bg" ? "Име" : "Name"} />
-            <input placeholder={lang === "bg" ? "Имейл" : "Email"} type="email" />
-            <input placeholder={lang === "bg" ? "Размер на проекта (MW)" : "Project size (MW)"} />
-            <textarea placeholder={lang === "bg" ? "Описание на проекта" : "Project description"} />
-            <button type="button">{lang === "bg" ? "Изпрати запитване" : "Send Request"}</button>
-          </div>
-        </div>
-      </section>
+.siteBrandText {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  color: var(--white);
+  transition: color 0.2s;
+}
 
-      <section style={{ padding: "60px 20px", background: "#EFF2F7", display:"flex", justifyContent:"center", alignItems:"center" }}>
-        <div dangerouslySetInnerHTML={{ __html: `
-          <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
-          <div class="sib-form" style="text-align:center; background-color:#EFF2F7;">
-            <div id="sib-form-container" class="sib-form-container">
-              <div id="sib-container" class="sib-container--large sib-container--vertical" style="text-align:center; background-color:rgba(255,255,255,1); max-width:540px; border-radius:3px; border-width:1px; border-color:#C0CCD9; border-style:solid; margin:0 auto;">
-                <form id="sib-form" method="POST" action="https://e5a3aca6.sibforms.com/serve/MUIFAGl6jZRusfmZKbTl9o-b_SPdLh6sO3poXKCLSH6tcgH62ll7r8ZV8VvCDpAy1wuqh2HlZJfNaMH7KvPXMRUPf_VgkOjq143QmaYpCEDL730q1L4NOd76MnQd0i-30bervCd8a0rn1HcGbKToPR8nvriIGuulu0f0OpvB57THmb4-SPs2v0TvhaHupMRuTkZL6gnHfHNHx-rWcg==">
-                  <div style="padding:8px 0;"><p style="font-size:32px;font-weight:700;font-family:Helvetica,sans-serif;color:#3C4858;">Monthly Solar Market Brief</p></div>
-                  <div style="padding:8px 0;"><p style="font-size:16px;font-family:Helvetica,sans-serif;color:#3C4858;">Solar market news for Bulgaria, Romania and SEE — once a month.</p></div>
-                  <div style="padding:8px 0;"><input type="text" name="EMAIL" placeholder="Your email" required style="width:90%;padding:12px;border:1px solid #C0CCD9;border-radius:3px;font-size:16px;"></div>
-                  <div style="padding:8px 0;"><button type="submit" style="background:#0b1220;color:#fff;border:none;padding:14px 40px;font-size:16px;font-weight:700;border-radius:3px;cursor:pointer;width:90%;">Subscribe</button></div>
-                  <input type="text" name="email_address_check" value="" style="display:none">
-                  <input type="hidden" name="locale" value="en">
-                  <input type="hidden" name="html_type" value="simple">
-                </form>
-              </div>
-            </div>
-          </div>
-        `}} />
-      </section>
+/* ── Nav ── */
+.siteNav {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
 
-      <footer style={{background:"#0b1220",padding:"48px 20px",marginTop:0}}>
-        <div style={{maxWidth:"960px",margin:"0 auto",display:"flex",flexWrap:"wrap",gap:"32px",justifyContent:"space-between",alignItems:"flex-start"}}>
-          <div>
-            <div style={{color:"#fff",fontWeight:700,fontSize:"1.1rem",marginBottom:"8px"}}>ELEVAT SOLAR</div>
-            <div style={{color:"rgba(255,255,255,0.5)",fontSize:"0.85rem",lineHeight:1.8}}>
-              Independent Solar Engineering Advisory<br/>
-              Bulgaria · Romania · Southeast Europe
-            </div>
-          </div>
-          <div style={{color:"rgba(255,255,255,0.5)",fontSize:"0.85rem",lineHeight:1.8}}>
-            <a href="mailto:office@elevatsolar.eu" style={{color:"#e89a1d",textDecoration:"none"}}>office@elevatsolar.eu</a><br/>
-            <a href="tel:+359888220330" style={{color:"rgba(255,255,255,0.5)",textDecoration:"none"}}>+359 888 220 330</a><br/>
-            <a href="https://linkedin.com/in/venelindimitrov" target="_blank" rel="noreferrer" style={{color:"rgba(255,255,255,0.5)",textDecoration:"none"}}>LinkedIn</a>
-          </div>
-          <div style={{color:"rgba(255,255,255,0.3)",fontSize:"0.8rem",alignSelf:"flex-end"}}>
-            © 2026 Elevat Solar OOD. All rights reserved.
-          </div>
-        </div>
-      </footer>
-    </>
-  );
+.siteNav a {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.70);
+  position: relative;
+  transition: color 0.2s;
+}
+
+.siteNav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0; height: 1px;
+  background: var(--orange);
+  transition: width 0.25s var(--ease-out);
+}
+
+.siteNav a:hover {
+  color: var(--white);
+}
+
+.siteNav a:hover::after {
+  width: 100%;
+}
+
+/* ── Lang toggle ── */
+.siteLang {
+  display: flex;
+  gap: 2px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 3px;
+}
+
+.siteLang button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.55);
+  padding: 4px 10px;
+  border-radius: 16px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.siteLang button:hover,
+.siteLang button[style*="700"] {
+  background: var(--orange);
+  color: var(--white);
+}
+
+/* ── Hamburger ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  transition: background 0.2s;
+}
+
+.hamburger:hover { background: rgba(255,255,255,0.08); }
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background: rgba(255,255,255,0.80);
+  border-radius: 2px;
+  transition: transform 0.3s var(--ease-out), opacity 0.3s;
+}
+
+.hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* ── Mobile nav ── */
+.mobileNav {
+  position: fixed;
+  top: 64px; left: 0; right: 0;
+  z-index: 99;
+  background: var(--navy);
+  padding: 0 24px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s var(--ease-out), padding 0.3s;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.mobileNav.open {
+  max-height: 360px;
+  padding: 20px 24px 28px;
+}
+
+.mobileNav a {
+  display: block;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.80);
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: color 0.2s;
+}
+
+.mobileNav a:hover { color: var(--orange); }
+
+.mobileLang {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.mobileLang button {
+  background: none;
+  border: 1px solid rgba(255,255,255,0.20);
+  border-radius: 20px;
+  color: rgba(255,255,255,0.60);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 6px 18px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.mobileLang button:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+/* ── Sections ── */
+.pageSection {
+  padding: 100px 24px;
+  background: var(--white);
+}
+
+.pageSection:nth-child(even) {
+  background: var(--cream);
+}
+
+.sectionInner {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.sectionInner > h2 {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(32px, 4.5vw, 56px);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--navy);
+  margin-bottom: 20px;
+}
+
+.sectionInner > p {
+  font-size: clamp(16px, 1.8vw, 19px);
+  color: var(--mid);
+  max-width: 680px;
+  line-height: 1.7;
+  margin-bottom: 52px;
+}
+
+/* ── Cards ── */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 48px;
+}
+
+.cardsGrid--3col {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.cardBox {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 32px 28px;
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out), border-color 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.cardBox::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 0;
+  background: var(--orange);
+  transition: height 0.35s var(--ease-out);
+}
+
+.cardBox:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(232,154,29,0.20);
+}
+
+.cardBox:hover::before {
+  height: 100%;
+}
+
+.cardBox h3 {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+
+.cardBox p {
+  font-size: 14px;
+  color: var(--mid);
+  line-height: 1.65;
+}
+
+/* ── Stats row ── */
+.statsRow {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+  margin: 48px 0;
+  padding: 40px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.statsRow > div {
+  font-size: 13px;
+  color: var(--mid);
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+}
+
+.statsRow strong {
+  display: block;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 400;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+/* ── Contact ── */
+.contactInfo {
+  margin: 28px auto;
+  max-width: 480px;
+  text-align: left;
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 32px 36px;
+}
+
+.contactInfo p {
+  font-size: 14px;
+  color: var(--mid);
+  margin-bottom: 6px;
+}
+
+.contactInfo p strong {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.contactInfo a {
+  color: var(--orange);
+  transition: opacity 0.2s;
+}
+
+.contactInfo a:hover { opacity: 0.75; }
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.contactForm input,
+.contactForm textarea {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--navy);
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 13px 16px;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.contactForm input:focus,
+.contactForm textarea:focus {
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px rgba(232,154,29,0.12);
+}
+
+.contactForm textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contactForm button {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  background: var(--navy);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 15px 28px;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.2s;
+}
+
+.contactForm button:hover {
+  background: var(--orange);
+  transform: translateY(-1px);
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .siteHeader { padding: 0 20px; }
+  .siteNav { display: none; }
+  .siteLang { display: none; }
+  .hamburger { display: flex; }
+  .pageSection { padding: 72px 20px; }
+  .statsRow { gap: 28px; }
+  .contactInfo { padding: 24px 20px; }
 }
