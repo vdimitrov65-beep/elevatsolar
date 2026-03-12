@@ -23,7 +23,7 @@ export default function App() {
   return (
     <>
       <header className="siteHeader" style={{
-        background: scrolled ? "rgba(11,18,32,0.95)" : "transparent",
+        background: scrolled ? "0b1220" : "transparent",
         backdropFilter: scrolled ? "blur(16px)" : "none",
         transition: "background 0.3s ease"
       }}>
