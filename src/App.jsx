@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import Hero from "./components/Hero";
 import NewsletterForm from "./NewsLetterForm";
@@ -6,13 +6,27 @@ import NewsletterForm from "./NewsLetterForm";
 export default function App() {
   const [lang, setLang] = useState("en");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   const closeMenu = () => setMenuOpen(false);
-if (window.location.pathname === '/brief') {
-  window.location.href = '/brief.html';
-}
+
+  if (window.location.pathname === '/brief') {
+    window.location.href = '/brief.html';
+  }
+
   return (
-    <><header className="siteHeader">
+    <>
+      <header className="siteHeader" style={{
+        background: scrolled ? "rgba(11,18,32,0.95)" : "transparent",
+        backdropFilter: scrolled ? "blur(16px)" : "none",
+        transition: "background 0.3s ease"
+      }}>
         <div className="siteBrand">
           <a href="/">
             <svg width="22" height="34" viewBox="0 0 28 42" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -54,7 +68,7 @@ if (window.location.pathname === '/brief') {
         </div>
       </div>
 
-     <div style={{marginTop:"64px"}}><Hero lang={lang} /></div>
+      <Hero lang={lang} />
 
       <section id="services" className="pageSection">
         <div className="sectionInner">
@@ -115,13 +129,10 @@ if (window.location.pathname === '/brief') {
           <h2 style={{ fontSize: "clamp(28px, 4vw, 48px)", marginBottom: "16px", marginTop: 0 }}>
             {lang === "bg" ? "Пазари" : "Markets"}
           </h2>
-          <p style={{ fontSize: "clamp(16px, 2vw, 20px)", maxWidth: "720px", lineHeight: 1.6, color: "#4b5563", margin: 0 }}>
-            {lang === "bg" ? "Инженерно консултиране за соларни проекти в България, Румъния и Югоизточна Европа." : "Solar engineering advisory across Bulgaria, Romania and Southeast Europe."}
-          </p>
           <div className="cardsGrid cardsGrid--3col">
             <div className="cardBox">
               <h3>{lang === "bg" ? "България" : "Bulgaria"}</h3>
-              <p>{lang === "bg" ? "Инженерно консултиране за utility-scale PV и оптимизация на индустриални покривни системи." : "Utility-scale PV engineering advisory and industrial rooftop optimisation."}</p>
+              <p>{lang === "bg" ? "EPC изпълнение и техническо консултиране за utility-scale и C&I соларни проекти." : "EPC delivery and technical advisory for utility-scale and C&I solar projects."}</p>
             </div>
             <div className="cardBox">
               <h3>{lang === "bg" ? "Румъния" : "Romania"}</h3>
@@ -195,46 +206,48 @@ if (window.location.pathname === '/brief') {
         </div>
       </section>
 
-      <section style={{ padding: "60px 20px", background: "#EFF2F7", display:"flex", justifyContent:"center", alignItems:"center" }}>
-        <div dangerouslySetInnerHTML={{ __html: `
-          <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
-          <div class="sib-form" style="text-align:center; background-color:#EFF2F7;">
-            <div id="sib-form-container" class="sib-form-container">
-              <div id="sib-container" class="sib-container--large sib-container--vertical" style="text-align:center; background-color:rgba(255,255,255,1); max-width:540px; border-radius:3px; border-width:1px; border-color:#C0CCD9; border-style:solid; margin:0 auto;">
-                <form id="sib-form" method="POST" action="https://e5a3aca6.sibforms.com/serve/MUIFAGl6jZRusfmZKbTl9o-b_SPdLh6sO3poXKCLSH6tcgH62ll7r8ZV8VvCDpAy1wuqh2HlZJfNaMH7KvPXMRUPf_VgkOjq143QmaYpCEDL730q1L4NOd76MnQd0i-30bervCd8a0rn1HcGbKToPR8nvriIGuulu0f0OpvB57THmb4-SPs2v0TvhaHupMRuTkZL6gnHfHNHx-rWcg==">
-                  <div style="padding:8px 0;"><p style="font-size:32px;font-weight:700;font-family:Helvetica,sans-serif;color:#3C4858;">Monthly Solar Market Brief</p></div>
-                  <div style="padding:8px 0;"><p style="font-size:16px;font-family:Helvetica,sans-serif;color:#3C4858;">Solar market news for Bulgaria, Romania and SEE — once a month.</p></div>
-                  <div style="padding:8px 0;"><input type="text" name="EMAIL" placeholder="Your email" required style="width:90%;padding:12px;border:1px solid #C0CCD9;border-radius:3px;font-size:16px;"></div>
-                  <div style="padding:8px 0;"><button type="submit" style="background:#;color:#fff;border:none;padding:14px 40px;font-size:16px;font-weight:700;border-radius:3px;cursor:pointer;width:90%;">Subscribe</button></div>
-                  <input type="text" name="email_address_check" value="" style="display:none">
-                  <input type="hidden" name="locale" value="en">
-                  <input type="hidden" name="html_type" value="simple">
-                </form>
+      <div style={{background:"#0b1220"}}>
+        <section style={{ padding: "60px 20px", display:"flex", justifyContent:"center", alignItems:"center" }}>
+          <div dangerouslySetInnerHTML={{ __html: `
+            <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+            <div class="sib-form" style="text-align:center;">
+              <div id="sib-form-container" class="sib-form-container">
+                <div id="sib-container" class="sib-container--large sib-container--vertical" style="text-align:center; background-color:rgba(255,255,255,0.06); max-width:540px; border-radius:8px; border-width:1px; border-color:rgba(255,255,255,0.12); border-style:solid; margin:0 auto; padding:16px 0;">
+                  <form id="sib-form" method="POST" action="https://e5a3aca6.sibforms.com/serve/MUIFAGl6jZRusfmZKbTl9o-b_SPdLh6sO3poXKCLSH6tcgH62ll7r8ZV8VvCDpAy1wuqh2HlZJfNaMH7KvPXMRUPf_VgkOjq143QmaYpCEDL730q1L4NOd76MnQd0i-30bervCd8a0rn1HcGbKToPR8nvriIGuulu0f0OpvB57THmb4-SPs2v0TvhaHupMRuTkZL6gnHfHNHx-rWcg==">
+                    <div style="padding:8px 0;"><p style="font-size:28px;font-weight:700;font-family:Helvetica,sans-serif;color:#ffffff;">Monthly Solar Market Brief</p></div>
+                    <div style="padding:8px 0;"><p style="font-size:15px;font-family:Helvetica,sans-serif;color:rgba(255,255,255,0.6);">Solar market news for Bulgaria, Romania and SEE — once a month.</p></div>
+                    <div style="padding:8px 0;"><input type="text" name="EMAIL" placeholder="Your email" required style="width:90%;padding:12px;border:1px solid rgba(255,255,255,0.2);border-radius:4px;font-size:16px;background:rgba(255,255,255,0.08);color:#fff;"></div>
+                    <div style="padding:8px 0;"><button type="submit" style="background:#e89a1d;color:#0b1220;border:none;padding:14px 40px;font-size:16px;font-weight:700;border-radius:4px;cursor:pointer;width:90%;">Subscribe</button></div>
+                    <input type="text" name="email_address_check" value="" style="display:none">
+                    <input type="hidden" name="locale" value="en">
+                    <input type="hidden" name="html_type" value="simple">
+                  </form>
+                </div>
               </div>
             </div>
-          </div>
-        `}} />
-      </section>
+          `}} />
+        </section>
 
-      <footer style={{background:"#1e3a5f",padding:"48px 20px",marginTop:0}}>
-        <div style={{maxWidth:"960px",margin:"0 auto",display:"flex",flexWrap:"wrap",gap:"32px",justifyContent:"space-between",alignItems:"flex-start"}}>
-          <div>
-            <div style={{color:"#fff",fontWeight:700,fontSize:"1.1rem",marginBottom:"8px"}}>ELEVAT SOLAR</div>
+        <footer style={{padding:"48px 20px", marginTop:0, borderTop:"1px solid rgba(255,255,255,0.08)"}}>
+          <div style={{maxWidth:"960px",margin:"0 auto",display:"flex",flexWrap:"wrap",gap:"32px",justifyContent:"space-between",alignItems:"flex-start"}}>
+            <div>
+              <div style={{color:"#fff",fontWeight:700,fontSize:"1.1rem",marginBottom:"8px"}}>ELEVAT SOLAR</div>
+              <div style={{color:"rgba(255,255,255,0.5)",fontSize:"0.85rem",lineHeight:1.8}}>
+                Independent Solar Engineering Advisory<br/>
+                Bulgaria · Romania · Southeast Europe
+              </div>
+            </div>
             <div style={{color:"rgba(255,255,255,0.5)",fontSize:"0.85rem",lineHeight:1.8}}>
-              Independent Solar Engineering Advisory<br/>
-              Bulgaria · Romania · Southeast Europe
+              <a href="mailto:office@elevatsolar.eu" style={{color:"#e89a1d",textDecoration:"none"}}>office@elevatsolar.eu</a><br/>
+              <a href="tel:+359888220330" style={{color:"rgba(255,255,255,0.5)",textDecoration:"none"}}>+359 888 220 330</a><br/>
+              <a href="https://linkedin.com/in/venelindimitrov" target="_blank" rel="noreferrer" style={{color:"rgba(255,255,255,0.5)",textDecoration:"none"}}>LinkedIn</a>
+            </div>
+            <div style={{color:"rgba(255,255,255,0.3)",fontSize:"0.8rem",alignSelf:"flex-end"}}>
+              © 2026 Elevat Solar OOD. All rights reserved.
             </div>
           </div>
-          <div style={{color:"rgba(255,255,255,0.5)",fontSize:"0.85rem",lineHeight:1.8}}>
-            <a href="mailto:office@elevatsolar.eu" style={{color:"#e89a1d",textDecoration:"none"}}>office@elevatsolar.eu</a><br/>
-            <a href="tel:+359888220330" style={{color:"rgba(255,255,255,0.5)",textDecoration:"none"}}>+359 888 220 330</a><br/>
-            <a href="https://linkedin.com/in/venelindimitrov" target="_blank" rel="noreferrer" style={{color:"rgba(255,255,255,0.5)",textDecoration:"none"}}>LinkedIn</a>
-          </div>
-          <div style={{color:"rgba(255,255,255,0.3)",fontSize:"0.8rem",alignSelf:"flex-end"}}>
-            © 2026 Elevat Solar OOD. All rights reserved.
-          </div>
-        </div>
-      </footer>
+        </footer>
+      </div>
     </>
   );
 }
