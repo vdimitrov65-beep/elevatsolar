@@ -13,7 +13,7 @@ if (window.location.pathname === '/brief') {
 }
   return (
     <>
-      <header className="siteHeader">
+   <header className="siteHeader" style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"12px 24px",background:"#0b1220"}}>
         <div className="siteBrand">
           <a href="/">
             <svg width="22" height="34" viewBox="0 0 28 42" fill="none" xmlns="http://www.w3.org/2000/svg">
