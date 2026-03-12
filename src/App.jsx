@@ -206,7 +206,7 @@ if (window.location.pathname === '/brief') {
                   <div style="padding:8px 0;"><p style="font-size:32px;font-weight:700;font-family:Helvetica,sans-serif;color:#3C4858;">Monthly Solar Market Brief</p></div>
                   <div style="padding:8px 0;"><p style="font-size:16px;font-family:Helvetica,sans-serif;color:#3C4858;">Solar market news for Bulgaria, Romania and SEE — once a month.</p></div>
                   <div style="padding:8px 0;"><input type="text" name="EMAIL" placeholder="Your email" required style="width:90%;padding:12px;border:1px solid #C0CCD9;border-radius:3px;font-size:16px;"></div>
-                  <div style="padding:8px 0;"><button type="submit" style="background:#0b1220;color:#fff;border:none;padding:14px 40px;font-size:16px;font-weight:700;border-radius:3px;cursor:pointer;width:90%;">Subscribe</button></div>
+                  <div style="padding:8px 0;"><button type="submit" style="background:#;color:#fff;border:none;padding:14px 40px;font-size:16px;font-weight:700;border-radius:3px;cursor:pointer;width:90%;">Subscribe</button></div>
                   <input type="text" name="email_address_check" value="" style="display:none">
                   <input type="hidden" name="locale" value="en">
                   <input type="hidden" name="html_type" value="simple">
@@ -217,7 +217,7 @@ if (window.location.pathname === '/brief') {
         `}} />
       </section>
 
-      <footer style={{background:"#0b1220",padding:"48px 20px",marginTop:0}}>
+      <footer style={{background:"#1e3a5f",padding:"48px 20px",marginTop:0}}>
         <div style={{maxWidth:"960px",margin:"0 auto",display:"flex",flexWrap:"wrap",gap:"32px",justifyContent:"space-between",alignItems:"flex-start"}}>
           <div>
             <div style={{color:"#fff",fontWeight:700,fontSize:"1.1rem",marginBottom:"8px"}}>ELEVAT SOLAR</div>
