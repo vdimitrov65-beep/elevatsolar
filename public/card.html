@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Venelin Dimitrov — Elevat Solar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --navy:#0b1622;
+  --navy2:#111f2e;
+  --navy3:#172a3a;
+  --navy4:#1e3347;
+  --orange:#f4792b;
+  --orange2:#ff9550;
+  --text:#e8f0f8;
+  --muted:#6a8fa8;
+  --border:rgba(244,121,43,0.15);
+  --border2:rgba(255,255,255,0.06);
+}
+
+html,body{
+  min-height:100vh;
+  background:var(--navy);
+  font-family:'DM Sans',sans-serif;
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+}
+
+body{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:2rem 1rem;
+  min-height:100vh;
+  background:var(--navy);
+  background-image:
+    radial-gradient(ellipse 70% 50% at 90% 0%, rgba(244,121,43,0.07) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 70% at 0% 100%, rgba(244,121,43,0.04) 0%, transparent 60%);
+}
+
+.card{
+  width:100%;
+  max-width:390px;
+  background:var(--navy2);
+  border:1px solid var(--border);
+  border-radius:22px;
+  overflow:hidden;
+  position:relative;
+  animation:fadeUp .5s ease both;
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(18px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.top-bar{
+  height:3px;
+  background:linear-gradient(90deg,var(--orange) 0%,var(--orange2) 50%,transparent 100%);
+}
+
+/* HEADER */
+.header{
+  padding:2rem 2rem 1.6rem;
+  border-bottom:1px solid var(--border2);
+}
+
+.brand-row{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  margin-bottom:1.8rem;
+}
+
+.brand-icon{
+  width:28px;
+  height:28px;
+  flex-shrink:0;
+}
+
+.brand-name{
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--orange);
+}
+
+.person-row{
+  display:flex;
+  align-items:flex-start;
+  gap:16px;
+}
+
+.avatar{
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  background:var(--navy3);
+  border:2px solid var(--orange);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:'DM Serif Display',serif;
+  font-size:19px;
+  color:var(--orange);
+  flex-shrink:0;
+  letter-spacing:1px;
+}
+
+.person-info{
+  flex:1;
+  padding-top:2px;
+}
+
+.name{
+  font-family:'DM Serif Display',serif;
+  font-size:22px;
+  font-weight:400;
+  color:#fff;
+  line-height:1.2;
+  margin-bottom:4px;
+}
+
+.title{
+  font-size:12px;
+  font-weight:400;
+  color:var(--muted);
+  margin-bottom:5px;
+  letter-spacing:.02em;
+}
+
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--orange);
+  background:rgba(244,121,43,0.1);
+  border:1px solid rgba(244,121,43,0.2);
+  border-radius:20px;
+  padding:3px 10px;
+}
+
+.badge-dot{
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:var(--orange);
+}
+
+/* CONTACTS */
+.section{
+  padding:1.3rem 2rem;
+  border-bottom:1px solid var(--border2);
+}
+
+.section-label{
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:12px;
+}
+
+.contact-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+  color:var(--text);
+  font-size:14px;
+  padding:7px 0;
+  border-bottom:1px solid rgba(255,255,255,0.03);
+  transition:color .15s;
+}
+.contact-item:last-child{border-bottom:none}
+.contact-item:hover{color:#fff}
+
+.contact-icon{
+  width:34px;
+  height:34px;
+  border-radius:9px;
+  background:rgba(244,121,43,0.08);
+  border:1px solid rgba(244,121,43,0.18);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+.contact-icon svg{width:15px;height:15px;fill:var(--orange)}
+
+.contact-meta{
+  display:flex;
+  flex-direction:column;
+}
+.contact-label{
+  font-size:10px;
+  color:var(--muted);
+  margin-bottom:1px;
+}
+.contact-value{
+  font-size:13.5px;
+  color:var(--text);
+}
+
+/* LINKS */
+.link-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+  color:var(--text);
+  font-size:14px;
+  padding:7px 0;
+  border-bottom:1px solid rgba(255,255,255,0.03);
+  transition:color .15s;
+}
+.link-item:last-child{border-bottom:none}
+.link-item:hover{color:#fff}
+
+.link-arrow{
+  margin-left:auto;
+  font-size:12px;
+  color:var(--muted);
+}
+
+/* QR */
+.qr-section{
+  padding:1.4rem 2rem;
+  border-bottom:1px solid var(--border2);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+}
+
+#qrcode{
+  background:#fff;
+  padding:10px;
+  border-radius:10px;
+  display:inline-block;
+}
+
+.qr-caption{
+  font-size:11px;
+  color:var(--muted);
+  text-align:center;
+}
+
+/* SAVE BUTTON */
+.save-section{
+  padding:1.4rem 2rem 1.8rem;
+}
+
+.save-btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  width:100%;
+  padding:13px;
+  background:var(--orange);
+  color:#fff;
+  font-family:'DM Sans',sans-serif;
+  font-size:14px;
+  font-weight:600;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  text-decoration:none;
+  letter-spacing:.02em;
+  transition:background .15s, transform .1s;
+}
+.save-btn:hover{background:var(--orange2)}
+.save-btn:active{transform:scale(0.98)}
+.save-btn svg{width:16px;height:16px;fill:#fff}
+
+.footer-note{
+  text-align:center;
+  font-size:11px;
+  color:var(--muted);
+  margin-top:.9rem;
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="top-bar"></div>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="brand-row">
+      <!-- Solar panel icon -->
+      <!-- Elevat Solar logo: panel grid + wordmark -->
+      <svg width="110" height="32" viewBox="0 0 110 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- 3x3 panel grid (bottom-left missing = E shape) -->
+        <rect x="0"  y="0"  width="8" height="8" rx="1.5" fill="#f4792b"/>
+        <rect x="10" y="0"  width="8" height="8" rx="1.5" fill="#c8660a"/>
+        <rect x="0"  y="10" width="8" height="8" rx="1.5" fill="#c8660a"/>
+        <rect x="10" y="10" width="8" height="8" rx="1.5" fill="#f4792b"/>
+        <rect x="0"  y="20" width="8" height="8" rx="1.5" fill="#f4792b"/>
+        <!-- top-right intentionally absent to form E -->
+        <!-- ELEVAT wordmark -->
+        <text x="26" y="15" font-family="'DM Sans', sans-serif" font-size="13" font-weight="600" letter-spacing="2" fill="#ffffff">ELEVAT</text>
+        <!-- SOLAR CONSULTING subtext -->
+        <text x="27" y="26" font-family="'DM Sans', sans-serif" font-size="7" font-weight="400" letter-spacing="2.5" fill="#6a8fa8">SOLAR CONSULTING</text>
+      </svg>
+    </div>
+
+    <div class="person-row">
+      <div class="avatar">VD</div>
+      <div class="person-info">
+        <div class="name">Venelin Dimitrov</div>
+        <div class="title">Managing Consultant</div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACTS -->
+  <div class="section">
+    <div class="section-label">Contact</div>
+
+    <a class="contact-item" href="tel:+359888220330">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+      </div>
+      <div class="contact-meta">
+        <span class="contact-label">Mobile</span>
+        <span class="contact-value">+359 888 220 330</span>
+      </div>
+    </a>
+
+    <a class="contact-item" href="mailto:ven@elevatsolar.eu">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      </div>
+      <div class="contact-meta">
+        <span class="contact-label">Email</span>
+        <span class="contact-value">ven@elevatsolar.eu</span>
+      </div>
+    </a>
+
+    <a class="contact-item" href="mailto:office@elevatsolar.eu">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      </div>
+      <div class="contact-meta">
+        <span class="contact-label">Office</span>
+        <span class="contact-value">office@elevatsolar.eu</span>
+      </div>
+    </a>
+  </div>
+
+  <!-- LINKS -->
+  <div class="section">
+    <div class="section-label">Links</div>
+
+    <a class="link-item" href="https://elevatsolar.eu" target="_blank">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+      </div>
+      <span>elevatsolar.eu</span>
+      <span class="link-arrow">↗</span>
+    </a>
+
+    <a class="link-item" href="https://linkedin.com/in/venelindimitrov" target="_blank">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+      </div>
+      <span>LinkedIn</span>
+      <span class="link-arrow">↗</span>
+    </a>
+  </div>
+
+  <!-- QR CODE -->
+  <div class="qr-section">
+    <div id="qrcode"></div>
+    <div class="qr-caption">Scan to open elevatsolar.eu</div>
+  </div>
+
+  <!-- SAVE CONTACT -->
+  <div class="save-section">
+    <a class="save-btn" id="vcardBtn" href="#" download="Venelin_Dimitrov_ElevatSolar.vcf">
+      <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+      Save Contact
+    </a>
+    <div class="footer-note">Sofia, Bulgaria · SE Europe · utility-scale PV &amp; BESS</div>
+  </div>
+</div>
+
+<script>
+// QR Code
+new QRCode(document.getElementById("qrcode"), {
+  text: "https://elevatsolar.eu",
+  width: 130,
+  height: 130,
+  colorDark: "#0b1622",
+  colorLight: "#ffffff",
+  correctLevel: QRCode.CorrectLevel.M
+});
+
+// vCard generation
+const vcard = [
+  "BEGIN:VCARD",
+  "VERSION:3.0",
+  "FN:Venelin Dimitrov",
+  "N:Dimitrov;Venelin;;;",
+  "ORG:Elevat Solar Consulting",
+  "TITLE:Managing Consultant",
+  "TEL;TYPE=CELL:+359888220330",
+  "EMAIL;TYPE=WORK:ven@elevatsolar.eu",
+  "EMAIL;TYPE=WORK:office@elevatsolar.eu",
+  "URL:https://elevatsolar.eu",
+  "ADR;TYPE=WORK:;;Sofia;;;Bulgaria;",
+  "NOTE:Independent solar technical advisory. 400+ MWp portfolio. Utility-scale PV & BESS across SE Europe.",
+  "END:VCARD"
+].join("\r\n");
+
+const blob = new Blob([vcard], {type:"text/vcard"});
+const url = URL.createObjectURL(blob);
+document.getElementById("vcardBtn").href = url;
+</script>
+</body>
+</html>
