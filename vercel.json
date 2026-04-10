@@ -1,5 +1,1 @@
-{
-  "rewrites": [
-    { "source": "/((?!brief.html).*)", "destination": "/index.html" }
-  ]
-}
+
