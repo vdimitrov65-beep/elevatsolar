@@ -1,8 +1,8 @@
 {
-  "outputDirectory": "public",
   "rewrites": [
-    { "source": "/brief", "destination": "/brief-index.html" },
+    { "source": "/brief", "destination": "/brief/index.html" },
     { "source": "/brief/2026/1", "destination": "/brief/2026/1/index.html" },
-    { "source": "/brief/2026/2", "destination": "/brief/2026/2/index.html" }
+    { "source": "/brief/2026/2", "destination": "/brief/2026/2/index.html" },
+    { "source": "/((?!brief).*)", "destination": "/index.html" }
   ]
 }
