@@ -1,479 +1,888 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Green Energy Brief #1 · March 2026 · Elevat Solar</title>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q5HHP98NM4"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-Q5HHP98NM4');
-  </script>
-  
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Green Energy Brief #2 — April 2026 | Elevat Solar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #E8631A;
+    --orange-light: #F5A05A;
+    --navy: #0D1B2A;
+    --navy-mid: #1A2E42;
+    --cream: #f8f7f2;
+    --cream-dark: #EDE9DF;
+    --text: #1A1A1A;
+    --text-muted: #5A5A5A;
+    --rule: #D4CFC4;
+  }
 
-    body {
-      font-family: Georgia, 'Times New Roman', serif;
-      background: #f8f7f2;
-      color: #1a1a1a;
-      line-height: 1.6;
-    }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    /* NAV */
-    nav {
-      background: #0b1220;
-      padding: 16px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    nav a.brand {
-      color: #e89a1d;
-      font-family: Arial, sans-serif;
-      font-weight: 700;
-      font-size: 1rem;
-      letter-spacing: 1px;
-      text-decoration: none;
-    }
-    nav a.home {
-      color: rgba(255,255,255,0.6);
-      font-family: Arial, sans-serif;
-      font-size: 0.85rem;
-      text-decoration: none;
-    }
-    nav a.home:hover { color: #fff; }
+  body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+  }
 
-    /* WRAPPER */
-    .wrapper {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 48px 24px 80px;
-    }
+  /* ── HEADER ── */
+  .header {
+    background: var(--navy);
+    color: white;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
 
-    /* INTRO BLOCK */
-    .intro {
-      border-left: 4px solid #ea580c;
-      padding-left: 24px;
-      margin-bottom: 48px;
-    }
-    .intro .meta {
-      font-family: Arial, sans-serif;
-      font-size: 0.78rem;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: #ea580c;
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-    .intro h1 {
-      font-size: clamp(28px, 4vw, 44px);
-      font-weight: 700;
-      color: #0b1220;
-      margin-bottom: 20px;
-      line-height: 1.2;
-    }
-    .intro p {
-      font-size: 1.05rem;
-      color: #3a3a3a;
-      max-width: 680px;
-      margin-bottom: 14px;
-    }
+  .header-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 48px 40px 40px;
+    position: relative;
+    z-index: 2;
+  }
 
-    /* INFOGRAPHIC SECTION */
-    .infographic {
-      background: #fff;
-      border-radius: 12px;
-      padding: 36px;
-      box-shadow: 0 2px 20px rgba(0,0,0,0.06);
-      margin-bottom: 48px;
-    }
-    .infographic-header {
-      margin-bottom: 8px;
-    }
-    .infographic-header h2 {
-      font-size: 1.25rem;
-      color: #0b1220;
-      font-weight: 700;
-    }
-    .infographic-subtitle {
-      font-family: Arial, sans-serif;
-      font-size: 0.78rem;
-      color: #888;
-      margin-bottom: 24px;
-      letter-spacing: 0.5px;
-    }
+  .header-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+  }
 
-    /* LEGEND */
-    .legend {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin-bottom: 28px;
-      font-family: Arial, sans-serif;
-      font-size: 0.78rem;
-      color: #555;
-    }
-    .legend-item {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .legend-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-    }
-    .legend-bar {
-      width: 4px;
-      height: 14px;
-      border-radius: 2px;
-    }
+  .header-meta .issue-badge {
+    background: var(--orange);
+    color: white;
+    padding: 3px 10px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+  }
 
-    /* CARDS GRID */
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 12px;
-    }
+  .header-meta .dot { opacity: 0.3; }
 
-    .card {
-      border-left: 4px solid #ea580c;
-      background: #f8f7f2;
-      border-radius: 8px;
-      padding: 16px;
-      position: relative;
-      cursor: default;
-      transition: box-shadow 0.2s;
-    }
-    .card.western-balkans {
-      border-left-color: #2563eb;
-    }
-    .card:hover {
-      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-    }
+  .header h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: white;
+    max-width: 700px;
+    margin-bottom: 16px;
+  }
 
-    .card-flag {
-      font-size: 1.4rem;
-      margin-bottom: 4px;
-    }
-    .card-country {
-      font-family: Arial, sans-serif;
-      font-weight: 700;
-      font-size: 0.85rem;
-      color: #0b1220;
-      margin-bottom: 10px;
-    }
+  .header h1 em {
+    font-style: italic;
+    color: var(--orange-light);
+  }
 
-    .card-pv {
-      font-size: 1.9rem;
-      font-weight: 700;
-      color: #ea580c;
-      line-height: 1;
-      margin-bottom: 2px;
-    }
-    .card-pv-label {
-      font-family: Arial, sans-serif;
-      font-size: 0.7rem;
-      color: #888;
-      margin-bottom: 10px;
-    }
+  .header-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.65);
+    max-width: 580px;
+    line-height: 1.5;
+  }
 
-    .card-secondary {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 12px;
-    }
-    .card-secondary-item .value {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: #0b1220;
-    }
-    .card-secondary-item .label {
-      font-family: Arial, sans-serif;
-      font-size: 0.65rem;
-      color: #888;
-    }
+  .header-decoration {
+    position: absolute;
+    right: 0; top: 0; bottom: 0;
+    width: 320px;
+    background: linear-gradient(135deg, transparent 40%, rgba(232,99,26,0.08) 100%);
+    z-index: 1;
+  }
 
-    /* BESS BADGE */
-    .bess-badge {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      font-family: Arial, sans-serif;
-      font-size: 0.62rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      padding: 3px 7px;
-      border-radius: 4px;
-      text-transform: uppercase;
-    }
-    .bess-active { background: #f0fdf4; color: #16a34a; }
-    .bess-blocked { background: #fffbeb; color: #d97706; }
-    .bess-early { background: #eff6ff; color: #2563eb; }
-    .bess-none { background: #f9fafb; color: #9ca3af; }
+  .header-number {
+    position: absolute;
+    right: 40px; bottom: 32px;
+    font-family: 'Playfair Display', serif;
+    font-size: 140px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.04);
+    line-height: 1;
+    z-index: 1;
+    user-select: none;
+  }
 
-    /* HOVER DETAIL */
-    .bess-detail {
-      display: none;
-      font-family: Arial, sans-serif;
-      font-size: 0.72rem;
-      color: #555;
-      border-top: 1px solid #e5e5e5;
-      padding-top: 8px;
-      margin-top: 4px;
-      line-height: 1.4;
-    }
-    .card:hover .bess-detail {
-      display: block;
-    }
+  /* ── LAYOUT ── */
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
 
-    /* FOOTER DISCLAIMER */
-    .disclaimer {
-      font-family: Arial, sans-serif;
-      font-size: 0.72rem;
-      color: #aaa;
-      border-top: 1px solid #e5e5e5;
-      padding-top: 16px;
-      margin-top: 24px;
-    }
+  /* ── SECTIONS ── */
+  section {
+    padding: 56px 0 48px;
+    border-bottom: 1px solid var(--rule);
+  }
 
-    /* EDITORIAL */
-    .editorial {
-      max-width: 700px;
-      margin-bottom: 48px;
-    }
-    .editorial h3 {
-      font-size: 1.1rem;
-      color: #0b1220;
-      margin-bottom: 10px;
-    }
-    .editorial p {
-      font-size: 1rem;
-      color: #3a3a3a;
-      margin-bottom: 14px;
-    }
+  section:last-of-type { border-bottom: none; }
 
-    /* SUBSCRIBE */
-    .subscribe-block {
-      background: #0b1220;
-      border-radius: 12px;
-      padding: 36px;
-      text-align: center;
-      margin-bottom: 48px;
-    }
-    .subscribe-block h3 {
-      color: #fff;
-      font-size: 1.2rem;
-      margin-bottom: 8px;
-    }
-    .subscribe-block p {
-      color: rgba(255,255,255,0.6);
-      font-family: Arial, sans-serif;
-      font-size: 0.9rem;
-      margin-bottom: 20px;
-    }
-    .subscribe-block a {
-      background: #e89a1d;
-      color: #0b1220;
-      font-family: Arial, sans-serif;
-      font-weight: 700;
-      padding: 12px 32px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 0.95rem;
-    }
+  .section-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
 
-    /* SITE FOOTER */
-    footer {
-      background: #0b1220;
-      padding: 32px 40px;
-      text-align: center;
-      font-family: Arial, sans-serif;
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.4);
-    }
-    footer a { color: #e89a1d; text-decoration: none; }
+  .section-label::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 40px;
+    background: var(--orange);
+    opacity: 0.4;
+  }
 
-    @media (max-width: 600px) {
-      .cards-grid { grid-template-columns: 1fr 1fr; }
-      nav { padding: 12px 20px; }
-      .wrapper { padding: 32px 16px 60px; }
-      .infographic { padding: 20px; }
-    }
-  </style>
+  h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(22px, 3vw, 32px);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin-bottom: 20px;
+    color: var(--navy);
+  }
+
+  p { margin-bottom: 14px; color: #333; }
+  p:last-child { margin-bottom: 0; }
+
+  strong { color: var(--navy); font-weight: 500; }
+
+  /* ── HEADLINE NUMBER ── */
+  .headline-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 32px;
+  }
+
+  .stat-card {
+    background: white;
+    border: 1px solid var(--rule);
+    padding: 28px;
+    position: relative;
+  }
+
+  .stat-card.accent {
+    background: var(--navy);
+    border-color: var(--navy);
+  }
+
+  .stat-card.accent .stat-label,
+  .stat-card.accent .stat-note { color: rgba(255,255,255,0.55); }
+  .stat-card.accent .stat-value { color: var(--orange-light); }
+  .stat-card.accent .stat-sub { color: rgba(255,255,255,0.8); }
+
+  .stat-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 56px;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--orange);
+    letter-spacing: -0.03em;
+    margin-bottom: 6px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+
+  .stat-sub {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+
+  /* ── COST BENCHMARK TABLE ── */
+  .benchmark-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 28px;
+    font-size: 14px;
+  }
+
+  .benchmark-table th {
+    text-align: left;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 10px 14px;
+    border-bottom: 2px solid var(--navy);
+    white-space: nowrap;
+  }
+
+  .benchmark-table td {
+    padding: 14px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+
+  .benchmark-table tr:last-child td { border-bottom: none; }
+
+  .benchmark-table tr.highlight td {
+    background: #FFF6F0;
+    font-weight: 500;
+  }
+
+  .benchmark-table tr.warning td {
+    background: #FFF0F0;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 2px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .tag-ok { background: #E8F5E9; color: #2E7D32; }
+  .tag-warn { background: #FFF3E0; color: #E65100; }
+  .tag-red { background: #FFEBEE; color: #C62828; }
+
+  /* ── IRR CHART ── */
+  .chart-wrapper {
+    margin-top: 32px;
+    background: white;
+    border: 1px solid var(--rule);
+    padding: 32px;
+  }
+
+  .chart-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+
+  .chart-subtitle {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 28px;
+  }
+
+  .chart-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .bar-row {
+    display: grid;
+    grid-template-columns: 180px 1fr 80px;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .bar-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-align: right;
+    line-height: 1.3;
+  }
+
+  .bar-label strong {
+    display: block;
+    font-size: 13px;
+    color: var(--navy);
+    font-weight: 500;
+  }
+
+  .bar-track {
+    background: var(--cream-dark);
+    height: 36px;
+    position: relative;
+    overflow: visible;
+  }
+
+  .bar-fill {
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: width 1s ease;
+  }
+
+  .bar-value {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--navy);
+    white-space: nowrap;
+  }
+
+  .bar-irr {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-align: right;
+  }
+
+  .bar-irr.bad { color: #C62828; font-weight: 600; }
+  .bar-irr.ok { color: #2E7D32; font-weight: 600; }
+
+  .chart-note {
+    margin-top: 18px;
+    font-size: 11px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--rule);
+    padding-top: 12px;
+  }
+
+  /* ── TIC TIMELINE ── */
+  .timeline {
+    margin-top: 32px;
+    position: relative;
+  }
+
+  .timeline-track {
+    display: flex;
+    align-items: flex-end;
+    gap: 0;
+    height: 120px;
+    border-bottom: 2px solid var(--navy);
+    padding: 0 0 0 0;
+    margin-bottom: 8px;
+  }
+
+  .timeline-bar-wrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+  }
+
+  .timeline-bar {
+    width: 70%;
+    background: var(--navy-mid);
+    position: relative;
+    transition: background 0.3s;
+  }
+
+  .timeline-bar.highlighted { background: var(--orange); }
+
+  .timeline-bar-val {
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--navy);
+    white-space: nowrap;
+  }
+
+  .timeline-labels {
+    display: flex;
+    gap: 0;
+  }
+
+  .timeline-label {
+    flex: 1;
+    text-align: center;
+    font-size: 10px;
+    color: var(--text-muted);
+    padding-top: 6px;
+  }
+
+  .timeline-label.bold {
+    font-weight: 600;
+    color: var(--orange);
+  }
+
+  /* ── QUALITY SIGNALS ── */
+  .signals-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 28px;
+  }
+
+  .signal-card {
+    border: 1px solid var(--rule);
+    padding: 20px;
+    position: relative;
+  }
+
+  .signal-card.red { border-left: 3px solid #C62828; }
+  .signal-card.amber { border-left: 3px solid #E65100; }
+  .signal-card.green { border-left: 3px solid #2E7D32; }
+
+  .signal-icon {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .signal-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+
+  .signal-text {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* ── PULL QUOTE ── */
+  .pull-quote {
+    border-left: 4px solid var(--orange);
+    padding: 20px 28px;
+    margin: 32px 0;
+    background: white;
+  }
+
+  .pull-quote p {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-style: italic;
+    color: var(--navy);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .pull-quote cite {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 10px;
+    font-style: normal;
+  }
+
+  /* ── ELEVAT ANGLE ── */
+  .elevat-box {
+    background: var(--navy);
+    color: white;
+    padding: 36px;
+    margin-top: 32px;
+  }
+
+  .elevat-box .section-label { color: var(--orange-light); }
+  .elevat-box .section-label::after { background: var(--orange-light); }
+
+  .elevat-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: white;
+  }
+
+  .elevat-box p { color: rgba(255,255,255,0.75); }
+
+  .checklist {
+    margin-top: 20px;
+    list-style: none;
+  }
+
+  .checklist li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-size: 13px;
+    color: rgba(255,255,255,0.75);
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 8px;
+    align-items: start;
+  }
+
+  .checklist li:last-child { border-bottom: none; }
+
+  .checklist li .check {
+    color: var(--orange-light);
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  /* ── SOURCES ── */
+  .sources {
+    background: var(--cream-dark);
+    padding: 28px 40px;
+    border-top: 1px solid var(--rule);
+    font-size: 11px;
+    color: var(--text-muted);
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .sources strong {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.45);
+    text-align: center;
+    padding: 28px 40px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+  }
+
+  .footer a { color: var(--orange-light); text-decoration: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 680px) {
+    .container { padding: 0 20px; }
+    .header-inner { padding: 36px 20px 32px; }
+    .headline-block { grid-template-columns: 1fr; }
+    .signals-grid { grid-template-columns: 1fr; }
+    .bar-row { grid-template-columns: 120px 1fr 60px; }
+    .sources { padding: 24px 20px; }
+    .footer { padding: 24px 20px; }
+    .elevat-box { padding: 24px 20px; }
+  }
+
+  @media print {
+    .header-number { display: none; }
+  }
+</style>
 </head>
 <body>
 
-<nav>
-  <div style="display:flex;align-items:center;gap:0;">
-    <a class="brand" href="https://elevatsolar.eu" style="display:flex;align-items:center;gap:10px;text-decoration:none;"><svg width="22" height="34" viewBox="0 0 28 42" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="14" y="0" width="12" height="12" rx="2" fill="#e89a1d"/><rect x="0" y="14" width="12" height="12" rx="2" fill="#e89a1d"/><rect x="14" y="14" width="12" height="12" rx="2" fill="#e89a1d"/><rect x="0" y="28" width="12" height="12" rx="2" fill="#e89a1d"/><rect x="14" y="28" width="12" height="12" rx="2" fill="#e89a1d"/></svg><span style="color:#e89a1d;font-family:Arial,sans-serif;font-weight:700;font-size:1rem;letter-spacing:1px;">ELEVAT SOLAR</span></a>
-    <span style="color:rgba(255,255,255,0.3);margin:0 12px;font-family:Arial,sans-serif;">|</span>
-    <span style="color:rgba(255,255,255,0.85);font-family:Arial,sans-serif;font-size:0.9rem;font-weight:600;letter-spacing:0.5px;">GREEN ENERGY BRIEF #1</span>
-    <span style="color:rgba(255,255,255,0.4);font-family:Arial,sans-serif;font-size:0.85rem;margin-left:12px;">· March 2026</span>
-  </div>
-  <a class="home" href="https://elevatsolar.eu">← Back to site</a>
-</nav>
-
-<div class="wrapper">
-
-  <!-- INTRO -->
-  <div class="intro">
-    <h1>Green Energy in SEE — Baseline</h1>
-    <p>Green Energy Brief is a monthly newsletter by Elevat Solar Consulting, dedicated to renewable energy markets in Southeast Europe. We track installed capacity, grid access, BESS development and policy shifts across 8 countries in the region.</p>
-    <p>Written for developers, investors and EPC companies operating or planning to operate in SEE. Free of charge, no paywalls.</p>
-  </div>
-
-  <!-- EDITORIAL -->
-  <div class="editorial">
-    <h3>Why a baseline?</h3>
-    <p>Before tracking change, you need to know where things stand. This first Brief establishes the baseline — installed PV, wind and hydro capacity across the region, and the current state of battery storage deployment in each country.</p>
-    <p>The picture is uneven. Greece has crossed 12 GW of PV. Romania and Bulgaria are not far behind. The Western Balkans are just getting started. BESS is active in some markets and completely absent in others. This is where Southeast Europe stands in March 2026.</p>
-    <h3 style="margin-top:24px;">Why we publish this</h3>
-    <p>We produce Green Energy Brief because we believe that accelerating the clean energy transition in Southeast Europe matters — for the industry, for the region, and for the kind of environment we all want to live in. Transparent, accessible data is a small but real contribution to that goal.</p>
-    <p style="font-size:0.88rem;color:#888;font-family:Arial,sans-serif;border-left:3px solid #e5e5e5;padding-left:12px;margin-top:8px;">We apologise in advance for any inaccuracies in the data presented. We do our best to source reliable figures, but energy statistics across SEE markets are not always consistent. If you spot an error, please write to us at <a href="/cdn-cgi/l/email-protection#d2bdb4b4bbb1b792b7beb7a4b3a6a1bdbeb3a0fcb7a7" style="color:#ea580c;"><span class="__cf_email__" data-cfemail="b7d8d1d1ded4d2f7d2dbd2c1d6c3c4d8dbd6c599d2c2">[email&#160;protected]</span></a> — we will correct it in the next issue.</p>
-  </div>
-
-  <!-- INFOGRAPHIC -->
-  <div class="infographic">
-    <div class="infographic-header">
-      <h2>Renewable Energy Capacity — Southeast Europe</h2>
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <div class="header-meta">
+      <span class="issue-badge">Issue #2</span>
+      <span class="dot">•</span>
+      <span>April 2026</span>
+      <span class="dot">•</span>
+      <span>Elevat Solar Consulting</span>
     </div>
-    <div class="infographic-subtitle">Installed capacity · 8 countries · PV · Wind · Hydro · BESS status — March 2026</div>
+    <h1>Solar costs dropped 87% since 2010.<br><em>So why are some EPC offers still suspicious?</em></h1>
+    <p class="header-sub">Global TIC declined from €3,970/kW to €640/kW in 14 years. But in Southeast Europe, something else is driving prices down — and it's not technology.</p>
+  </div>
+  <div class="header-decoration"></div>
+  <div class="header-number">2</div>
+</header>
 
-    <!-- LEGEND -->
-    <div class="legend">
-      <div class="legend-item"><div class="legend-bar" style="background:#ea580c;"></div> EU member</div>
-      <div class="legend-item"><div class="legend-bar" style="background:#2563eb;"></div> Western Balkans</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#16a34a;"></div> BESS Active</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#d97706;"></div> BESS Blocked</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#2563eb;"></div> BESS Early</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#9ca3af;"></div> No BESS</div>
+<!-- SECTION 1: HEADLINE NUMBERS -->
+<section>
+  <div class="container">
+    <div class="section-label">Headline Numbers</div>
+    <h2>The cost decline is real — and well-documented</h2>
+    <p>IRENA data confirms what the industry has been celebrating: global utility-scale solar is the cheapest new electricity source ever built. But the numbers hide a critical distinction between two very different types of price reduction.</p>
+
+    <div class="headline-block">
+      <div class="stat-card accent">
+        <div class="stat-label">Global TIC, Utility-Scale Solar</div>
+        <div class="stat-value">87%</div>
+        <div class="stat-sub">decline from 2010 (€3,970/kW) to 2024 (€640/kW) — driven by technology improvement, supply chain scale, and competition.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Europe Average TIC, 2024</div>
+        <div class="stat-value" style="color:var(--navy)">€721<span style="font-size:24px">/kW</span></div>
+        <div class="stat-sub">Still 13% above global average, reflecting higher labour costs, permitting complexity, and grid connection fees. <em>Legitimate premium.</em></div>
+      </div>
     </div>
 
-    <!-- CARDS -->
-    <div class="cards-grid">
+    <!-- TIC Timeline -->
+    <div style="margin-top:40px">
+      <div class="section-label" style="margin-bottom:18px">TIC Decline 2010–2024 · Global Utility-Scale PV</div>
 
-      <!-- Greece -->
-      <div class="card">
-        <span class="bess-badge bess-blocked">Blocked</span>
-        <div class="card-flag">🇬🇷</div>
-        <div class="card-country">Greece</div>
-        <div class="card-pv">12.2 GW</div>
-        <div class="card-pv-label">PV installed</div>
-        <div class="card-secondary">
-          <div class="card-secondary-item"><div class="value">5.8 GW</div><div class="label">Wind</div></div>
-          <div class="card-secondary-item"><div class="value">3.2 GW</div><div class="label">Hydro</div></div>
-        </div>
-        <div class="bess-detail">900 MW tendered, 0 MW connected. Grid connection bottleneck blocking deployment.</div>
+      <div class="timeline">
+        <div class="timeline-track" id="ticTrack"></div>
+        <div class="timeline-labels" id="ticLabels"></div>
       </div>
 
-      <!-- Romania -->
-      <div class="card">
-        <span class="bess-badge bess-active">Active</span>
-        <div class="card-flag">🇷🇴</div>
-        <div class="card-country">Romania</div>
-        <div class="card-pv">7.8 GW</div>
-        <div class="card-pv-label">PV installed</div>
-        <div class="card-secondary">
-          <div class="card-secondary-item"><div class="value">3.8 GW</div><div class="label">Wind</div></div>
-          <div class="card-secondary-item"><div class="value">6.5 GW</div><div class="label">Hydro</div></div>
-        </div>
-        <div class="bess-detail">CfD scheme active. First utility-scale BESS projects in development.</div>
-      </div>
-
-      <!-- Bulgaria -->
-      <div class="card">
-        <span class="bess-badge bess-active">Active</span>
-        <div class="card-flag">🇧🇬</div>
-        <div class="card-country">Bulgaria</div>
-        <div class="card-pv">6.0 GW</div>
-        <div class="card-pv-label">PV installed</div>
-        <div class="card-secondary">
-          <div class="card-secondary-item"><div class="value">0.7 GW</div><div class="label">Wind</div></div>
-          <div class="card-secondary-item"><div class="value">3.2 GW</div><div class="label">Hydro</div></div>
-        </div>
-        <div class="bess-detail">13.7 GWh tendered under RESTORE 1 &amp; 2. Large pipeline in development.</div>
-      </div>
-
-      <!-- N. Macedonia -->
-      <div class="card western-balkans">
-        <span class="bess-badge bess-early">Early</span>
-        <div class="card-flag">🇲🇰</div>
-        <div class="card-country">N. Macedonia</div>
-        <div class="card-pv">1.0 GW</div>
-        <div class="card-pv-label">PV installed</div>
-        <div class="card-secondary">
-          <div class="card-secondary-item"><div class="value">50 MW</div><div class="label">Wind</div></div>
-          <div class="card-secondary-item"><div class="value">0.68 GW</div><div class="label">Hydro</div></div>
-        </div>
-        <div class="bess-detail">New energy storage law passed in 2025. First projects expected 2026–2027.</div>
-      </div>
-
-      <!-- Serbia -->
-      <div class="card western-balkans">
-        <span class="bess-badge bess-early">Early</span>
-        <div class="card-flag">🇷🇸</div>
-        <div class="card-country">Serbia</div>
-        <div class="card-pv">320 MW</div>
-        <div class="card-pv-label">PV installed</div>
-        <div class="card-secondary">
-          <div class="card-secondary-item"><div class="value">0.81 GW</div><div class="label">Wind</div></div>
-          <div class="card-secondary-item"><div class="value">2.8 GW</div><div class="label">Hydro</div></div>
-        </div>
-        <div class="bess-detail">Target: 1 GW PV+BESS hybrid by 2028. Regulatory framework in development.</div>
-      </div>
-
-      <!-- Bosnia -->
-      <div class="card western-balkans">
-        <span class="bess-badge bess-none">No BESS</span>
-        <div class="card-flag">🇧🇦</div>
-        <div class="card-country">Bosnia</div>
-        <div class="card-pv">210 MW</div>
-        <div class="card-pv-label">PV installed</div>
-        <div class="card-secondary">
-          <div class="card-secondary-item"><div class="value">0.6 GW</div><div class="label">Wind</div></div>
-          <div class="card-secondary-item"><div class="value">2.2 GW</div><div class="label">Hydro</div></div>
-        </div>
-        <div class="bess-detail">No BESS policy or procurement. Coal dependency remains high.</div>
-      </div>
-
-      <!-- Montenegro -->
-      <div class="card western-balkans">
-        <span class="bess-badge bess-none">No BESS</span>
-        <div class="card-flag">🇲🇪</div>
-        <div class="card-country">Montenegro</div>
-        <div class="card-pv">30 MW</div>
-        <div class="card-pv-label">PV installed</div>
-        <div class="card-secondary">
-          <div class="card-secondary-item"><div class="value">120 MW</div><div class="label">Wind</div></div>
-          <div class="card-secondary-item"><div class="value">0.66 GW</div><div class="label">Hydro</div></div>
-        </div>
-        <div class="bess-detail">Small market. Hydro-dominant. No BESS framework in place.</div>
-      </div>
-
-      <!-- Kosovo -->
-      <div class="card western-balkans">
-        <span class="bess-badge bess-none">No BESS</span>
-        <div class="card-flag">🇽🇰</div>
-        <div class="card-country">Kosovo</div>
-        <div class="card-pv">20 MW</div>
-        <div class="card-pv-label">PV installed</div>
-        <div class="card-secondary">
-          <div class="card-secondary-item"><div class="value">—</div><div class="label">Wind</div></div>
-          <div class="card-secondary-item"><div class="value">0.3 GW</div><div class="label">Hydro</div></div>
-        </div>
-        <div class="bess-detail">Earliest stage market. Lignite coal still dominant. PV just beginning.</div>
-      </div>
-
-    </div>
-
-    <div class="disclaimer">
-      Data sourced from IRENA, ENTSO-E, WindEurope, Helapco, RES Serbia · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e48b82828d8781a4818881928590978b888596ca8191">[email&#160;protected]</a> · © Elevat Solar 2026
+      <p style="font-size:11px;color:var(--text-muted);margin-top:8px">Source: IRENA, Renewable Power Generation Costs. Values in €/kW (USD converted at approximate period rates).</p>
     </div>
   </div>
+</section>
 
-  
+<!-- SECTION 2: TWO TYPES OF COST REDUCTION -->
+<section>
+  <div class="container">
+    <div class="section-label">The Critical Distinction</div>
+    <h2>Two types of lower prices. Only one is legitimate.</h2>
+
+    <p>The 87% TIC reduction happened because modules got better, inverters got smarter, and supply chains scaled globally. That's value creation. The suspicious offers appearing in Romania and Bulgaria today are driven by something else entirely.</p>
+
+    <div class="pull-quote">
+      <p>"Lower installed costs driven by technology are a global trend. Lower EPC offers driven by contractor desperation are a different story — and the bill doesn't arrive at COD."</p>
+      <cite>— Elevat Solar, from on-the-ground experience in SEE, 2025–2026</cite>
+    </div>
+
+    <table class="benchmark-table">
+      <thead>
+        <tr>
+          <th>Market / Scenario</th>
+          <th>Typical TIC Range</th>
+          <th>Key Drivers</th>
+          <th>Assessment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Global benchmark</strong><br><span style="font-size:12px;color:var(--text-muted)">Utility-scale, 2024</span></td>
+          <td>€580–700/kW</td>
+          <td>Technology + scale</td>
+          <td><span class="tag tag-ok">Benchmark</span></td>
+        </tr>
+        <tr>
+          <td><strong>Western Europe</strong><br><span style="font-size:12px;color:var(--text-muted)">DE, FR, ES, NL</span></td>
+          <td>€700–850/kW</td>
+          <td>Labour + permitting + grid</td>
+          <td><span class="tag tag-ok">Expected</span></td>
+        </tr>
+        <tr class="highlight">
+          <td><strong>SEE — bankable range</strong><br><span style="font-size:12px;color:var(--text-muted)">RO, BG, utility-scale</span></td>
+          <td>€680–780/kW</td>
+          <td>IE-approved, proper spec</td>
+          <td><span class="tag tag-ok">Bankable</span></td>
+        </tr>
+        <tr class="warning">
+          <td><strong>SEE — suspicious offers</strong><br><span style="font-size:12px;color:var(--text-muted)">2025/2026 tenders</span></td>
+          <td>€460–540/kW</td>
+          <td>Missing scope, margin desperation</td>
+          <td><span class="tag tag-red">Red Flag</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="font-size:12px;color:var(--text-muted);margin-top:12px">* SEE bankable range is Elevat Solar internal benchmark based on advisory portfolio. The €200–240/kW gap between bankable and suspicious offers must go somewhere — and it always does.</p>
+  </div>
+</section>
+
+<!-- SECTION 3: THE QUALITY DATA -->
+<section>
+  <div class="container">
+    <div class="section-label">The Evidence</div>
+    <h2>While costs fell, underperformance tripled</h2>
+
+    <p>This isn't a SEE-specific phenomenon — it's a global pattern that emerges when rapid deployment outpaces execution quality. The data from independent O&amp;M analytics is unambiguous.</p>
+
+    <div class="chart-wrapper">
+      <div class="chart-title">Annualised Revenue Loss from Underperformance</div>
+      <div class="chart-subtitle">Per MW, utility-scale solar assets. Source: Raptor Maps Global Solar Report 2025 (193 GW analysed, 67 GW in 2024)</div>
+
+      <div class="chart-bars">
+        <div class="bar-row">
+          <div class="bar-label"><strong>2020</strong>baseline</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:17%;background:#BDC6CE;">
+              <span class="bar-value" style="padding-left:6px;color:white;font-size:11px">$977/MW</span>
+            </div>
+          </div>
+          <div class="bar-irr ok">1.84% loss</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label"><strong>2021</strong></div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:25%;background:#99A8B4;">
+              <span class="bar-value" style="padding-left:6px;color:white;font-size:11px">$1,450/MW</span>
+            </div>
+          </div>
+          <div class="bar-irr">2.4% loss</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label"><strong>2022</strong></div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:38%;background:#6B7F8E;">
+              <span class="bar-value" style="padding-left:6px;color:white;font-size:11px">$2,200/MW</span>
+            </div>
+          </div>
+          <div class="bar-irr">3.2% loss</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label"><strong>2023</strong>inflection</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:68%;background:var(--orange-light);">
+              <span class="bar-value" style="padding-left:6px;color:white;font-size:11px">$4,696/MW</span>
+            </div>
+          </div>
+          <div class="bar-irr bad">4.47% loss</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label"><strong>2024</strong>current</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:100%;background:var(--orange);">
+              <span class="bar-value" style="padding-left:8px;color:white;font-size:11px">$5,720/MW</span>
+            </div>
+          </div>
+          <div class="bar-irr bad">5.77% loss</div>
+        </div>
+      </div>
+
+      <div style="margin-top:24px;padding:16px;background:var(--cream);border-left:3px solid var(--orange)">
+        <strong style="font-size:13px;display:block;margin-bottom:4px">IRR Impact: 249 basis points</strong>
+        <span style="font-size:12px;color:var(--text-muted)">A 100 MW asset experiencing 5.77% underperformance from year 2 through decommissioning sees its project IRR reduced by 249 bps — the difference between a fundable and unfundable project in today's lending environment.</span>
+      </div>
+
+      <div class="chart-note">Raptor Maps 2025 Global Solar Report. Dataset: 193 GW of utility-scale, commercial and industrial PV assets worldwide. Power loss figures represent equipment-driven underperformance, excluding weather events.</div>
+    </div>
+
+    <div style="margin-top:32px">
+      <p>Module-level quality has also deteriorated at scale. The 2024 Kiwa PVEL PV Module Reliability Scorecard found that <strong>two-thirds of manufacturers experienced at least one test failure</strong> — the highest percentage ever recorded. Bill of Materials failure rates reached 41%, up from 26% in 2021. Clean Energy Associates documented a 47% increase in micro-crack incidence from early 2022, a period of explosive module production scale-up.</p>
+      <p>The implication for SEE procurement: a contractor buying on price, without independent factory audits or pre-shipment inspection, is absorbing this quality lottery into your project.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: WHERE THE MONEY GOES -->
+<section>
+  <div class="container">
+    <div class="section-label">What Suspicious Offers Actually Look Like</div>
+    <h2>The bill arrives at year 3–5, not at COD</h2>
+
+    <p>A €200/kW gap on a 50 MWp project is €10 million. That money is recovered somewhere in the execution — typically across five predictable compromise points:</p>
+
+    <div class="signals-grid">
+      <div class="signal-card red">
+        <div class="signal-icon">⚡</div>
+        <div class="signal-title">Cable sizing "optimised" beyond reason</div>
+        <p class="signal-text">Undersized DC strings and AC cables to save copper cost. Manifests as chronic voltage drop and elevated losses — undocumented, unwarranted, permanent.</p>
+      </div>
+      <div class="signal-card red">
+        <div class="signal-icon">🏗️</div>
+        <div class="signal-title">Civil works executed in winter</div>
+        <p class="signal-text">Concrete poured below minimum temperature thresholds, piling without proper frost depth. Cracks visible by summer 1. Structural remediation cost exceeds the saving.</p>
+      </div>
+      <div class="signal-card amber">
+        <div class="signal-icon">📋</div>
+        <div class="signal-title">Copy-paste commissioning reports</div>
+        <p class="signal-text">String-level IV curve data from a different project, or from simulation only. Impossible to trigger performance guarantees or warranty claims without baseline data.</p>
+      </div>
+      <div class="signal-card amber">
+        <div class="signal-icon">🔍</div>
+        <div class="signal-title">No independent monitoring at string level</div>
+        <p class="signal-text">SCADA covers inverters but not strings. Underperforming strings go undetected for months. In a 50 MWp plant, a 3% string loss across 40 tables costs €80–120k annually.</p>
+      </div>
+      <div class="signal-card red">
+        <div class="signal-icon">📦</div>
+        <div class="signal-title">Module procurement without factory audit</div>
+        <p class="signal-text">No pre-shipment inspection, no EL testing, no power bin validation. The contractor passes your capital risk to a manufacturer you never approved.</p>
+      </div>
+      <div class="signal-card green">
+        <div class="signal-icon">✓</div>
+        <div class="signal-title">What bankable execution looks like</div>
+        <p class="signal-text">IE appointed by lender, independent QA at construction milestones, as-built documentation at string level, PR ≥ 80% warranty on P90 basis, 5–10% retention 12 months post-COD.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: ELEVAT ANGLE -->
+<section style="border-bottom:none;padding-bottom:0">
+  <div class="container">
+    <div class="section-label">Elevat Angle</div>
+    <h2>What bankable projects actually cost in SEE today</h2>
+
+    <p>Based on Elevat Solar's advisory portfolio (400+ MWp across Romania and Bulgaria), a properly specified utility-scale project in SEE — with independent engineering, bankable equipment, and complete documentation — comes in at <strong>€680–780/kW all-in</strong>. This includes:</p>
+
+    <div class="elevat-box">
+      <div class="section-label">Minimum Bankability Checklist · SEE 2025/2026</div>
+      <h3>If your EPC offer doesn't cover this, ask what's missing</h3>
+      <ul class="checklist">
+        <li><span class="check">→</span><span>Independent Engineer (IE) scope embedded in EPC contract, lender-approved</span></li>
+        <li><span class="check">→</span><span>Module supply with factory audit or pre-shipment inspection by independent lab</span></li>
+        <li><span class="check">→</span><span>As-built documentation at string level — not inverter level</span></li>
+        <li><span class="check">→</span><span>IV curve commissioning data per string, not simulation output</span></li>
+        <li><span class="check">→</span><span>Performance ratio warranty ≥ 80% on P90 basis, with measurement protocol defined</span></li>
+        <li><span class="check">→</span><span>Retention 5–10% held for minimum 12 months post-COD</span></li>
+        <li><span class="check">→</span><span>Tracker installation in non-frozen ground with documented soil bearing test</span></li>
+        <li><span class="check">→</span><span>Supply chain traceability per EU Solar Charter / SolarPower Europe guidelines</span></li>
+      </ul>
+    </div>
+
+    <div style="margin-top:32px">
+      <p><strong>The bottom line:</strong> The 87% cost decline since 2010 was earned by engineers and manufacturers. The suspicious offers appearing in SEE today are not a continuation of that trend — they are a transfer of risk from contractor to asset owner, deferred in time and hidden in commissioning reports. Procurement decisions based on headline EPC price without technical due diligence are not cost savings. They are deferred liabilities.</p>
+      <p>SolarPower Europe published its first-ever Technical Due Diligence Best Practice Guidelines for hybrid PV+BESS projects in February 2026 — a direct response to the industry's recognition that quality risk is now a bankability risk.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SOURCES -->
+<div class="sources">
+  <strong>Sources &amp; Data</strong>
+  IRENA, Renewable Power Generation Costs (2024 edition) · Raptor Maps, Global Solar Report 2025 (193 GW dataset) · Kiwa PVEL, PV Module Reliability Scorecard 2024 · Clean Energy Associates, Module Quality Report 2023 · SolarPower Europe, EPC Best Practice Guidelines v3.0 (February 2026) · kWh Analytics, Solar Generation Index · PV Tech / Intersolar Europe 2024 · Elevat Solar internal benchmark data (400+ MWp advisory portfolio, RO/BG)
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div>
+    <strong style="color:rgba(255,255,255,0.7);font-size:12px">Green Energy Brief</strong> is published by
+    <a href="https://elevatsolar.eu">Elevat Solar Consulting</a> — independent technical advisory for utility-scale solar and BESS in Southeast Europe.
+    <br style="margin-bottom:4px">
+    Next update: <strong style="color:rgba(255,255,255,0.6)">July 2026</strong> (2025 IRENA data) ·
+    <a href="https://elevatsolar.eu">elevatsolar.eu</a>
+  </div>
+</footer>
+
+<script>
+// TIC Timeline data
+const ticData = [
+  { year: '2010', val: 3970, pct: 100 },
+  { year: '2012', val: 2800, pct: 70.5 },
+  { year: '2014', val: 1900, pct: 47.9 },
+  { year: '2016', val: 1270, pct: 32.0 },
+  { year: '2018', val: 960,  pct: 24.2 },
+  { year: '2020', val: 793,  pct: 20.0 },
+  { year: '2022', val: 720,  pct: 18.1 },
+  { year: '2024', val: 640,  pct: 16.1 },
+];
+
+const track = document.getElementById('ticTrack');
+const labels = document.getElementById('ticLabels');
+
+const maxPct = 100;
+
+ticData.forEach((d, i) => {
+  const wrap = document.createElement('div');
+  wrap.className = 'timeline-bar-wrap';
+
+  const bar = document.createElement('div');
+  bar.className = 'timeline-bar' + (d.year === '2024' ? ' highlighted' : '');
+  const h = Math.round((d.pct / maxPct) * 100);
+  bar.style.height = h + 'px';
+
+  const valEl = document.createElement('div');
+  valEl.className = 'timeline-bar-val';
+  valEl.textContent = '€' + d.val;
+
+  bar.appendChild(valEl);
+  wrap.appendChild(bar);
+  track.appendChild(wrap);
+
+  const label = document.createElement('div');
+  label.className = 'timeline-label' + (d.year === '2010' || d.year === '2024' ? ' bold' : '');
+  label.textContent = d.year;
+  labels.appendChild(label);
+});
+</script>
+
+</body>
+</html>
