@@ -24,6 +24,9 @@ export default function NewsletterForm({ lang }) {
         setStatus("success");
         setEmail("");
         setName("");
+        setTimeout(() => {
+          window.location.href = "/brief3.html";
+        }, 1000);
       } else {
         setStatus("error");
       }
