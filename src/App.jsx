@@ -1,9 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 
 const sectionIds = ["about", "services", "projects", "contact"];
-const NEWSLETTER_SUBSCRIBE_URL =
-  "https://e5a3aca6.sibforms.com/serve/MUIFAGl6jZRusfmZKbTl9o-b_SPdLh6sO3poXKCLSH6tcgH62ll7r8ZV8VvCDpAy1wuqh2HlZJfNaMH7KvPXMRUPf_VgkOjq143QmaYpCEDL730q1L4NOd76MnQd0i-30bervCd8a0rn1HcGbKToPR8nvriIGuulu0f0OpvB57THmb4-SPs2v0TvhaHupMRuTkZL6gnHfHNHx-rWcg==";
-
+const NEWSLETTER_SUBSCRIBE_URL = "https://elevatsolar.eu/brief.html";
 const copy = {
   en: {
     brand: "elevat solar",
