@@ -485,20 +485,39 @@ function App() {
     setReviewState({ error: "", success: t.success.review });
     setReviewData({ name: "", email: "", phone: "", company: "", message: "" });
   };
+const handleSubscribe = async (e) => {
+  e.preventDefault();
+  setBriefState({ loading: false, error: "", success: "" });
 
-  const handleSubscribe = (e) => {
-    e.preventDefault();
-    setBriefState({ loading: false, error: "", success: "" });
+  if (!isValidEmail(briefEmail)) {
+    setBriefState({ loading: false, error: t.errors.email, success: "" });
+    return;
+  }
 
-    if (!isValidEmail(briefEmail)) {
-      setBriefState({ loading: false, error: t.errors.email, success: "" });
-      return;
+  setBriefState({ loading: true, error: "", success: "" });
+  
+  try {
+    const response = await fetch("/api/subscribe", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: briefEmail }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Subscription failed");
     }
 
-    setBriefState({ loading: true, error: "", success: "" });
-    window.location.href = NEWSLETTER_SUBSCRIBE_URL;
-  };
-
+    setBriefState({ loading: false, error: "", success: t.success.subscribe });
+    setBriefEmail("");
+    
+    setTimeout(() => {
+      window.location.href = "https://elevatsolar.eu/brief.html";
+    }, 1500);
+  } catch (error) {
+    setBriefState({ loading: false, error: error.message, success: "" });
+  }
+};
+  
   return (
     <>
       <a className="skip-link" href="#about">
