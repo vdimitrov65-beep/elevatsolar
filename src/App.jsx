@@ -488,14 +488,6 @@ function App() {
     setReviewState({ error: "", success: t.success.review });
     setReviewData({ name: "", email: "", phone: "", company: "", message: "" });
   };
-const handleSubscribe = async (e) => {
-  e.preventDefault();
-  setBriefState({ loading: false, error: "", success: "" });
-
-  if (!isValidEmail(briefEmail)) {
-    setBriefState({ loading: false, error: t.errors.email, success: "" });
-    return;
-  }
 
   setBriefState({ loading: true, error: "", success: "" });
   
