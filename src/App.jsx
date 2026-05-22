@@ -469,18 +469,21 @@ function App() {
     return () => observer.disconnect();
   }, [lang]);
 
-  const handleReviewSubmit = (e) => {
-    e.preventDefault();
-    setReviewState({ error: "", success: "" });
+ const handleSubscribe = (e) => {
+  e.preventDefault();
+  setBriefState({ loading: false, error: "", success: "" });
 
-    if (!reviewData.name || !reviewData.email || !reviewData.message) {
-      setReviewState({ error: t.errors.required, success: "" });
-      return;
-    }
-    if (!isValidEmail(reviewData.email)) {
-      setReviewState({ error: t.errors.email, success: "" });
-      return;
-    }
+  if (!isValidEmail(briefEmail)) {
+    setBriefState({ loading: false, error: t.errors.email, success: "" });
+    return;
+  }
+
+  setBriefState({ loading: false, error: "", success: t.success.subscribe });
+  setBriefEmail("");
+  
+  // Редирект директно към архива без API
+  window.location.href = "https://elevatsolar.eu/brief.html";
+};
 
     setReviewState({ error: "", success: t.success.review });
     setReviewData({ name: "", email: "", phone: "", company: "", message: "" });
