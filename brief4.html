@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Green Energy Brief No 04 · June 2026 · Elevat Solar</title>
+  <meta name="description" content="The first operational data from Bulgaria's landmark BESS commissionings meets the SEEPEX negative-price era. SEE solar and storage intelligence, June 2026." />
+  <meta property="og:title" content="Green Energy Brief No 04 - June 2026" />
+  <meta property="og:description" content="Three months of live data - and the UK precedent that tells us what comes next." />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q5HHP98NM4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q5HHP98NM4');
+  </script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background: #f8f7f2;
+      color: #1a1a1a;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* Masthead */
+    .masthead {
+      border-bottom: 3px solid #E8922A;
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .masthead-left h1 {
+      font-size: 32px;
+      font-weight: normal;
+      letter-spacing: -0.5px;
+      color: #1a1a1a;
+    }
+    .masthead-left h1 .accent { color: #E8922A; }
+    .masthead-left .subtitle {
+      font-size: 13px;
+      color: #888;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+    .masthead-right {
+      font-size: 13px;
+      color: #666;
+      text-align: right;
+    }
+    .masthead-right .issue {
+      font-size: 16px;
+      color: #1a1a1a;
+      font-weight: bold;
+    }
+
+    /* Brief arc reference */
+    .arc-note {
+      font-size: 13px;
+      color: #888;
+      font-style: italic;
+      margin-bottom: 32px;
+      padding: 12px 18px;
+      border-left: 2px solid #E8922A;
+      background: rgba(232, 146, 42, 0.04);
+    }
+    .arc-note a { color: #E8922A; text-decoration: none; }
+    .arc-note a:hover { text-decoration: underline; }
+
+    /* Section labels */
+    .section-label {
+      font-size: 12px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #888;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+    .section-number {
+      color: #E8922A;
+      margin-right: 8px;
+    }
+
+    /* Section 01 - Headline Number */
+    .headline-card {
+      background: #fff;
+      border: 1px solid #e8e4d8;
+      padding: 56px 48px;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+    .headline-number {
+      font-size: 96px;
+      font-weight: normal;
+      color: #1a1a1a;
+      line-height: 1;
+      margin: 16px 0;
+      letter-spacing: -3px;
+    }
+    .headline-unit {
+      font-size: 22px;
+      color: #888;
+      margin-bottom: 24px;
+    }
+    .headline-lede {
+      font-size: 19px;
+      color: #333;
+      max-width: 760px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+    .headline-lede em { color: #1a1a1a; font-style: normal; font-weight: bold; }
+    .headline-source {
+      font-size: 12px;
+      color: #999;
+      margin-top: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    /* Grid sections */
+    .section { margin-bottom: 44px; }
+
+    .section-title {
+      font-size: 24px;
+      margin-bottom: 8px;
+      color: #1a1a1a;
+      font-weight: normal;
+    }
+    .section-subtitle {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    /* Market Snapshot - 3 col grid */
+    .country-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .country-card {
+      background: #fff;
+      border: 1px solid #e8e4d8;
+      padding: 22px;
+    }
+    .country-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .country-flag { font-size: 22px; }
+    .country-name {
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: #1a1a1a;
+    }
+    .country-data {
+      font-size: 14px;
+      color: #333;
+      line-height: 1.6;
+    }
+    .country-data strong { color: #1a1a1a; }
+    .country-ref {
+      font-size: 11px;
+      color: #aaa;
+      margin-top: 8px;
+      letter-spacing: 0.3px;
+    }
+    .country-ref a { color: #888; text-decoration: none; border-bottom: 1px dotted #aaa; }
+
+    /* BESS, Deal Flow, Policy - 2 col */
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .item-card {
+      background: #fff;
+      border: 1px solid #e8e4d8;
+      padding: 24px;
+    }
+    .item-header {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #E8922A;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .item-title {
+      font-size: 17px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #1a1a1a;
+      line-height: 1.3;
+    }
+    .item-body {
+      font-size: 14px;
+      color: #333;
+      line-height: 1.6;
+    }
+    .item-body strong { color: #1a1a1a; }
+    .item-callout {
+      font-size: 12px;
+      color: #666;
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid #f0ece0;
+      font-style: italic;
+    }
+
+    /* Elevat Angle - full width dark */
+    .angle-card {
+      background: #1a1a1a;
+      color: #f8f7f2;
+      padding: 48px;
+      border-left: 4px solid #E8922A;
+    }
+    .angle-card .section-label { color: #E8922A; }
+    .angle-card .section-number { color: #f8f7f2; }
+    .angle-card .section-title {
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .angle-card .section-subtitle {
+      color: #a8a496;
+      margin-bottom: 28px;
+    }
+    .angle-body {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #d8d4c8;
+    }
+    .angle-body p { margin-bottom: 18px; }
+    .angle-body strong { color: #fff; }
+    .angle-body em { color: #E8922A; font-style: normal; font-weight: bold; }
+    .angle-body .lead {
+      font-size: 18px;
+      color: #fff;
+      font-weight: bold;
+      border-left: 3px solid #E8922A;
+      padding-left: 16px;
+      margin-bottom: 24px;
+    }
+    .angle-signature {
+      margin-top: 32px;
+      padding-top: 20px;
+      border-top: 1px solid #444;
+      font-size: 13px;
+      color: #888;
+      font-style: italic;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 64px;
+      padding-top: 32px;
+      border-top: 1px solid #e8e4d8;
+      text-align: center;
+      font-size: 13px;
+      color: #888;
+    }
+    .footer a { color: #E8922A; text-decoration: none; }
+    .footer .subscribe-line {
+      font-size: 15px;
+      color: #1a1a1a;
+      margin-bottom: 16px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .country-grid { grid-template-columns: repeat(2, 1fr); }
+      .two-col { grid-template-columns: 1fr; }
+      .headline-number { font-size: 72px; }
+      .headline-card { padding: 40px 24px; }
+      .angle-card { padding: 32px 24px; }
+    }
+    @media (max-width: 600px) {
+      .country-grid { grid-template-columns: 1fr; }
+      .container { padding: 32px 16px 48px; }
+      .masthead h1 { font-size: 26px; }
+      .headline-number { font-size: 56px; letter-spacing: -2px; }
+      .headline-lede { font-size: 16px; }
+      .angle-body { font-size: 15px; }
+      .angle-body .lead { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- MASTHEAD -->
+    <header class="masthead">
+      <div class="masthead-left">
+        <h1>Green Energy <span class="accent">Brief</span></h1>
+        <div class="subtitle">Southeast Europe · Solar &amp; Storage Intelligence</div>
+      </div>
+      <div class="masthead-right">
+        <div class="issue">Issue No 04</div>
+        <div>11 June 2026</div>
+      </div>
+    </header>
+
+    <!-- ARC NOTE -->
+    <div class="arc-note">
+      Brief No 02 introduced Nova Zagora and St. George as the moment BESS arrived at scale in
+      Southeast Europe. Brief No 03 examined the EU inverter restrictions that will reshape the
+      supply chain through 2027. This issue tests both stories against the first month of live
+      market data.
+    </div>
+
+    <!-- SECTION 01 - HEADLINE NUMBER -->
+    <section class="section">
+      <div class="section-label"><span class="section-number">01</span>Headline Number</div>
+      <div class="headline-card">
+        <div class="headline-unit">SEEPEX day-ahead, lowest hourly clearing</div>
+        <div class="headline-number">−€45.50</div>
+        <div class="headline-unit">per MWh · delivery 7 June 2026</div>
+        <p class="headline-lede">
+          The Southeast European Power Exchange enabled negative prices on
+          <em>5 May 2026</em>. Exactly one month later, the day-ahead market printed nine
+          consecutive negative hours, the lowest at −€45.50/MWh - and Bulgaria's grid was charging.
+        </p>
+        <div class="headline-source">Source: SEEPEX day-ahead market, Balkan Green Energy News, June 2026</div>
+      </div>
+    </section>
+
+    <!-- SECTION 02 - MARKET SNAPSHOT -->
+    <section class="section">
+      <div class="section-label"><span class="section-number">02</span>Market Snapshot</div>
+      <h2 class="section-title">Eight markets, eight stories</h2>
+      <div class="section-subtitle">Material developments since the last issue, country by country.</div>
+
+      <div class="country-grid">
+
+        <div class="country-card">
+          <div class="country-header">
+            <span class="country-flag">🇧🇬</span>
+            <span class="country-name">Bulgaria</span>
+          </div>
+          <div class="country-data">
+            The 840 MWh of BESS commissioned by Enery (Nova Zagora) and Rezolv (St. George) is now
+            operating into a market that didn't price negative power until five weeks ago.
+            Charging on cheap midday electrons; discharging into evening peaks.
+          </div>
+          <div class="country-ref">See §03 for operational signals</div>
+        </div>
+
+        <div class="country-card">
+          <div class="country-header">
+            <span class="country-flag">🇷🇴</span>
+            <span class="country-name">Romania</span>
+          </div>
+          <div class="country-data">
+            CfD Round 2 cleared. Solar weighted average <strong>€40.35/MWh</strong> - well below
+            the €73 cap and below 2025's day-ahead average of €110/MWh. Solar awarded
+            <strong>1.49 GW</strong> (49% above quota); wind only 1.26 GW of 2 GW (~37%
+            unallocated). Transelectrica's new grid-allocation rules in force.
+          </div>
+          <div class="country-ref">See §04 and §05</div>
+        </div>
+
+        <div class="country-card">
+          <div class="country-header">
+            <span class="country-flag">🇬🇷</span>
+            <span class="country-name">Greece</span>
+          </div>
+          <div class="country-data">
+            <strong>876.5 GWh</strong> of renewables curtailed Jan–Apr 2026 - up 49%
+            year-on-year. CfD solar parks lost up to 60% of theoretical April revenue. Government
+            granted zero-price remuneration as a tactical patch.
+          </div>
+          <div class="country-ref">See §05 for policy details</div>
+        </div>
+
+        <div class="country-card">
+          <div class="country-header">
+            <span class="country-flag">🇷🇸</span>
+            <span class="country-name">Serbia</span>
+          </div>
+          <div class="country-data">
+            SEEPEX enabled negative day-ahead prices on 5 May - the record −€45.50/MWh print
+            came one month later. Separately, large-project grid connections officially deferred
+            to <strong>2029</strong>; Linglong and HBIS filed Serbia's first active-consumer
+            self-supply applications.
+          </div>
+          <div class="country-ref">See §01 and §05</div>
+        </div>
+
+        <div class="country-card">
+          <div class="country-header">
+            <span class="country-flag">🇭🇷</span>
+            <span class="country-name">Croatia</span>
+          </div>
+          <div class="country-data">
+            A US-backed <strong>€50 bn</strong> hyperscale data-centre will be supplied entirely
+            by behind-the-meter PV plus BESS, bypassing the grid queue. HERA's draft connection-fee
+            methodology arrives after a three-year delay, with ~3 GW of stalled pipeline waiting.
+          </div>
+          <div class="country-ref">See §04 and §05</div>
+        </div>
+
+        <div class="country-card">
+          <div class="country-header">
+            <span class="country-flag">🇲🇰</span>
+            <span class="country-name">N. Macedonia</span>
+          </div>
+          <div class="country-data">
+            EVN Macedonia commissioned a <strong>10 MW / 20 MWh</strong> BESS at its Probištip
+            PV plant on 13 May - the first storage at an EVN-owned site, and the second-largest
+            operational BESS in the country after Mey Energy's 30 MW/60 MWh. Strategic
+            energy MoU with Croatia signed 27 May.
+          </div>
+          <div class="country-ref">Active pipeline: Renalfa 50 MW / 200 MWh under construction at Oslomej</div>
+        </div>
+
+        <div class="country-card">
+          <div class="country-header">
+            <span class="country-flag">🇸🇮</span>
+            <span class="country-name">Slovenia</span>
+          </div>
+          <div class="country-data">
+            Two regulatory unlocks in two weeks: nationwide <strong>electricity-sharing</strong>
+            framework registration opened 1 June, live from 1 July; and Borzen published the
+            BESS <strong>rebate scheme</strong> on 8 June - €10M budget, up to 45% of eligible
+            CAPEX, cap €225/kWh. Applications open 4 August. Cumulative PV 1.65 GW.
+          </div>
+          <div class="country-ref">Strongest SI policy month in two years</div>
+        </div>
+
+        <div class="country-card">
+          <div class="country-header">
+            <span class="country-flag">🇧🇦</span>
+            <span class="country-name">BiH</span>
+          </div>
+          <div class="country-data">
+            Quiet month at the policy level. Visible pipeline carries: <strong>132 MW Poklečani
+            wind</strong> (EPHZHB, EIB-financed 2025) and <strong>125 MW Stolac PV</strong>
+            (Aurora Solar, under construction) advance toward 2027 commissioning. Installed PV
+            ~280 MW; total renewable pipeline ~900 MW.
+          </div>
+          <div class="country-ref">Watching for FBiH energy strategy revision in H2</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 03 - BESS TRACKER -->
+    <section class="section">
+      <div class="section-label"><span class="section-number">03</span>BESS Tracker</div>
+      <h2 class="section-title">First-month operational signals</h2>
+      <div class="section-subtitle">A direct follow-up to Brief No 02. What does the data say now that the systems are live?</div>
+
+      <div class="two-col">
+
+        <div class="item-card">
+          <div class="item-header">🇧🇬 Nova Zagora · Live</div>
+          <div class="item-title">601.8 MWh standalone - 3 months commercial</div>
+          <div class="item-body">
+            Enery's 150 MW / 601.8 MWh facility in Sliven Province started commercial operations
+            in March 2026 (officially inaugurated 7 May). The asset operates under a <strong>VPPA
+            with Vitol</strong> - a hybrid offtake structure pairing a financial PPA floor with
+            merchant arbitrage upside. The model SEE banks now use as the bankability template
+            for the next standalone wave.
+          </div>
+          <div class="item-callout">Reference: the offtake structure, not the size, is the
+            replicable insight here.</div>
+        </div>
+
+        <div class="item-card">
+          <div class="item-header">🇧🇬 St. George · Live</div>
+          <div class="item-title">225 MWp + 90 MW / 240 MWh co-located</div>
+          <div class="item-body">
+            Rezolv Energy's first operational asset. The BESS component received a
+            <strong>NextGenerationEU grant</strong>, materially de-risking the storage CAPEX line.
+            Solar offtake via a 12-year VPPA with AGP-Europe (110 GWh/year). Brief No 02 framed this
+            as a co-located benchmark; we'd add: the EU-grant + corporate VPPA combination is the
+            cleanest bankability stack we have seen in SEE.
+          </div>
+          <div class="item-callout">EPC: Solarpro + CMC Europe. HV works: Green Solar Energy.</div>
+        </div>
+
+        <div class="item-card">
+          <div class="item-header">🇧🇬 Maglizh · New</div>
+          <div class="item-title">Hybrid PV + 72 MWh BESS commissioned 25 May</div>
+          <div class="item-body">
+            A smaller addition to the Bulgarian fleet, but notable: a hybrid configuration where
+            the storage component was sized against the existing PV nameplate, rather than as a
+            separate standalone project. This is the model the EU's BESS-co-location grants were
+            designed to incentivise.
+          </div>
+        </div>
+
+        <div class="item-card">
+          <div class="item-header">🇷🇴 Premier Energy · Financed</div>
+          <div class="item-title">200 MW / 400 MWh - €100M from ČSOB</div>
+          <div class="item-body">
+            Czech ČSOB closed €100M project financing for a 200 MW / 400 MWh BESS in Romania,
+            online late 2026 / early 2027. The capital structure is increasingly conventional:
+            a regional bank, a single-purpose vehicle, and a project-finance facility - without
+            recourse to the parent. <strong>Storage is becoming a bankable asset class in Romania
+            on the same terms as utility PV was two years ago.</strong>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 04 - DEAL FLOW -->
+    <section class="section">
+      <div class="section-label"><span class="section-number">04</span>Deal Flow</div>
+      <h2 class="section-title">Money, M&amp;A, project closings</h2>
+      <div class="section-subtitle">Net-new deals not covered elsewhere in this issue.</div>
+
+      <div class="two-col">
+
+        <div class="item-card">
+          <div class="item-header">🇭🇷 Croatia · Hyperscale</div>
+          <div class="item-title">Pantheon AI: €50 bn campus + 500 MW PV + 2 GW / 8 GWh BESS</div>
+          <div class="item-body">
+            Announced 28 April at the Three Seas Summit in Dubrovnik. US-led Pantheon Atlas
+            (€12 bn initial, €50 bn total with tenants) will host hyperscale AI compute at
+            Topusko, fully supplied behind-the-meter by a <strong>500 MW solar plant + 2 GW /
+            8 GWh BESS</strong> built by KKR-owned Greenvolt. Construction 2027, operations
+            Q1 2029. Largest single private investment in Croatian history.
+          </div>
+          <div class="item-callout">The signal isn't the data centre - it's the off-grid
+            energy architecture that comes with it.</div>
+        </div>
+
+        <div class="item-card">
+          <div class="item-header">🇷🇴 Romania · CfD II</div>
+          <div class="item-title">2.75 GW awarded: 1.49 GW solar + 1.26 GW wind</div>
+          <div class="item-body">
+            49 winners across 2,751 MW - solar overshot the 1 GW quota by ~50%, wind missed
+            the 2 GW target by ~37%. Wind weighted average <strong>€73.89/MWh</strong>; solar
+            <strong>€40.35/MWh</strong> (range €35.77–45.20). Modernisation Fund underwrites
+            the 15-year contracts. Largest single solar award: West Power Investments, 520 MW
+            (Dama Solar). Round 3 in preparation.
+          </div>
+        </div>
+
+        <div class="item-card">
+          <div class="item-header">🇽🇰 Kosovo · Wind</div>
+          <div class="item-title">Çalik Renewables + Eurokos: 72 MW wind, online July</div>
+          <div class="item-body">
+            One of the few utility-scale renewables additions in the Western Balkans this year
+            outside of Serbia and North Macedonia. Turkey-based Çalik and domestic Eurokos are
+            in final commissioning works.
+          </div>
+        </div>
+
+        <div class="item-card">
+          <div class="item-header">🇹🇷 Turkey · Hybrid</div>
+          <div class="item-title">Energo-Pro 40 MW PV at the 280 MW Alpaslan 2 hydro plant</div>
+          <div class="item-body">
+            A solar array integrated with an existing hydroelectric station in eastern Turkey.
+            Hydro + PV hybridisation is a configuration to watch - Bulgaria's NEK has published
+            studies on similar deployments at Belmeken and Chaira.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 05 - POLICY WATCH -->
+    <section class="section">
+      <div class="section-label"><span class="section-number">05</span>Policy Watch</div>
+      <h2 class="section-title">Rules of the game</h2>
+      <div class="section-subtitle">Including the implementation timeline for the EU inverter restrictions covered in Brief No 03.</div>
+
+      <div class="two-col">
+
+        <div class="item-card">
+          <div class="item-header">🇪🇺 EU · Continued from Brief No 03</div>
+          <div class="item-title">Chinese inverter restrictions - implementation calendar</div>
+          <div class="item-body">
+            The Commission has set a phased schedule: <strong>1 July 2026</strong> - all EU
+            services review ongoing activities and propose integration of the restrictions;
+            <strong>15 July</strong> - assessment of whether alternative suppliers can meet
+            demand; <strong>1 November</strong> - existing-project assessments under the previous
+            framework with possible additional cybersecurity measures; <strong>April 2027</strong>
+            - full enforcement on new contracts. Limited derogations on security or political grounds.
+          </div>
+          <div class="item-callout">For SEE EPCs: BoQ specifications and procurement
+            contracts dated after 1 July should anticipate the November supplier review.</div>
+        </div>
+
+        <div class="item-card">
+          <div class="item-header">🇬🇷 Greece</div>
+          <div class="item-title">Zero-price remuneration for CfD solar plants</div>
+          <div class="item-body">
+            The Greek government accepted a request from CfD-holding producers to receive
+            zero-price remuneration during negative-price hours, rather than pay back the
+            difference under the strike-price mechanism. It relieves stressed asset owners,
+            but shifts cost to the budget and signals the conventional CfD model is buckling
+            under SEE solar penetration.
+          </div>
+        </div>
+
+        <div class="item-card">
+          <div class="item-header">🇷🇸 Serbia</div>
+          <div class="item-title">Large applications deferred to 2029</div>
+          <div class="item-body">
+            For utility-scale wind and solar applications already submitted, processing is now
+            officially deferred to 2029. EMS' Jelena Matejić states the grid can technically
+            connect 12 GW over six years - but the queue, not the wires, is the binding constraint.
+          </div>
+        </div>
+
+        <div class="item-card">
+          <div class="item-header">🇭🇷 Croatia · 🇷🇴 Romania · 🇸🇮 Slovenia</div>
+          <div class="item-title">Three grid-connection &amp; storage reforms in three weeks</div>
+          <div class="item-body">
+            HERA published Croatia's draft connection-fee methodology after a three-year delay
+            (~3 GW of stalled pipeline waiting). Transelectrica's revised allocation rules in
+            Romania set fixed timeframes for auction rounds for projects ≥5 MW. Borzen published
+            Slovenia's BESS rebate scheme on 8 June (€10M budget; 45% / €225/kWh cap;
+            applications open 4 August). Three regulators, same logic:
+            <strong>predictability and storage incentives are the bottleneck, not policy
+            ambition.</strong>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 06 - ELEVAT ANGLE -->
+    <section class="section">
+      <div class="angle-card">
+        <div class="section-label"><span class="section-number">06</span>Elevat Angle</div>
+        <h2 class="section-title">Three months of live data - and a UK precedent that travels</h2>
+        <div class="section-subtitle">Synthesis. Not a recap of the issue.</div>
+
+        <div class="angle-body">
+
+          <p class="lead">
+            The most useful frame for the next 24 months of SEE storage is not a forecast.
+            It is the UK BESS revenue stack between 2022 and 2024.
+          </p>
+
+          <p>
+            In 2022, frequency response was 80% of typical UK BESS revenue. By 2024, it was
+            20%. The opportunity didn't disappear - it migrated. Market saturation compressed
+            ancillary prices; arbitrage and capacity markets absorbed the difference. The
+            operators who built early captured the peak of the stack. Those who came later
+            built into a structurally different return profile, on the same CAPEX.
+          </p>
+
+          <p>
+            <strong>Southeast Europe is running the same play, faster.</strong> Bulgaria has
+            allocated <em>14+ GWh</em> of standalone storage under RESTORE - a volume that will
+            saturate the BG ancillary market well inside 24 months. Romania's ancillary prices
+            today (~€9/MW/hr aFRR, ~€70/MW/hr FCR) look generous because the market is shallow.
+            Each new 100 MW of operational BESS compresses them.
+          </p>
+
+          <p>
+            The data from this month is the inflection. SEEPEX enabled negative prices on 5 May.
+            Within a month, the day-ahead printed nine consecutive negative hours. Nova Zagora
+            and St. George - commissioned a few months earlier - were charging into that
+            negative-priced window. The arbitrage thesis is no longer projection; it is
+            this quarter's revenue.
+          </p>
+
+          <p>
+            <em>Three implications follow.</em>
+          </p>
+
+          <p>
+            <strong>One - the timing premium is the single largest IRR contributor available to
+            SEE BESS in 2026.</strong> Projects reaching commercial operation before mid-2027
+            will operate at the top of the revenue stack. Projects commissioning in 2028 will
+            operate in an arbitrage-dominant, compressed market. Same equipment, same CAPEX,
+            materially different returns. The window is open and visible.
+          </p>
+
+          <p>
+            <strong>Two - the conventional bankability framework needs revision.</strong>
+            Lenders modelling Romanian or Bulgarian BESS on today's ancillary headlines are
+            pricing yesterday's market. A 2027 base case should assume UK-2024 composition:
+            roughly 60–70% arbitrage, 20% ancillary, 10–20% capacity. The Nova Zagora /
+            St. George structure - financial PPA floor with merchant arbitrage tail - is
+            already the template the next financings should follow.
+          </p>
+
+          <p>
+            <strong>Three - Romania CfD II at €40.35/MWh is a structural warning, not a
+            celebration.</strong> Greek CfD solar lost 60% of April revenue against negative
+            prices and curtailment. Romanian developers who bid the cap without an in-built
+            storage strategy will discover the same arithmetic by 2028. The Greek government's
+            zero-price ruling is a fiscal patch; it does not change the underlying physics.
+            Every new SEE PV megawatt without a credible storage line is a future stranded
+            cash flow.
+          </p>
+
+          <p>
+            <strong>What we are watching next month:</strong> the first ENTSO-E balancing data
+            from the Nova Zagora and St. George BESS, Romania's Q3 CfD Round 3 framework, and
+            whether Croatia's draft HERA fees actually clear the regulatory backlog or stall again.
+          </p>
+
+        </div>
+        <div class="angle-signature">
+          Elevat Solar Consulting · Independent technical advisory · Sofia · 11 June 2026
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="subscribe-line">
+        Forwarded this brief? Subscribe at <a href="https://elevatsolar.eu">elevatsolar.eu</a>
+      </div>
+      <div>
+        Elevat Solar Consulting OOD · Sofia, Bulgaria ·
+        <a href="https://elevatsolar.eu">elevatsolar.eu</a> ·
+        <a href="https://www.linkedin.com/company/elevat-solar-consulting">LinkedIn</a>
+      </div>
+      <div style="margin-top: 12px; font-size: 11px; color: #aaa;">
+        Sources: Aurora Energy Research, Balkan Green Energy News, pv magazine, ESS News,
+        PV-Tech, Energy Storage News, Rabobank, DNV, EY, SEEPEX, IBEX, Reuters · June 2026
+      </div>
+    </footer>
+
+  </div>
+
+</body>
+</html>
