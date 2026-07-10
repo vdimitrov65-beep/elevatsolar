@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Green Energy Brief No 05 · July 2026 · Elevat Solar</title>
+  <meta name="description" content="Southeast Europe solar and storage intelligence, July 2026: the EU inverter restrictions take effect, Bulgaria's first four-hour BESS, Greece integrates 650 MW of storage, and the regional arbitrage spread widens." />
+  <meta property="og:title" content="Green Energy Brief No 05 - July 2026" />
+  <meta property="og:description" content="The inverter reckoning: EU restrictions take effect on 1 July, and the storage answer starts to arrive across SEE." />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q5HHP98NM4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q5HHP98NM4');
+  </script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background: #f8f7f2;
+      color: #1a1a1a;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container { max-width: 1140px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    /* Masthead */
+    .masthead {
+      border-bottom: 3px solid #E8922A;
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .masthead-left h1 { font-size: 32px; font-weight: normal; letter-spacing: -0.5px; color: #1a1a1a; }
+    .masthead-left h1 .accent { color: #E8922A; }
+    .masthead-left .subtitle {
+      font-size: 13px; color: #888; letter-spacing: 2px; text-transform: uppercase; margin-top: 6px;
+    }
+    .masthead-right { font-size: 13px; color: #666; text-align: right; }
+    .masthead-right .issue { font-size: 16px; color: #1a1a1a; font-weight: bold; }
+
+    /* Arc note */
+    .arc-note {
+      font-size: 13px; color: #888; font-style: italic; margin-bottom: 32px;
+      padding: 12px 18px; border-left: 2px solid #E8922A; background: rgba(232, 146, 42, 0.04);
+    }
+
+    /* Section labels */
+    .section-label {
+      font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; color: #888;
+      font-weight: bold; margin-bottom: 12px;
+    }
+    .section-number { color: #E8922A; margin-right: 8px; }
+
+    /* Section 01 */
+    .headline-card {
+      background: #fff; border: 1px solid #e8e4d8; padding: 56px 48px; margin-bottom: 32px; text-align: center;
+    }
+    .headline-number {
+      font-size: 88px; font-weight: normal; color: #1a1a1a; line-height: 1; margin: 16px 0; letter-spacing: -3px;
+    }
+    .headline-unit { font-size: 22px; color: #888; margin-bottom: 24px; }
+    .headline-lede { font-size: 19px; color: #333; max-width: 780px; margin: 0 auto; line-height: 1.65; }
+    .headline-lede em { color: #1a1a1a; font-style: normal; font-weight: bold; }
+    .headline-source { font-size: 12px; color: #999; margin-top: 20px; letter-spacing: 0.5px; }
+
+    .section { margin-bottom: 44px; }
+    .section-title { font-size: 24px; margin-bottom: 8px; color: #1a1a1a; font-weight: normal; }
+    .section-subtitle { font-size: 14px; color: #888; margin-bottom: 20px; font-style: italic; }
+
+    /* Country grid */
+    .country-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .country-card { background: #fff; border: 1px solid #e8e4d8; padding: 22px; }
+    .country-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .country-flag { font-size: 22px; }
+    .country-name {
+      font-size: 14px; font-weight: bold; letter-spacing: 0.8px; text-transform: uppercase; color: #1a1a1a;
+    }
+    .country-data { font-size: 14px; color: #333; line-height: 1.6; }
+    .country-data strong { color: #1a1a1a; }
+    .country-ref { font-size: 11px; color: #aaa; margin-top: 8px; letter-spacing: 0.3px; }
+
+    /* Two-col */
+    .two-col { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .item-card { background: #fff; border: 1px solid #e8e4d8; padding: 24px; }
+    .item-header {
+      font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #E8922A;
+      font-weight: bold; margin-bottom: 8px;
+    }
+    .item-title { font-size: 17px; font-weight: bold; margin-bottom: 10px; color: #1a1a1a; line-height: 1.3; }
+    .item-body { font-size: 14px; color: #333; line-height: 1.6; }
+    .item-body strong { color: #1a1a1a; }
+    .item-callout {
+      font-size: 12px; color: #666; margin-top: 12px; padding-top: 10px;
+      border-top: 1px solid #f0ece0; font-style: italic;
+    }
+
+    /* Elevat Angle */
+    .angle-card { background: #1a1a1a; color: #f8f7f2; padding: 48px; border-left: 4px solid #E8922A; }
+    .angle-card .section-label { color: #E8922A; }
+    .angle-card .section-number { color: #f8f7f2; }
+    .angle-card .section-title { color: #fff; margin-bottom: 8px; }
+    .angle-card .section-subtitle { color: #a8a496; margin-bottom: 28px; }
+    .angle-body { font-size: 16px; line-height: 1.7; color: #d8d4c8; }
+    .angle-body p { margin-bottom: 18px; }
+    .angle-body strong { color: #fff; }
+    .angle-body em { color: #E8922A; font-style: normal; font-weight: bold; }
+    .angle-body .lead {
+      font-size: 18px; color: #fff; font-weight: bold; border-left: 3px solid #E8922A;
+      padding-left: 16px; margin-bottom: 24px;
+    }
+    .angle-signature {
+      margin-top: 32px; padding-top: 20px; border-top: 1px solid #444;
+      font-size: 13px; color: #888; font-style: italic;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 64px; padding-top: 32px; border-top: 1px solid #e8e4d8;
+      text-align: center; font-size: 13px; color: #888;
+    }
+    .footer a { color: #E8922A; text-decoration: none; }
+    .footer .subscribe-line { font-size: 15px; color: #1a1a1a; margin-bottom: 16px; }
+
+    @media (max-width: 900px) {
+      .country-grid { grid-template-columns: repeat(2, 1fr); }
+      .two-col { grid-template-columns: 1fr; }
+      .headline-number { font-size: 60px; }
+      .headline-card { padding: 40px 24px; }
+      .angle-card { padding: 32px 24px; }
+    }
+    @media (max-width: 600px) {
+      .country-grid { grid-template-columns: 1fr; }
+      .container { padding: 32px 16px 48px; }
+      .masthead h1 { font-size: 26px; }
+      .headline-number { font-size: 44px; letter-spacing: -2px; }
+      .headline-lede { font-size: 16px; }
+      .angle-body { font-size: 15px; }
+      .angle-body .lead { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- MASTHEAD -->
+    <header class="masthead">
+      <div class="masthead-left">
+        <h1>Green Energy <span class="accent">Brief</span></h1>
+        <div class="subtitle">Southeast Europe · Solar &amp; Storage Intelligence</div>
+      </div>
+      <div class="masthead-right">
+        <div class="issue">Issue No 05</div>
+        <div>11 July 2026</div>
+      </div>
+    </header>
+
+    <!-- ARC NOTE -->
+    <div class="arc-note">
+      Brief No 03 flagged the coming EU restrictions on high-risk inverters. Brief No 04 measured
+      the negative-price stress they arrive into. This issue marks the moment the restrictions
+      take effect - and the first signs that the storage answer is reaching the grid.
+    </div>
+
+    <!-- SECTION 01 -->
+    <section class="section">
+      <div class="section-label"><span class="section-number">01</span>In Focus</div>
+      <div class="headline-card">
+        <div class="headline-unit">EU high-risk inverter restrictions - first enforcement milestone</div>
+        <div class="headline-number">1 July</div>
+        <div class="headline-unit">2026 · Commission integration deadline</div>
+        <p class="headline-lede">
+          The restrictions on high-risk suppliers now explicitly cover <em>BESS power-conversion
+          systems</em>, not just PV inverters. As of 1 July, every EU service must build them into
+          project-level funding checks, with an assessment of alternative-supplier capacity due
+          15 July. For any SEE developer with an EU-funded pipeline, procurement just changed.
+        </p>
+        <div class="headline-source">Source: European Commission, ESS News, pv magazine, Euronews · July 2026</div>
+      </div>
+    </section>
+
+    <!-- SECTION 02 - MARKET SNAPSHOT -->
+    <section class="section">
+      <div class="section-label"><span class="section-number">02</span>Market Snapshot</div>
+      <h2 class="section-title">Eight markets, eight moves</h2>
+      <div class="section-subtitle">Developments since the last issue, country by country.</div>
+
+      <div class="country-grid">
+
+        <div class="country-card">
+          <div class="country-header"><span class="country-flag">🇧🇬</span><span class="country-name">Bulgaria</span></div>
+          <div class="country-data">
+            Smolyan VE commissioned an <strong>80 MW / 320 MWh</strong> facility - one of the
+            country's first utility-scale <strong>four-hour</strong> BESS. The four-hour duration
+            matters: it is long enough to shift midday solar fully into the evening peak.
+          </div>
+          <div class="country-ref">See §03 for the duration argument</div>
+        </div>
+
+        <div class="country-card">
+          <div class="country-header"><span class="country-flag">🇬🇷</span><span class="country-name">Greece</span></div>
+          <div class="country-data">
+            HEnEX integrated BESS into the day-ahead and intraday markets, with <strong>650 MW</strong>
+            expected live by end-June. After a spring of record curtailment, storage can finally
+            monetise the midday-to-evening spread on the exchange.
+          </div>
+          <div class="country-ref">See §05 for the policy mechanics</div>
+        </div>
+
+        <div class="country-card">
+          <div class="country-header"><span class="country-flag">🇷🇸</span><span class="country-name">Serbia</span></div>
+          <div class="country-data">
+            The SEEPEX arbitrage spread reached <strong>€163.6/MWh</strong> for two-hour systems and
+            <strong>€151.5/MWh</strong> for four-hour, per data reported by Balkan Green Energy News.
+            That is a direct read on how much revenue a battery can now capture from the daily
+            price swing.
+          </div>
+          <div class="country-ref">See §03</div>
+        </div>
+
+        <div class="country-card">
+          <div class="country-header"><span class="country-flag">🇷🇴</span><span class="country-name">Romania</span></div>
+          <div class="country-data">
+            MORE (Motor Oil Hellas) put a solar-plus-BESS park into <strong>trial operation</strong>
+            northeast of Bucharest, and Shikun &amp; Binui secured final regulatory go-ahead for a
+            <strong>76 MW</strong> hybrid connection. Co-located hybrids are moving from award to steel.
+          </div>
+          <div class="country-ref">See §04</div>
+        </div>
+
+        <div class="country-card">
+          <div class="country-header"><span class="country-flag">🇽🇰</span><span class="country-name">Kosovo</span></div>
+          <div class="country-data">
+            YEO Technology signed a turnkey EPC contract with Lindja Solar for a <strong>130 MWp</strong>
+            solar plant, including the 110 kV substation and grid connection. One of the largest
+            utility-scale solar builds in Kosovo to date.
+          </div>
+          <div class="country-ref">See §04</div>
+        </div>
+
+        <div class="country-card">
+          <div class="country-header"><span class="country-flag">🇲🇰</span><span class="country-name">N. Macedonia</span></div>
+          <div class="country-data">
+            The government moved toward building the <strong>Čebren</strong> pumped-storage hydro
+            plant on its own after roughly fourteen failed attempts over the years. Long-duration
+            storage re-enters the national plan - by hydro, not lithium.
+          </div>
+          <div class="country-ref">Follow-up to EVN Probištip BESS (Brief No 04)</div>
+        </div>
+
+        <div class="country-card">
+          <div class="country-header"><span class="country-flag">🇲🇪</span><span class="country-name">Montenegro</span></div>
+          <div class="country-data">
+            The PowerX (Japan) - EPCG plan for <strong>500 MWh</strong> of battery storage advanced,
+            and the EPCG NET 2026 energy symposium framed storage and grid security as the country's
+            near-term priority. A first serious BESS signal from Podgorica.
+          </div>
+          <div class="country-ref">Deal advancing, not yet financed</div>
+        </div>
+
+        <div class="country-card">
+          <div class="country-header"><span class="country-flag">🇧🇦</span><span class="country-name">BiH</span></div>
+          <div class="country-data">
+            Quiet month at policy level. The visible pipeline - Poklečani wind and Stolac PV -
+            continues toward 2027 commissioning. No new material regulatory or financing datapoint
+            this cycle.
+          </div>
+          <div class="country-ref">Watching for the FBiH energy strategy revision</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 03 - BESS TRACKER -->
+    <section class="section">
+      <div class="section-label"><span class="section-number">03</span>BESS Tracker</div>
+      <h2 class="section-title">The answer starts arriving - and duration is the new variable</h2>
+      <div class="section-subtitle">A follow-up to Brief No 04: where Brief No 04 measured the problem, this is the response reaching the grid.</div>
+
+      <div class="two-col">
+
+        <div class="item-card">
+          <div class="item-header">🇧🇬 Bulgaria · Live</div>
+          <div class="item-title">Smolyan VE 80 MW / 320 MWh - the four-hour threshold</div>
+          <div class="item-body">
+            Bulgaria's fleet so far has been built around one- and two-hour systems. A
+            <strong>four-hour</strong> battery is a different animal: it can take in a full midday
+            solar surplus and discharge across the whole evening ramp, not just the sharpest peak.
+            As negative-price windows widen, that extra duration is what turns curtailment into a
+            revenue stack instead of a single arbitrage trade.
+          </div>
+          <div class="item-callout">Duration, not just MWh, is becoming the bankability question.</div>
+        </div>
+
+        <div class="item-card">
+          <div class="item-header">🇬🇷 Greece · Market access</div>
+          <div class="item-title">650 MW of BESS enters the HEnEX day-ahead and intraday markets</div>
+          <div class="item-body">
+            Until now, Greek storage largely sat outside the wholesale market. HEnEX integration
+            means batteries can bid directly into day-ahead and intraday - precisely the venues where
+            the midday-to-evening spread is widest. This is the mechanism that lets Greek storage
+            begin absorbing the 876 GWh curtailment problem flagged last month, rather than merely
+            observing it.
+          </div>
+        </div>
+
+        <div class="item-card">
+          <div class="item-header">🇷🇸 Regional · The spread</div>
+          <div class="item-title">SEEPEX arbitrage: €163.6/MWh (2h) vs €151.5/MWh (4h)</div>
+          <div class="item-body">
+            Read carefully, the two-hour system still wins on a per-MWh basis today. The signal is
+            in how small the gap has become: a four-hour asset captures a wider slice of the daily
+            curve, is less exposed to a single mispriced hour, and gives up very little headline
+            spread for it. The gap is closing, and that tells you where compensation is heading.
+          </div>
+        </div>
+
+        <div class="item-card">
+          <div class="item-header">🌍 Context · Financing</div>
+          <div class="item-title">Balkan Battery Day, Athens - EBRD and the bankability question</div>
+          <div class="item-body">
+            The inaugural Balkan Battery Day gathered developers, EBRD and financiers around one
+            theme: moving BESS from pipeline to operation across eleven SEE jurisdictions. The
+            recurring lender concern was multi-jurisdiction risk - licensing, grid access and
+            market participation differ market by market, and that fragmentation, not technology,
+            is now the binding constraint on regional scale.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 04 - DEAL FLOW -->
+    <section class="section">
+      <div class="section-label"><span class="section-number">04</span>Deal Flow</div>
+      <h2 class="section-title">Money, EPC and project closings</h2>
+      <div class="section-subtitle">Net-new deals not covered elsewhere in this issue.</div>
+
+      <div class="two-col">
+
+        <div class="item-card">
+          <div class="item-header">🇽🇰 Kosovo · EPC</div>
+          <div class="item-title">YEO Technology - Lindja Solar, 130 MWp turnkey</div>
+          <div class="item-body">
+            The Istanbul-listed EPC will deliver engineering, procurement, construction and grid
+            connection, including a 110 kV substation and transmission line. Turkish EPCs continue to
+            take utility-scale share across the Western Balkans, where local turnkey capacity is thin.
+          </div>
+        </div>
+
+        <div class="item-card">
+          <div class="item-header">🇷🇴 Romania · Trial</div>
+          <div class="item-title">MORE (Motor Oil Hellas) solar-plus-BESS enters trial operation</div>
+          <div class="item-body">
+            The renewables arm of a Greek oil major commissioning a co-located park near Bucharest
+            is a cross-border signal: Greek utilities are exporting the hybrid model into Romania,
+            where merchant-plus-CfD economics are more favourable than at home.
+          </div>
+        </div>
+
+        <div class="item-card">
+          <div class="item-header">🇷🇴 Romania · Regulatory</div>
+          <div class="item-title">Shikun &amp; Binui - 76 MW hybrid connection approved</div>
+          <div class="item-body">
+            Final regulatory go-ahead for a hybrid connection capacity de-risks the grid-access line
+            of the project - historically the slowest and least certain step in the Romanian
+            development cycle. Approval, not award, is what unlocks financing.
+          </div>
+        </div>
+
+        <div class="item-card">
+          <div class="item-header">🇲🇪 Montenegro · Planning</div>
+          <div class="item-title">PowerX (Japan) - EPCG, 500 MWh BESS advances</div>
+          <div class="item-body">
+            A Japanese battery firm partnering with Montenegro's state utility on half a gigawatt-hour
+            of storage marks a rare non-Chinese, non-European technology entrant in the region -
+            notable given the inverter/PCS restrictions now reshaping supplier choice.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 05 - POLICY WATCH -->
+    <section class="section">
+      <div class="section-label"><span class="section-number">05</span>Policy Watch</div>
+      <h2 class="section-title">Rules of the game</h2>
+      <div class="section-subtitle">The enforcement detail behind this issue's headline, plus the market-design moves around it.</div>
+
+      <div class="two-col">
+
+        <div class="item-card">
+          <div class="item-header">🇪🇺 EU · Enforcement (from Brief No 03)</div>
+          <div class="item-title">Inverter restrictions now explicitly include BESS PCS</div>
+          <div class="item-body">
+            The confirmed detail that matters most for storage: the restrictions cover
+            <strong>power-conversion systems</strong>, not only PV inverters, and apply to entities
+            controlled by high-risk countries even when manufacturing in Europe. The Commission
+            estimates a <strong>sub-2%</strong> total project cost increase from switching to trusted
+            suppliers. Milestones: 1 July integration, 15 July supplier-capacity assessment,
+            1 November existing-project review, April 2027 full enforcement on new contracts.
+          </div>
+          <div class="item-callout">For SEE EPCs: procurement dated after 1 July should anticipate the November supplier review.</div>
+        </div>
+
+        <div class="item-card">
+          <div class="item-header">🇬🇷 Greece · Market design</div>
+          <div class="item-title">CfD zero-price remuneration meets BESS market entry</div>
+          <div class="item-body">
+            Two Greek measures now interact. CfD plants can take zero-price remuneration during
+            negative hours (the patch from Brief No 04), while HEnEX lets storage bid into the same
+            hours. Together they shift the burden of midday oversupply from the taxpayer toward the
+            battery - a healthier long-run design, if the storage volume actually materialises.
+          </div>
+        </div>
+
+        <div class="item-card">
+          <div class="item-header">🇲🇰 N. Macedonia · Long-duration</div>
+          <div class="item-title">Čebren pumped-storage back on the table - self-financed</div>
+          <div class="item-body">
+            After roughly fourteen attempts, the decision to build Čebren without a foreign strategic
+            partner signals a regional theme: for genuinely long-duration storage, pumped hydro
+            remains the only mature option, and governments are increasingly willing to carry the
+            balance-sheet risk themselves.
+          </div>
+        </div>
+
+        <div class="item-card">
+          <div class="item-header">🇸🇮 Slovenia · Incentive live</div>
+          <div class="item-title">Borzen BESS rebate - applications open 4 August</div>
+          <div class="item-body">
+            The rebate scheme flagged last month moves from published to open: applications start
+            4 August. The budget is modest, but this is the country's first direct BESS capital
+            subsidy, and the kind of template other small SEE markets tend to copy once someone
+            else has tested it.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 06 - ELEVAT ANGLE -->
+    <section class="section">
+      <div class="angle-card">
+        <div class="section-label"><span class="section-number">06</span>Elevat Angle</div>
+        <h2 class="section-title">Two forces met this month - and they point the same way</h2>
+        <div class="section-subtitle">Synthesis. Not a recap of the issue.</div>
+
+        <div class="angle-body">
+
+          <p class="lead">
+            The inverter restrictions and the storage build-out look like unrelated stories. They
+            are the same story, seen from two ends of the same bankability model.
+          </p>
+
+          <p>
+            On 1 July the EU restrictions stopped being a policy proposal and became a procurement
+            fact. The Commission's under-2% cost estimate may well be right on hardware, and it
+            still misses the point: the real cost is not the price delta on a trusted-supplier
+            inverter, it is the <strong>re-underwriting</strong> of every EU-funded project in the
+            pipeline whose BoQ named a now-restricted vendor. And because the rules explicitly
+            capture BESS power-conversion systems, the projects most exposed are exactly the storage
+            projects the region most needs.
+          </p>
+
+          <p>
+            At the same time, storage finally started reaching the grid in a form that matters. Not
+            just megawatt-hours - <em>duration</em>. Bulgaria's first four-hour system, Greece's
+            650 MW entering the wholesale market, the SEEPEX spread narrowing between two-hour and
+            four-hour returns. Each of these says the same thing: the market has moved past "does the
+            battery exist" to "how long can it hold, and can it bid where the spread lives."
+          </p>
+
+          <p>
+            <em>Here is where the two forces converge.</em> A four-hour battery bidding into HEnEX or
+            SEEPEX is a more complex, more digital, more grid-integrated asset than a one-hour peaker.
+            Its PCS is exactly the component now under supplier restriction. So the same month that
+            raised the bar on <strong>what</strong> a bankable battery must do - longer duration,
+            direct market access - also narrowed the list of <strong>whose</strong> hardware can do it
+            inside an EU-funded structure. Capability requirements went up; supplier options went down.
+          </p>
+
+          <p>
+            <strong>What this means for developers.</strong> The projects that clear over the next
+            eighteen months will be the ones that solved both constraints at once: four-hour-capable,
+            market-integrated, and built on a trusted-supplier PCS from day one. Retrofitting
+            compliance onto a project designed around a restricted vendor will cost far more than the
+            2% headline - it will cost the timeline. And in a market where the timing premium is the
+            single largest IRR contributor, as we argued last month, a lost timeline is a lost return.
+          </p>
+
+          <p>
+            <strong>What we are watching next month:</strong> the 15 July supplier-capacity assessment
+            and whether it confirms trusted-supplier volume actually exists at SEE scale; the first
+            operational data from Greece's newly market-integrated BESS; and whether Slovenia's
+            4 August rebate opening draws the pipeline the design intends.
+          </p>
+
+        </div>
+        <div class="angle-signature">
+          Elevat Solar Consulting · Independent technical advisory · Sofia · 11 July 2026
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="subscribe-line" style="margin-bottom: 8px;">
+        Know someone developing or underwriting SEE solar and storage? Forward them this issue.
+      </div>
+      <div class="subscribe-line">
+        Forwarded this brief? Subscribe at <a href="https://elevatsolar.eu">elevatsolar.eu</a>
+      </div>
+      <div>
+        Elevat Solar Consulting OOD · Sofia, Bulgaria ·
+        <a href="https://elevatsolar.eu">elevatsolar.eu</a> ·
+        <a href="https://www.linkedin.com/company/elevat-solar-consulting">LinkedIn</a>
+      </div>
+      <div style="margin-top: 12px; font-size: 11px; color: #aaa;">
+        Sources: European Commission, ESS News, pv magazine, PV-Tech, Energy Storage News,
+        Balkan Green Energy News, SEEPEX, HEnEX, Euronews · July 2026
+      </div>
+    </footer>
+
+  </div>
+
+</body>
+</html>
