@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Green Energy Brief #6 — August 2026 | Elevat Solar</title>
+<link href="https://fonts.googleapis.com/css2?family=Georgia:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & BASE ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --cream: #f8f7f2;
+  --cream-dark: #f0ede4;
+  --orange: #E8922A;
+  --orange-dark: #C97B1A;
+  --blue: #1a4a8a;
+  --blue-dark: #0f3060;
+  --ink: #1a1a1a;
+  --ink-mid: #444;
+  --ink-light: #777;
+  --rule: #d8d3c8;
+  --card-bg: #ffffff;
+  --shadow: 0 2px 12px rgba(0,0,0,0.07);
+  --shadow-hover: 0 6px 24px rgba(0,0,0,0.13);
+}
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--orange-dark); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── LAYOUT ── */
+.page { max-width: 900px; margin: 0 auto; padding: 48px 24px 64px; }
+
+/* ── MASTHEAD ── */
+.masthead {
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 18px;
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.masthead-left {}
+.brand {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  margin-bottom: 4px;
+}
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+.title span { color: var(--orange); }
+.masthead-right {
+  text-align: right;
+  font-size: 12px;
+  color: var(--ink-light);
+  line-height: 1.8;
+}
+.issue-badge {
+  display: inline-block;
+  background: var(--ink);
+  color: #fff;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 2px;
+  margin-bottom: 4px;
+}
+
+/* ── SECTION LABELS ── */
+.section { margin-bottom: 44px; }
+.section-label {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  border-top: 1px solid var(--rule);
+  padding-top: 14px;
+  margin-bottom: 20px;
+}
+
+/* ── 01 HEADLINE NUMBER ── */
+.headline-block {
+  background: var(--ink);
+  color: #fff;
+  border-radius: 6px;
+  padding: 32px 36px;
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  flex-wrap: wrap;
+}
+.headline-number {
+  font-size: 72px;
+  font-weight: 700;
+  color: var(--orange);
+  line-height: 1;
+  white-space: nowrap;
+}
+.headline-unit {
+  font-size: 22px;
+  color: var(--orange);
+  font-weight: 400;
+}
+.headline-text h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1.25;
+}
+.headline-text p {
+  font-size: 14px;
+  color: #ccc;
+  line-height: 1.55;
+  max-width: 480px;
+}
+.headline-sub {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #aaa;
+  font-style: italic;
+}
+
+/* ── 02 MARKET SNAPSHOT GRID ── */
+.grid-8 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+@media (max-width: 680px) {
+  .grid-8 { grid-template-columns: repeat(2, 1fr); }
+}
+
+.country-card {
+  background: var(--card-bg);
+  border-radius: 6px;
+  border-left: 4px solid var(--orange);
+  box-shadow: var(--shadow);
+  padding: 16px 14px 14px;
+  position: relative;
+  cursor: default;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.country-card.wb { border-left-color: var(--blue); }
+.country-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+.card-flag-name {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.card-flag { font-size: 18px; line-height: 1; }
+.card-name { font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink); }
+.card-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 2px;
+  font-family: Georgia, serif;
+}
+.badge-active { background: #e8f5e9; color: #2e7d32; }
+.badge-growing { background: #fff8e1; color: #f57f17; }
+.badge-blocked { background: #fce4ec; color: #c62828; }
+.badge-early { background: #e3f2fd; color: #1565c0; }
+.badge-none { background: #f5f5f5; color: #757575; }
+
+.card-pv {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--orange);
+  line-height: 1;
+  margin-bottom: 2px;
+}
+.card-pv-unit { font-size: 13px; color: var(--ink-mid); font-weight: 400; }
+.card-sub-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+  font-size: 11px;
+  color: var(--ink-light);
+}
+.card-sub-item { display: flex; align-items: center; gap: 3px; }
+.card-sub-label { color: var(--ink-light); }
+.card-sub-val { font-weight: 700; color: var(--ink-mid); }
+
+.card-event {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid var(--rule);
+  font-size: 11px;
+  color: var(--ink-mid);
+  line-height: 1.4;
+  font-style: italic;
+}
+.card-event strong { font-style: normal; color: var(--ink); }
+
+/* BESS tooltip */
+.bess-tooltip {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 0; right: 0;
+  background: var(--ink);
+  color: #fff;
+  font-size: 11px;
+  line-height: 1.45;
+  padding: 10px 12px;
+  border-radius: 4px;
+  z-index: 10;
+  pointer-events: none;
+}
+.bess-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 20px;
+  border: 5px solid transparent;
+  border-top-color: var(--ink);
+}
+.country-card:hover .bess-tooltip { display: block; }
+
+/* Legend */
+.grid-legend {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  font-size: 11px;
+  color: var(--ink-light);
+}
+.legend-item { display: flex; align-items: center; gap: 6px; }
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+/* ── 03 BESS TRACKER ── */
+.bess-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.bess-table th {
+  text-align: left;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  border-bottom: 1px solid var(--rule);
+  padding: 8px 10px;
+  font-weight: 400;
+}
+.bess-table td {
+  padding: 10px 10px;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+.bess-table tr:last-child td { border-bottom: none; }
+.bess-table tr:hover td { background: var(--cream-dark); }
+.bess-country { font-weight: 700; font-size: 12px; }
+.bess-project { color: var(--ink-mid); font-style: italic; }
+.bess-mw { font-weight: 700; color: var(--orange-dark); }
+.bess-status-tag {
+  font-size: 10px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 2px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* ── 04 DEAL FLOW ── */
+.deal-list { display: flex; flex-direction: column; gap: 0; }
+.deal-item {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  gap: 14px;
+  align-items: start;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.deal-item:last-child { border-bottom: none; }
+.deal-size {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--orange-dark);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.deal-desc { font-size: 13px; line-height: 1.5; color: var(--ink-mid); }
+.deal-desc strong { color: var(--ink); font-weight: 700; }
+.deal-country {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  white-space: nowrap;
+  padding-top: 2px;
+}
+
+/* ── 05 POLICY WATCH ── */
+.policy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 600px) { .policy-grid { grid-template-columns: 1fr; } }
+
+.policy-item {
+  background: var(--card-bg);
+  border-radius: 4px;
+  padding: 14px 16px;
+  box-shadow: var(--shadow);
+  border-left: 3px solid var(--rule);
+}
+.policy-item.flag-orange { border-left-color: var(--orange); }
+.policy-item.flag-blue { border-left-color: var(--blue); }
+.policy-item.flag-red { border-left-color: #c62828; }
+.policy-country {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  margin-bottom: 5px;
+}
+.policy-text { font-size: 13px; line-height: 1.5; color: var(--ink-mid); }
+.policy-text strong { color: var(--ink); }
+
+/* ── 06 ELEVAT ANGLE ── */
+.angle-block {
+  background: var(--card-bg);
+  border-radius: 6px;
+  padding: 28px 32px;
+  box-shadow: var(--shadow);
+  border-top: 4px solid var(--orange);
+}
+.angle-block p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--ink-mid);
+  margin-bottom: 14px;
+}
+.angle-block p:last-child { margin-bottom: 0; }
+.angle-block p strong { color: var(--ink); }
+.angle-byline {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule);
+  font-size: 12px;
+  color: var(--ink-light);
+  font-style: italic;
+}
+
+/* ── FOOTER ── */
+.brief-footer {
+  margin-top: 48px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+  font-size: 11px;
+  color: var(--ink-light);
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  line-height: 1.6;
+}
+.footer-disclaimer { max-width: 560px; }
+.footer-right { text-align: right; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <div class="masthead-left">
+      <div class="brand">Elevat Solar Consulting</div>
+      <div class="title">Green Energy <span>Brief</span></div>
+    </div>
+    <div class="masthead-right">
+      <div class="issue-badge">Issue #6</div><br>
+      August 11, 2026<br>
+      Southeast Europe<br>
+      PV · BESS · Policy
+    </div>
+  </header>
+
+  <!-- 01 HEADLINE NUMBER -->
+  <section class="section">
+    <div class="section-label">01 — Headline Number</div>
+    <div class="headline-block">
+      <div>
+        <div class="headline-number">10 <span class="headline-unit">cm</span></div>
+        <div class="headline-sub">Danube water level — Budapest, August 4, 2026</div>
+      </div>
+      <div class="headline-text">
+        <h2>Danube hits record low — SEE grid on emergency footing</h2>
+        <p>The Danube reached 10 cm in Budapest on August 4 — well below the previous all-time low of 33 cm set in 2018. Serbia's Djerdap I and II hydro plants operate at 20–30% capacity. Romania shut down one reactor at Cernavodă and deployed its navy to blast rock to redirect cooling water. Bulgaria warned of potential Kozloduy curtailment. Solar and BESS are the only generation assets unaffected by the drought — and suddenly the most valuable on the grid.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 MARKET SNAPSHOT -->
+  <section class="section">
+    <div class="section-label">02 — Market Snapshot · July–August 2026 · Hover card for BESS detail</div>
+    <div class="grid-8">
+
+      <!-- Bulgaria -->
+      <div class="country-card">
+        <div class="bess-tooltip">🇧🇬 BESS: 4,800 MW / 14+ GWh operational by mid-June (Capital). Top 15 ranking: Enery, PPC, ContourGlobal lead. IPS battery factory near Sofia — 3 GWh production started, 5 GWh by Q2. Kozloduy nuclear threatened by Danube drought.</div>
+        <div class="card-flag-name"><span class="card-flag">🇧🇬</span><span class="card-name">Bulgaria</span></div>
+        <span class="card-badge badge-active">BESS Active</span>
+        <div class="card-pv">6.64 <span class="card-pv-unit">GW PV</span></div>
+        <div class="card-sub-row">
+          <span class="card-sub-item"><span class="card-sub-label">Wind</span>&nbsp;<span class="card-sub-val">0.7 GW</span></span>
+          <span class="card-sub-item"><span class="card-sub-label">Hydro</span>&nbsp;<span class="card-sub-val">3.3 GW</span></span>
+        </div>
+        <div class="card-event"><strong>Key event:</strong> 50%+ renewable generation in May–June for first time. Bulgaria net exporter during Danube crisis. BESS hits 14 GWh milestone.</div>
+      </div>
+
+      <!-- Romania -->
+      <div class="country-card">
+        <div class="bess-tooltip">🇷🇴 BESS: Premier Energy 200MW/400MWh under construction. PNE Romania: 2 standalone BESS permits (165MW/330MWh + 107MW/214MWh, Constanța). PPC BESS at Fântânele-Vest (45.7MW/91.4MWh) + Corugea (40.1MW/80.2MWh). Cernavodă nuclear at 50% — grid stress acute.</div>
+        <div class="card-flag-name"><span class="card-flag">🇷🇴</span><span class="card-name">Romania</span></div>
+        <span class="card-badge badge-active">BESS Active</span>
+        <div class="card-pv">~8.5 <span class="card-pv-unit">GW PV</span></div>
+        <div class="card-sub-row">
+          <span class="card-sub-item"><span class="card-sub-label">Wind</span>&nbsp;<span class="card-sub-val">3.5 GW</span></span>
+          <span class="card-sub-item"><span class="card-sub-label">Hydro</span>&nbsp;<span class="card-sub-val">6.4 GW</span></span>
+        </div>
+        <div class="card-event"><strong>Key event:</strong> Cernavodă reactor shut down — Danube flow at 1,500 m³/s (⅓ of average). Day-ahead prices hit €340/MWh. State of energy alert declared.</div>
+      </div>
+
+      <!-- Greece -->
+      <div class="country-card">
+        <div class="bess-tooltip">🇬🇷 BESS: Curtailments projected 3.3–3.7 TWh for 2026 (75% increase vs 2025). BESS deployment still blocked by financing issues. Curtailments reached 12% of renewables output. Metlen + PPC BESS JV announced.</div>
+        <div class="card-flag-name"><span class="card-flag">🇬🇷</span><span class="card-name">Greece</span></div>
+        <span class="card-badge badge-blocked">BESS Blocked</span>
+        <div class="card-pv">~12.0 <span class="card-pv-unit">GW PV</span></div>
+        <div class="card-sub-row">
+          <span class="card-sub-item"><span class="card-sub-label">Wind</span>&nbsp;<span class="card-sub-val">5.8 GW</span></span>
+          <span class="card-sub-item"><span class="card-sub-label">Hydro</span>&nbsp;<span class="card-sub-val">3.4 GW</span></span>
+        </div>
+        <div class="card-event"><strong>Key event:</strong> 2026 curtailments forecast 3.3–3.7 TWh (+75% vs 2025). Greece leaning on Bulgaria for power imports during Danube crisis.</div>
+      </div>
+
+      <!-- Serbia -->
+      <div class="country-card wb">
+        <div class="bess-tooltip">🇷🇸 BESS: Grid connection contracts for 724MW signed. Hyundai/UGT 1GW + 200MW/400MWh ongoing. Djerdap I+II at 20–30% capacity due to Danube drought. Serbia–EDF strategic partnership signed.</div>
+        <div class="card-flag-name"><span class="card-flag">🇷🇸</span><span class="card-name">Serbia</span></div>
+        <span class="card-badge badge-early">BESS Early</span>
+        <div class="card-pv">0.38 <span class="card-pv-unit">GW PV</span></div>
+        <div class="card-sub-row">
+          <span class="card-sub-item"><span class="card-sub-label">Wind</span>&nbsp;<span class="card-sub-val">0.8 GW</span></span>
+          <span class="card-sub-item"><span class="card-sub-label">Hydro</span>&nbsp;<span class="card-sub-val">2.8 GW</span></span>
+        </div>
+        <div class="card-event"><strong>Key event:</strong> Djerdap hydro at 20% capacity — energy emergency declared. SEEPEX price fell to €107/MWh, €40 below Montenegro.</div>
+      </div>
+
+      <!-- North Macedonia -->
+      <div class="country-card wb">
+        <div class="bess-tooltip">🇲🇰 BESS: Ministry launched public call for standalone BESS grants. Končar + Dalekovod building first phase of Štip wind farm. Intraday market operational since May 6.</div>
+        <div class="card-flag-name"><span class="card-flag">🇲🇰</span><span class="card-name">N. Macedonia</span></div>
+        <span class="card-badge badge-early">BESS Early</span>
+        <div class="card-pv">0.30 <span class="card-pv-unit">GW PV</span></div>
+        <div class="card-sub-row">
+          <span class="card-sub-item"><span class="card-sub-label">Wind</span>&nbsp;<span class="card-sub-val">0.1 GW</span></span>
+          <span class="card-sub-item"><span class="card-sub-label">Hydro</span>&nbsp;<span class="card-sub-val">0.7 GW</span></span>
+        </div>
+        <div class="card-event"><strong>Key event:</strong> Ministry launches BESS grant scheme. Štip wind farm construction begins (Končar + Dalekovod).</div>
+      </div>
+
+      <!-- Montenegro -->
+      <div class="country-card wb">
+        <div class="bess-tooltip">🇲🇪 BESS: AFD + CGES €25M loan for substation modernization (Perućica + Pljevlja 2) — enables 350MW hydro integration. EPCG 639MW pipeline active. Montenegro highest day-ahead prices in region during Danube crisis.</div>
+        <div class="card-flag-name"><span class="card-flag">🇲🇪</span><span class="card-name">Montenegro</span></div>
+        <span class="card-badge badge-early">BESS Early</span>
+        <div class="card-pv">0.10 <span class="card-pv-unit">GW PV</span></div>
+        <div class="card-sub-row">
+          <span class="card-sub-item"><span class="card-sub-label">Wind</span>&nbsp;<span class="card-sub-val">0.1 GW</span></span>
+          <span class="card-sub-item"><span class="card-sub-label">Hydro</span>&nbsp;<span class="card-sub-val">0.7 GW</span></span>
+        </div>
+        <div class="card-event"><strong>Key event:</strong> AFD €25M loan for substation upgrades. Montenegro highest-priced market in SEE during drought — €40+ above Serbia.</div>
+      </div>
+
+      <!-- Bosnia -->
+      <div class="country-card wb">
+        <div class="bess-tooltip">🇧🇦 BESS: No operational projects. Coal still dominant. CBAM lobbying continues with WB5 partners. EuroHPC €10B AI Gigafactories call — potential data center + energy demand signal.</div>
+        <div class="card-flag-name"><span class="card-flag">🇧🇦</span><span class="card-name">Bosnia & Herz.</span></div>
+        <span class="card-badge badge-none">No BESS</span>
+        <div class="card-pv">0.10 <span class="card-pv-unit">GW PV</span></div>
+        <div class="card-sub-row">
+          <span class="card-sub-item"><span class="card-sub-label">Wind</span>&nbsp;<span class="card-sub-val">0.1 GW</span></span>
+          <span class="card-sub-item"><span class="card-sub-label">Hydro</span>&nbsp;<span class="card-sub-val">2.1 GW</span></span>
+        </div>
+        <div class="card-event"><strong>Key event:</strong> No solar/BESS milestone this month. CBAM provisions remain under WB5 pressure.</div>
+      </div>
+
+      <!-- Kosovo -->
+      <div class="country-card wb">
+        <div class="bess-tooltip">🇽🇰 BESS: No operational projects. KEK Solar 100MW under construction. 170MW storage target by 2031 per NECP. Danube crisis has limited impact — Kosovo not Danube-dependent.</div>
+        <div class="card-flag-name"><span class="card-flag">🇽🇰</span><span class="card-name">Kosovo</span></div>
+        <span class="card-badge badge-none">No BESS</span>
+        <div class="card-pv">0.10 <span class="card-pv-unit">GW PV</span></div>
+        <div class="card-sub-row">
+          <span class="card-sub-item"><span class="card-sub-label">Wind</span>&nbsp;<span class="card-sub-val">0.0 GW</span></span>
+          <span class="card-sub-item"><span class="card-sub-label">Hydro</span>&nbsp;<span class="card-sub-val">0.3 GW</span></span>
+        </div>
+        <div class="card-event"><strong>Key event:</strong> KEK Solar 100MW under construction. Drought has limited grid impact vs neighbours.</div>
+      </div>
+
+    </div>
+        <div class="card-flag-name"><span class="card-flag">🇧🇦</span><span class="card-name">Bosnia & Herz.</span></div>
+        <span class="card-badge badge-none">No BESS</span>
+        <div class="card-pv">0.10 <span class="card-pv-unit">GW PV</span></div>
+        <div class="card-sub-row">
+          <span class="card-sub-item"><span class="card-sub-label">Wind</span>&nbsp;<span class="card-sub-val">0.1 GW</span></span>
+          <span class="card-sub-item"><span class="card-sub-label">Hydro</span>&nbsp;<span class="card-sub-val">2.1 GW</span></span>
+        </div>
+        <div class="card-event"><strong>Key event:</strong> WB6 countries request CBAM electricity exemption adjustment. US investor focus on gas interconnect.</div>
+      </div>
+
+      <!-- Kosovo -->
+      <div class="country-card wb">
+        <div class="bess-tooltip">🇽🇰 BESS: No operational projects. KEK Solar 100MW PV (EIB/KfW €33M) under construction near Pristina. 170 MW storage target by 2031 per NECP.</div>
+        <div class="card-flag-name"><span class="card-flag">🇽🇰</span><span class="card-name">Kosovo</span></div>
+        <span class="card-badge badge-none">No BESS</span>
+        <div class="card-pv">0.10 <span class="card-pv-unit">GW PV</span></div>
+        <div class="card-sub-row">
+          <span class="card-sub-item"><span class="card-sub-label">Wind</span>&nbsp;<span class="card-sub-val">0.0 GW</span></span>
+          <span class="card-sub-item"><span class="card-sub-label">Hydro</span>&nbsp;<span class="card-sub-val">0.3 GW</span></span>
+        </div>
+        <div class="card-event"><strong>Key event:</strong> New KEO CEO confirmed. KEK Solar 100MW PV under construction — largest in country.</div>
+      </div>
+
+    </div><!-- /grid-8 -->
+
+    <div class="grid-legend">
+      <div class="legend-item"><div class="legend-dot" style="background:var(--orange)"></div> EU member state</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--blue)"></div> Western Balkans</div>
+      <div class="legend-item" style="font-style:italic">Hover card for BESS detail · PV data: ENTSO-E / national TSOs · May 2026</div>
+    </div>
+  </section>
+
+  <!-- 03 BESS TRACKER -->
+  <section class="section">
+    <div class="section-label">03 — BESS Tracker · Active &amp; Under Construction · May 2026</div>
+    <table class="bess-table">
+      <thead>
+        <tr>
+          <th>Country</th>
+          <th>Project</th>
+          <th>MW / MWh</th>
+          <th>Status</th>
+          <th>Note</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="bess-country">🇧🇬 Bulgaria</span></td>
+          <td><span class="bess-project">Total operational BESS</span></td>
+          <td><span class="bess-mw">4,800 / 14,000+</span></td>
+          <td><span class="bess-status-tag badge-active">Operational</span></td>
+          <td style="font-size:12px;color:#777">Capital ranking: 4,800MW / 14GWh+ by mid-June 2026. Largest BESS market in CEE.</td>
+        </tr>
+        <tr>
+          <td><span class="bess-country">🇧🇬 Bulgaria</span></td>
+          <td><span class="bess-project">IPS Battery Factory (Sofia)</span></td>
+          <td><span class="bess-mw">3,000 MWh/yr</span></td>
+          <td><span class="bess-status-tag badge-active">In Production</span></td>
+          <td style="font-size:12px;color:#777">Production started. Expanding to 5 GWh/yr capacity by Q2 2027.</td>
+        </tr>
+        <tr>
+          <td><span class="bess-country">🇷🇴 Romania</span></td>
+          <td><span class="bess-project">Premier Energy (Iași)</span></td>
+          <td><span class="bess-mw">200 / 400</span></td>
+          <td><span class="bess-status-tag badge-growing">Under Construction</span></td>
+          <td style="font-size:12px;color:#777">On track for Q4 2026 / Q1 2027 COD. €100M ČSOB financing.</td>
+        </tr>
+        <tr>
+          <td><span class="bess-country">🇷🇴 Romania</span></td>
+          <td><span class="bess-project">PNE Romania — 2 standalone (Constanța)</span></td>
+          <td><span class="bess-mw">272 / 544</span></td>
+          <td><span class="bess-status-tag badge-early">Permits secured</span></td>
+          <td style="font-size:12px;color:#777">165MW/330MWh + 107MW/214MWh. Grid connection at 110kV.</td>
+        </tr>
+        <tr>
+          <td><span class="bess-country">🇷🇴 Romania</span></td>
+          <td><span class="bess-project">PPC — Fântânele-Vest + Corugea</span></td>
+          <td><span class="bess-mw">86 / 172</span></td>
+          <td><span class="bess-status-tag badge-early">Development</span></td>
+          <td style="font-size:12px;color:#777">45.7MW/91.4MWh + 40.1MW/80.2MWh. Modernisation Fund co-financed.</td>
+        </tr>
+        <tr>
+          <td><span class="bess-country">🇷🇸 Serbia</span></td>
+          <td><span class="bess-project">7 standalone (EMS contracts)</span></td>
+          <td><span class="bess-mw">724 / —</span></td>
+          <td><span class="bess-status-tag badge-early">Grid contracts signed</span></td>
+          <td style="font-size:12px;color:#777">Djerdap hydro at 20% — BESS urgently needed for grid stability.</td>
+        </tr>
+        <tr>
+          <td><span class="bess-country">🇲🇰 N. Macedonia</span></td>
+          <td><span class="bess-project">Ministry BESS grant scheme</span></td>
+          <td><span class="bess-mw">TBD</span></td>
+          <td><span class="bess-status-tag badge-early">Public call open</span></td>
+          <td style="font-size:12px;color:#777">Ministry launched public call for standalone BESS grants — first in country.</td>
+        </tr>
+        <tr>
+          <td><span class="bess-country">🇬🇷 Greece</span></td>
+          <td><span class="bess-project">3 tender programmes</span></td>
+          <td><span class="bess-mw">900 / —</span></td>
+          <td><span class="bess-status-tag badge-blocked">0 MW connected</span></td>
+          <td style="font-size:12px;color:#777">2026 curtailments forecast 3.3–3.7 TWh. BESS still unfinanced.</td>
+        </tr>
+      </tbody>
+    <div class="section-label">04 — Deal Flow · Selected transactions June–August 2026</div>
+    <div class="deal-list">
+
+      <div class="deal-item">
+        <div class="deal-size">€175M</div>
+        <div class="deal-desc"><strong>EBRD — €175M loan to PPC for BG/GR/RO renewables.</strong> Supports ~400MW of new wind and solar across Bulgaria, Greece and Romania. Guaranteed under EU InvestEU Programme — longer maturity than market terms.</div>
+        <div class="deal-country">🇧🇬 BG 🇬🇷 GR 🇷🇴 RO</div>
+      </div>
+
+      <div class="deal-item">
+        <div class="deal-size">€25M</div>
+        <div class="deal-desc"><strong>AFD + CGES — Montenegro substation modernization.</strong> Loan from French development agency for Perućica and Pljevlja 2 substations. Enables integration of up to 350MW of hydropower — critical for Montenegro's energy transition.</div>
+        <div class="deal-country">🇲🇪 ME</div>
+      </div>
+
+      <div class="deal-item">
+        <div class="deal-size">TBD</div>
+        <div class="deal-desc"><strong>Serbia — EDF + AFD strategic energy partnership.</strong> Serbia signed partnership with Électricité de France and Agence Française de Développement. Covers renewables, grid modernization and energy transition support.</div>
+        <div class="deal-country">🇷🇸 RS</div>
+      </div>
+
+      <div class="deal-item">
+        <div class="deal-size">€460M</div>
+        <div class="deal-desc"><strong>Enery Ogrezeni — under construction.</strong> 761MW PV + 534MW/1GWh+ BESS — potentially largest hybrid in Europe. Financial close with Intesa Sanpaolo, UniCredit, ING. Construction ongoing.</div>
+        <div class="deal-country">🇷🇴 RO</div>
+      </div>
+
+      <div class="deal-item">
+        <div class="deal-size">€100M</div>
+        <div class="deal-desc"><strong>Premier Energy — 200MW/400MWh BESS Romania.</strong> Under construction near Iași. On track for Q4 2026 commissioning — timing now critical given Cernavodă nuclear outage and Danube crisis.</div>
+        <div class="deal-country">🇷🇴 RO</div>
+      </div>
+
+      <div class="deal-item">
+        <div class="deal-size">€700M</div>
+        <div class="deal-desc"><strong>Premier Energy acquires Evryo Group / DEO.</strong> Distribution operator Distribuție Energie Oltenia from Macquarie. PPC also expanding into Hungary. Regional consolidation accelerating.</div>
+        <div class="deal-country">🇷🇴 RO</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 05 POLICY WATCH -->
+  <section class="section">
+    <div class="section-label">05 — Policy Watch · Regulatory developments July–August 2026</div>
+    <div class="policy-grid">
+
+      <div class="policy-item flag-red" style="grid-column: span 2;">
+        <div class="policy-country">🇷🇴 Romania — ENERGY EMERGENCY</div>
+        <div class="policy-text"><strong>State of energy alert declared — Danube at 1,500 m³/s (⅓ of July average).</strong> Cernavodă nuclear at 50% capacity, one reactor shut down. Romanian navy carried out controlled underwater explosions near Bala Canal to redirect cooling water. Acting PM Bolojan called on citizens to reduce consumption in peak hours. Carmakers Dacia and Ford halted production until Aug 19. Day-ahead prices hit €340/MWh on Aug 4. Grid capacity auctions (Oct 30) remain on schedule — Transelectrica has confirmed no delays.</div>
+      </div>
+
+      <div class="policy-item flag-red">
+        <div class="policy-country">🇷🇸 Serbia — ENERGY EMERGENCY</div>
+        <div class="policy-text"><strong>Djerdap I + II at 20–30% capacity.</strong> PM Macut presided over emergency energy meeting Aug 4. Citizens asked to limit AC and large appliances. Danube level nearing 1909 negative record at Serbia entry point. Emergency declared in three municipalities. SEEPEX settled at €107/MWh — but Serbia is importing, not exporting.</div>
+      </div>
+
+      <div class="policy-item flag-orange">
+        <div class="policy-country">🇧🇬 Bulgaria</div>
+        <div class="policy-text"><strong>Bulgaria net exporter during crisis — BESS enabling new role.</strong> Bulgarian solar output covers domestic demand and exports to Romania, Serbia, North Macedonia and Greece simultaneously. BESS fleet (4,800MW / 14GWh) imports cheap midday solar, exports in evening peaks. Kozloduy nuclear flagged as potential curtailment risk if Danube falls further. Bulgaria's RESTORE deadline was July 31, 2026 — projects commissioned by deadline confirmed.</div>
+      </div>
+
+      <div class="policy-item flag-red">
+        <div class="policy-country">🇬🇷 Greece</div>
+        <div class="policy-text"><strong>Curtailments 2026 forecast: 3.3–3.7 TWh (+75% vs 2025).</strong> Greece relies on Bulgarian imports during Danube crisis — ironic given Greece's own curtailment problem. Curtailments already represent 12% of renewables output in 2026. Remote control law for RES >400kW in force. No BESS financing solution in sight.</div>
+      </div>
+
+      <div class="policy-item flag-blue">
+        <div class="policy-country">🇲🇰 North Macedonia</div>
+        <div class="policy-text"><strong>Ministry launches first standalone BESS grant scheme.</strong> Public call issued July–August 2026. Štip wind farm (Končar + Dalekovod) construction started — first phase. Intraday market operational since May 6.</div>
+      </div>
+
+      <div class="policy-item flag-blue">
+        <div class="policy-country">🇪🇺 EU — AI Gigafactories</div>
+        <div class="policy-text"><strong>EuroHPC €10B AI Gigafactories call — energy demand signal.</strong> Invitation to bids for AI compute infrastructure published Aug 4. Each Gigafactory requires 100–500MW of firm power. SEE countries with cheap renewable + BESS are competitive hosts. Watch for data center + PPA announcements in BG and RO by Q1 2027.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 06 ELEVAT ANGLE -->
+  <section class="section">
+    <div class="section-label">06 — Elevat Angle</div>
+    <div class="angle-block">
+      <p><strong>The Danube crisis is the most important stress test SEE's energy infrastructure has faced in a decade.</strong> Record-low water at 10 cm in Budapest. Serbia's largest hydro plants at 20% capacity. Romania deploying its navy to blast riverbeds. Bulgaria's nuclear plant on watch. And in the middle of all this — solar panels keep generating, batteries keep charging and discharging, and Bulgaria emerges as a net exporter to the region. This is not a coincidence. It is the structural argument for the energy transition made visible in real time.</p>
+      <p><strong>Bulgaria's BESS fleet — 4,800 MW / 14+ GWh — has changed the country's grid role.</strong> In the old model, Bulgaria exported baseload coal power. In the new model, it imports cheap midday solar from across the region, stores it, and re-exports it in evening peaks when neighbours are desperate for supply. Romania was paying €340/MWh on August 4. Bulgaria's batteries were buying at near-zero and selling into that spread. The business model works. The infrastructure investment thesis is validated.</p>
+      <p><strong>Greece remains the cautionary tale.</strong> 13 GW of solar installed, 3.3–3.7 TWh forecast to be curtailed in 2026, zero operational BESS from 900 MW tendered, and now relying on Bulgarian imports during the regional crisis. The country that built solar fastest is least prepared to benefit from it. The connection between curtailment, BESS deployment failure, and import dependency is not accidental — it is the predictable result of a financing framework that never resolved the bankability of storage.</p>
+      <p><strong>The drought exposes a structural vulnerability that the energy transition was supposed to solve.</strong> Hydro was supposed to be the flexibility provider. At 10 cm of Danube, it provides nothing. The lesson for the next decade of infrastructure planning in SEE is that flexibility cannot depend on a single resource — and that BESS is not optional for any grid with serious renewable penetration. The countries that understood this early (Bulgaria, Romania) are weathering the crisis. The countries that didn't (Serbia, Greece) are in emergency mode.</p>
+      <div class="angle-byline">Venelin Dimitrov, Managing Consultant — Elevat Solar Consulting · August 2026 · office@elevatsolar.eu · elevatsolar.eu</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="brief-footer">
+    <div class="footer-disclaimer">Data sourced from ENTSO-E Transparency Platform, Balkan Green Energy News, Capital.bg, pv magazine, Energy Storage News, AP, Euronews, CNBC and company announcements. Capacity figures are estimates as of August 2026 and subject to revision. This brief is for informational purposes only and does not constitute investment advice.</div>
+    <div class="footer-right">
+      © Elevat Solar Consulting 2026<br>
+      <a href="https://elevatsolar.eu">elevatsolar.eu</a><br>
+      Issue #7 — September 11, 2026
+    </div>
+  </footer>
+
+</div><!-- /page -->
+</body>
+</html>
+        <tr>
+          <td><span class="bess-country">🇧🇬 Bulgaria</span></td>
+          <td><span class="bess-project">St. George (Rezolv)</span></td>
+          <td><span class="bess-mw">90 / 240</span></td>
+          <td><span class="bess-status-tag badge-active">Operational</span></td>
+          <td style="font-size:12px;color:#777">Co-located with 225MW PV. NextGenerationEU grant.</td>
+        </tr>
+        <tr>
+          <td><span class="bess-country">🇧🇬 Bulgaria</span></td>
+          <td><span class="bess-project">ContourGlobal standalone</span></td>
+          <td><span class="bess-mw">202 / —</span></td>
+          <td><span class="bess-status-tag badge-active">Operational</span></td>
+          <td style="font-size:12px;color:#777">Inaugurated Jan 2026. Active in BG day-ahead market.</td>
+        </tr>
+        <tr>
+          <td><span class="bess-country">🇷🇴 Romania</span></td>
+          <td><span class="bess-project">Premier Energy (Iași)</span></td>
+          <td><span class="bess-mw">200 / 400</span></td>
+          <td><span class="bess-status-tag badge-growing">Under Construction</span></td>
+          <td style="font-size:12px;color:#777">Started May 4. €100M ČSOB financing.</td>
+        </tr>
+        <tr>
+          <td><span class="bess-country">🇷🇴 Romania</span></td>
+          <td><span class="bess-project">Enery Ogrezeni hybrid</span></td>
+          <td><span class="bess-mw">534 / 1,000+</span></td>
+          <td><span class="bess-status-tag badge-growing">Under Construction</span></td>
+          <td style="font-size:12px;color:#777">761MW PV + >1GWh BESS. €460M consortium finance.</td>
+        </tr>
+        <tr>
+          <td><span class="bess-country">🇷🇴 Romania</span></td>
+          <td><span class="bess-project">Renalfa Horia-Arad cluster</span></td>
+          <td><span class="bess-mw">400 / 800</span></td>
+          <td><span class="bess-status-tag badge-early">Development</span></td>
+          <td style="font-size:12px;color:#777">365MWp PV + 800MWh. Dual-chemistry Li-ion + Na-ion.</td>
+        </tr>
+        <tr>
+          <td><span class="bess-country">🇷🇸 Serbia</span></td>
+          <td><span class="bess-project">7 standalone (EMS contracts)</span></td>
+          <td><span class="bess-mw">724 / —</span></td>
+          <td><span class="bess-status-tag badge-early">Grid contracts signed</span></td>
+          <td style="font-size:12px;color:#777">TSO signed 7 connection contracts Apr 30. 2–4h duration.</td>
+        </tr>
+        <tr>
+          <td><span class="bess-country">🇷🇸 Serbia</span></td>
+          <td><span class="bess-project">Noćaj 1 (Fortis Energy)</span></td>
+          <td><span class="bess-mw">— / 72</span></td>
+          <td><span class="bess-status-tag badge-early">Permit secured</span></td>
+          <td style="font-size:12px;color:#777">270MW PV + 72MWh BESS. Construction Q2 2026.</td>
+        </tr>
+        <tr>
+          <td><span class="bess-country">🇬🇷 Greece</span></td>
+          <td><span class="bess-project">3 tender programmes</span></td>
+          <td><span class="bess-mw">900 / —</span></td>
+          <td><span class="bess-status-tag badge-blocked">0 MW connected</span></td>
+          <td style="font-size:12px;color:#777">900MW awarded 2023–2025. None operational. Banks declining.</td>
+        </tr>
+      </tbody>
+    </table>
+
+</div><!-- /page -->
+</body>
+</html>
