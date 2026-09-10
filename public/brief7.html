@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Green Energy Brief No 07 · September 2026 · Elevat Solar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & BASE ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --paper:#f6f4ef;
+  --paper-deep:#efece4;
+  --ink:#211f1b;
+  --ink-mid:#4a453c;
+  --ink-soft:#6d6759;
+  --ink-faint:#8b8474;
+  --rule:#ded7c8;
+  --rule-firm:#cec7b6;
+  --accent:#8a5a12;
+  --accent-bright:#C97B1A;
+  --flag-red:#9F2F2D;
+  --flag-green:#346538;
+}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Newsreader',Georgia,'Times New Roman',serif;
+  font-size:16px;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+  font-variant-numeric:tabular-nums;
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.page{max-width:860px;margin:0 auto;padding:44px 26px 72px}
+
+/* ── SHARED TYPE ── */
+.mono{font-family:'IBM Plex Mono',ui-monospace,monospace}
+.label{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:10px;letter-spacing:.24em;text-transform:uppercase;
+}
+
+/* ── MASTHEAD ── */
+.masthead{text-align:center;border-bottom:1px solid var(--ink);padding-bottom:10px}
+.masthead .kick{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-faint)}
+.masthead .title{font-family:'Instrument Serif',Georgia,serif;font-size:62px;line-height:.95;letter-spacing:-.012em;margin:10px 0 12px}
+.masthead .rule2{
+  border-top:3px double var(--ink);margin-top:4px;padding-top:9px;
+  display:flex;justify-content:space-between;gap:12px;
+  font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-faint);
+}
+.masthead .rule2 b{color:var(--ink);font-weight:600}
+
+/* ── ARC NOTE ── */
+.arc-note{
+  font-style:italic;color:var(--ink-mid);text-align:center;
+  max-width:66ch;margin:24px auto 4px;font-size:16.5px;line-height:1.6;
+}
+
+/* ── SECTIONS ── */
+.section{margin-top:38px}
+.section-label{
+  font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--accent);border-bottom:1px solid var(--rule-firm);padding-bottom:6px;margin-bottom:16px;
+  display:flex;justify-content:space-between;align-items:baseline;gap:14px;
+}
+.section-label .sub{color:var(--ink-faint);letter-spacing:.1em;font-size:9.5px;text-align:right}
+
+/* ── 01 IN FOCUS ── */
+h2.head{font-family:'Instrument Serif',Georgia,serif;font-size:39px;line-height:1.06;letter-spacing:-.012em;margin-bottom:14px}
+.lede{columns:2;column-gap:36px;column-rule:1px solid var(--rule)}
+.lede p{margin-bottom:12px}
+.lede p:first-child::first-letter{
+  font-family:'Instrument Serif',Georgia,serif;float:left;font-size:58px;line-height:.8;
+  padding:5px 9px 0 0;color:var(--accent);
+}
+.kv{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);margin:20px 0 4px}
+.kv div{padding:13px 15px;border-right:1px solid var(--rule)}
+.kv div:last-child{border-right:0}
+.kv .l{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.kv .v{font-family:'Instrument Serif',Georgia,serif;font-size:28px;line-height:1.1;margin-top:3px}
+
+/* ── 02 MARKET SNAPSHOT ── */
+.markets{border-top:1px solid var(--ink)}
+.mrow{
+  display:grid;grid-template-columns:58px 1fr 188px;gap:18px;
+  padding:13px 0;border-bottom:1px solid var(--rule);align-items:start;
+}
+.mrow .cc{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;font-weight:600;color:var(--accent);padding-top:2px}
+.mrow .nm{font-size:17px;line-height:1.3;font-weight:500}
+.mrow .ev{font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;color:var(--ink-mid);line-height:1.55;margin-top:4px}
+.mrow .bess{font-family:'IBM Plex Sans',sans-serif;font-size:11.5px;color:var(--ink-soft);line-height:1.5;margin-top:5px;padding-left:11px;border-left:1px solid var(--rule)}
+.mrow .fig{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-mid);text-align:right;line-height:1.75;white-space:nowrap}
+.mrow .fig b{color:var(--ink);font-weight:600}
+.mrow .price{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;color:var(--ink);
+  display:block;padding-bottom:5px;margin-bottom:5px;border-bottom:1px solid var(--rule);letter-spacing:-.02em}
+.mrow .price span{font-size:9.5px;font-weight:400;color:var(--ink-faint);letter-spacing:.06em}
+.mrow .price.none{font-size:10.5px;font-weight:400;color:var(--ink-faint)}
+.mrow .basis{display:block;margin-top:6px;padding-top:5px;border-top:1px solid var(--rule);
+  font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mrow .fig .vint{font-size:9px;letter-spacing:.06em;color:var(--ink-faint);border:1px solid var(--rule);padding:0 3px}
+.status{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;border:1px solid currentColor;padding:1px 5px;margin-top:5px}
+.s-on{color:var(--flag-green)}.s-mid{color:var(--accent)}.s-off{color:var(--flag-red)}.s-non{color:var(--ink-faint)}
+.legend{
+  font-family:'IBM Plex Sans',sans-serif;font-size:11px;line-height:1.65;
+  color:var(--ink-soft);margin-top:14px;padding-top:11px;border-top:1px solid var(--rule);
+}
+.legend b{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600}
+
+/* ── 03 BESS TRACKER ── */
+table.tracker{width:100%;border-collapse:collapse;font-size:14px}
+table.tracker th{
+  font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-faint);text-align:left;font-weight:500;padding:0 12px 7px 0;border-bottom:1px solid var(--ink);
+}
+table.tracker th.r{text-align:right}
+table.tracker td{padding:10px 12px 10px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+table.tracker td.cc{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;font-weight:600;color:var(--accent);white-space:nowrap}
+table.tracker td.num{font-family:'IBM Plex Mono',monospace;font-size:12px;text-align:right;white-space:nowrap;font-weight:500}
+table.tracker td.note{font-family:'IBM Plex Sans',sans-serif;font-size:11.5px;color:var(--ink-soft);line-height:1.5;width:40%}
+table.tracker td.st{white-space:nowrap}
+
+/* ── 04 DEAL FLOW ── */
+.deals{border-top:1px solid var(--ink)}
+.deal{display:grid;grid-template-columns:118px 1fr;gap:20px;padding:15px 0;border-bottom:1px solid var(--rule);align-items:start}
+.deal .size{font-family:'Instrument Serif',Georgia,serif;font-size:29px;line-height:1;letter-spacing:-.01em;color:var(--accent)}
+.deal .cc{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:var(--ink-faint);margin-top:7px;display:block}
+.deal .txt{font-size:15px;line-height:1.6}
+.deal .txt strong{font-weight:600}
+
+/* ── 05 POLICY WATCH ── */
+.policy{columns:2;column-gap:34px;column-rule:1px solid var(--rule)}
+.pitem{break-inside:avoid;margin-bottom:20px}
+.pitem.wide{column-span:all;border-bottom:1px solid var(--rule);padding-bottom:16px;margin-bottom:20px}
+.pitem .country{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:5px}
+.pitem .country.alert{color:var(--flag-red)}
+.pitem p{font-size:14.5px;line-height:1.58}
+.pitem p strong{font-weight:600}
+
+/* ── 06 ELEVAT ANGLE ── */
+.angle{border-left:2px solid var(--accent);padding-left:22px}
+.angle p{font-size:16.5px;line-height:1.66;margin-bottom:15px}
+.angle p strong{font-weight:600}
+.byline{
+  font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-faint);border-top:1px solid var(--rule);padding-top:11px;margin-top:4px;line-height:1.9;
+}
+
+/* ── FOOTER ── */
+.brief-footer{
+  margin-top:44px;border-top:3px double var(--ink);padding-top:16px;
+  display:flex;justify-content:space-between;gap:30px;align-items:flex-start;
+}
+.disclaimer{font-family:'IBM Plex Sans',sans-serif;font-size:11px;line-height:1.6;color:var(--ink-soft);max-width:62%}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.08em;text-align:right;color:var(--ink-faint);line-height:2}
+
+/* ── RESPONSIVE ── */
+@media(max-width:720px){
+  .page{padding:28px 18px 52px}
+  .masthead .title{font-size:40px}
+  .masthead .rule2{flex-direction:column;gap:2px;text-align:center;align-items:center}
+  h2.head{font-size:29px}
+  .lede,.policy{columns:1;column-rule:0}
+  .kv{grid-template-columns:repeat(2,1fr)}
+  .kv div:nth-child(2){border-right:0}
+  .kv div:nth-child(1),.kv div:nth-child(2){border-bottom:1px solid var(--rule)}
+  .mrow{grid-template-columns:44px 1fr;gap:12px}
+  .mrow .fig{grid-column:2;text-align:left;margin-top:6px}
+  .deal{grid-template-columns:1fr;gap:6px}
+  .deal .cc{display:inline;margin-left:10px}
+  table.tracker td.note{display:none}
+  .brief-footer{flex-direction:column}
+  .disclaimer{max-width:100%}
+  .footer-right{text-align:left}
+}
+@media print{
+  body{background:#fff}
+  .page{max-width:100%;padding:0}
+  .section{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <div class="kick">Elevat Solar Consulting</div>
+    <div class="title">Green Energy Brief</div>
+    <div class="rule2">
+      <span><b>Issue No 07</b></span>
+      <span>Southeast Europe · Solar and Storage Intelligence</span>
+      <span><b>11 September 2026</b></span>
+    </div>
+  </header>
+
+  <!-- ARC NOTE -->
+  <div class="arc-note">
+    Brief No 05 marked the moment the EU inverter restrictions took effect. Brief No 06 covered the
+    Danube at a record low and the regional grid on emergency footing. This issue was meant to cover
+    what the emergency left behind. It has not left. Romania extended its state of alert on 28.08.2026,
+    Cernavoda Unit 1 has been in safe shutdown since 27.07.2026, and after six weeks the fastest thing
+    the country has produced is not generation capacity. It is a permitting shortcut.
+  </div>
+
+  <!-- 01 IN FOCUS -->
+  <section class="section">
+    <div class="section-label"><span>01 In Focus</span><span class="sub">Romania</span></div>
+    <h2 class="head">Six weeks into an emergency, the only thing Romania built quickly was a shortcut</h2>
+    <div class="lede">
+      <p>The state of alert was declared on 31.07.2026 by decision No 15/2026 of the National Committee for Emergency Situations, published in Monitorul Oficial I No 637 of the same day, and extended on 28.08.2026 by decision No 21/2026, Monitorul Oficial I No 722. Under it, ANRE and Transelectrica were instructed to fast-track the authorisation of completed solar, wind and storage projects still waiting on operating permits. More than 400 MW cleared within days, about one third of it storage.</p>
+      <p>None of it was built during the crisis. It was already standing, commissioned and connected, held behind paperwork. The drought did not add generation to the Romanian system, it removed an administrative queue. Cernavoda Unit 1 has been in safe shutdown since 27.07.2026 and Unit 2 is running on volatile parameters, so the queue is still the only lever that moves at speed.</p>
+      <p>The precedent is now spreading. On 26.08.2026 lawmakers overrode the president's veto to simplify environmental permitting for strategic hydropower. On 09.09.2026 the two promised support programmes landed with a number attached: EUR 650 million for public institutions to install solar and batteries for self-consumption. Two days earlier the government set out a target of 10 GW of new wind and solar by 2030 with storage as the stated focus.</p>
+      <p>Deregulation under pressure is easy to start and hard to aim. The alert has now run past the month it was declared for, and on 10.09.2026 Romania was still importing around 472 MW with OPCOM at EUR 202.46/MWh. The open question for the rest of 2026 is not whether the shortcut outlives the emergency. It is whether anything else in the system can be made to move at the same speed once the emergency ends.</p>
+    </div>
+    <div class="kv">
+      <div><div class="l">Fast-tracked</div><div class="v">400 MW</div></div>
+      <div><div class="l">Storage share</div><div class="v">~1/3</div></div>
+      <div><div class="l">Alert extended</div><div class="v">28.08</div></div>
+      <div><div class="l">Support launched</div><div class="v">EUR 650M</div></div>
+    </div>
+  </section>
+
+  <!-- 02 MARKET SNAPSHOT -->
+  <section class="section">
+    <div class="section-label"><span>02 Market Snapshot</span><span class="sub">Day-ahead base prices for 10.09.2026 delivery</span></div>
+    <div class="markets">
+
+      <div class="mrow">
+        <div class="cc">BG</div>
+        <div>
+          <div class="nm">Bulgaria</div>
+          <div class="ev">IBEX traded 3.03 TWh day-ahead in August, up 3% on July and 20.6% year on year, with the baseload average at EUR 143.15/MWh against EUR 111.74 in July. The reported average peak price came in below baseload at EUR 111.15/MWh. Kozloduy on the brink of emergency output reduction on 17.08.2026 as the Danube approached a critical level. The RESTORE commissioning deadline of 31.07.2026 has passed, with official and independent counts of the BESS fleet differing by roughly 1.4 GW.</div>
+          <div class="bess">Storage: ESO reported 3 432 MW installed at 20.05.2026, Capital counted 4 823 MW in June from its own project list. Lovech BESS 124.1 MW / 496.4 MWh commissioned, described by the Ministry of Energy as the largest in the EU. IPS battery factory near Sofia in production at 3 GWh/yr.</div>
+        </div>
+        <div class="fig"><span class="price">188.50 <span>EUR/MWh</span></span><b>5.98</b> GW PV <span class="vint">12.2025</span><br>0.72 GW wind <span class="vint">07.2026</span><br>2.71 GW hydro <span class="vint">NEK</span><br><span class="status s-on">BESS Active</span><span class="basis">Capacities: MW AC</span></div>
+      </div>
+
+      <div class="mrow">
+        <div class="cc">RO</div>
+        <div>
+          <div class="nm">Romania</div>
+          <div class="ev">Still importing about 472 MW net on 10.09.2026 with Cernavoda unavailable. Emergency permitting cleared over 400 MW of finished projects. Two subsidy programmes worth EUR 650 million for solar and BESS at public institutions launched on 09.09.2026, and a target of 10 GW of new wind and solar by 2030 was set out on 08.09.2026.</div>
+          <div class="bess">Storage: over 400 MW fast-tracked under the alert, about one third of it batteries. Nova Power and Gas cleared the first 200.6 MWh of an 802.4 MWh scheme. Enery is building 543 MW at Ogrezeni plus a separate 400 MW / 400 MWh standalone system. Premier Energy 200 MW / 400 MWh near Iasi under construction.</div>
+        </div>
+        <div class="fig"><span class="price">202.46 <span>EUR/MWh</span></span><b>8.50</b> GW PV <span class="vint">08.2026</span> <span class="vint">basis n/s</span><br>3.30 GW wind <span class="vint">12.2025</span><br>6.40 GW hydro <span class="vint">08.2026</span><br><span class="status s-on">BESS Active</span><span class="basis">Capacities: MW AC</span></div>
+      </div>
+
+      <div class="mrow">
+        <div class="cc">GR</div>
+        <div>
+          <div class="nm">Greece</div>
+          <div class="ev">The government announced a plan on 08.09.2026 to cut electricity prices for final consumers by 30% over three years. The EUR 4.8 billion Social Climate Plan was approved on 27.08.2026. Reported 25.08.2026: 724 MW of new PV added in May alone, with the storage queue still at zero.</div>
+          <div class="bess">Storage: 900 MW awarded across three tender rounds, none of it operational. Developer attention has moved to the 4.7 GW merchant standalone programme with priority connection and no subsidy. Curtailment forecast at 3.3 to 3.7 TWh for 2026, around 12% of renewable output.</div>
+        </div>
+        <div class="fig"><span class="price">183.60 <span>EUR/MWh</span></span><b>11.50</b> GW PV <span class="vint">12.2025</span><br>6.02 GW wind <span class="vint">06.2026</span><br>3.22 GW hydro <span class="vint">PPC</span><br><span class="status s-off">BESS Blocked</span><span class="basis">Capacities: MW AC</span></div>
+      </div>
+
+      <div class="mrow">
+        <div class="cc">RS</div>
+        <div>
+          <div class="nm">Serbia</div>
+          <div class="ev">SEEPEX rose 60% in a single day to EUR 174.39/MWh for 10.09 delivery, with a maximum hour at EUR 350 and off-peak averaging EUR 188.2 against a peak average of EUR 160.5. EPS issued a call on 07.09.2026 to acquire or co-develop renewable energy projects. Minister Dedovic Handanovic said on 09.09.2026 that the construction tender for the Bistrica pumped storage plant is set for 2027. Djerdap recovering as the Danube rises.</div>
+          <div class="bess">Storage: grid connection contracts for 724 MW signed. The Hyundai and UGT programme covers six solar plants totalling 1 GW with up to 200 MW / 400 MWh of storage across the sites. Nocaj 1, 90 MW PV, is being paired with a 36 MWh system.</div>
+        </div>
+        <div class="fig"><span class="price">174.39 <span>EUR/MWh</span></span><b>0.38</b> GW PV <span class="vint">06.2026</span><br>0.81 GW wind <span class="vint">12.2025</span><br>3.01 GW hydro <span class="vint">EPS</span><br><span class="status s-mid">BESS Early</span><span class="basis">Capacities: MW AC</span></div>
+      </div>
+
+      <div class="mrow">
+        <div class="cc">MK</div>
+        <div>
+          <div class="nm">North Macedonia</div>
+          <div class="ev">Cumulative solar passed 1 GW during 2025 and stands near 1.2 GW, the largest base of any Western Balkan market. PowerChina Jiangxi selected on 21.08.2026 to build a 30 MW solar plant. Nomagas contracted the design and build of a gas interconnector with Serbia on 28.08.2026.</div>
+          <div class="bess">Storage: the 2026 annual construction plan cleared 19 standalone facilities at 637.5 MW / 1 495 MWh, plus 77 integrated systems totalling 3 466 MWh. Ministry grant call for standalone BESS open. Intraday market operational since 06.05.2026.</div>
+        </div>
+        <div class="fig"><span class="price">133.35 <span>EUR/MWh</span></span><b>1.20</b> GW PV <span class="vint">12.2025</span><br>0.08 GW wind <span class="vint">01.2026</span><br>0.72 GW hydro <span class="vint">12.2024</span><br><span class="status s-mid">BESS Early</span><span class="basis">Capacities: MW AC</span></div>
+      </div>
+
+      <div class="mrow">
+        <div class="cc">ME</div>
+        <div>
+          <div class="nm">Montenegro</div>
+          <div class="ev">Investment screening for strategic sectors, energy included, reported on 14.08.2026. A call opened on 28.08.2026 for US firms on the Adriatic-Ionian Corridor.</div>
+          <div class="bess">Storage: no operational grid-scale projects. The first solar premium auction was annulled after bids failed procedural and grid eligibility tests, with a combined solar and wind round due under the 2026 to 2028 incentive programme. The AFD and CGES EUR 25 million substation loan enables up to 350 MW of hydropower integration.</div>
+        </div>
+        <div class="fig"><span class="price">154.67 <span>EUR/MWh</span></span><b>0.03</b> GW PV <span class="vint">12.2024</span><br>0.12 GW wind <span class="vint">01.2026</span><br>0.65 GW hydro <span class="vint">EPCG</span><br><span class="status s-mid">BESS Early</span><span class="basis">Capacities: MW AC</span></div>
+      </div>
+
+      <div class="mrow">
+        <div class="cc">BA</div>
+        <div>
+          <div class="nm">Bosnia and Herzegovina</div>
+          <div class="ev">The Republika Srpska utility opened a tender on 28.08.2026 for the 60 MW Hrgud wind farm, with bidders expected to arrange financing themselves.</div>
+          <div class="bess">Solar capacity is genuinely disputed here: IRENA records 212 MW at end 2024, Bankwatch 608 MW for the same date, and the state regulator DERK counts 305.59 MW in larger plants only. The three are measuring different things and none of them says which. Storage: no operational projects. Coal still dominant in the generation mix. The Federation is moving toward issuing guarantees of origin, a precondition for credible PPA and green tariff products. CBAM lobbying continues with WB5 partners.</div>
+        </div>
+        <div class="fig"><span class="price none">No exchange quote</span><b>0.21 / 0.61</b> GW PV <span class="vint">disputed</span><br>0.22 GW wind <span class="vint">12.2024</span><br>2.30 GW hydro <span class="vint">12.2024</span><br><span class="status s-non">No BESS</span><span class="basis">Capacities: MW AC</span></div>
+      </div>
+
+      <div class="mrow">
+        <div class="cc">XK</div>
+        <div>
+          <div class="nm">Kosovo</div>
+          <div class="ev">The Zatriq 70 MW wind park delivered first power to the grid on 25.08.2026, the fourth wind plant in the market. Estimated output 185 GWh/y.</div>
+          <div class="bess">Storage: no operational projects. The operational solar base was 21 MW at end 2025 per IRENA, against a 100 MW KEK plant under construction and a 105 MW auction project that broke ground in July 2026. Storage target of 170 MW by 2031 per the NECP. Wind fleet now four plants: Zatriq 70 MW, Selac 104.1 MW, Kitka 32.4 MW and Golesh 1.35 MW.</div>
+        </div>
+        <div class="fig"><span class="price none">No exchange quote</span><b>0.02</b> GW PV <span class="vint">12.2025</span><br>0.21 GW wind <span class="vint">09.2026</span><br>0.10 GW hydro <span class="vint">01.2026</span><br><span class="status s-non">No BESS</span><span class="basis">Capacities: MW AC</span></div>
+      </div>
+
+    </div>
+    <div class="legend"><b>Prices</b>: day-ahead base prices for 10.09.2026 delivery, reported by Serbia Energy on 10.09.2026 from OPCOM, IBEX, HEnEx, SEEPEX, BELEN and the Macedonian exchange. Bulgaria's August monthly series is from IBEX via the same source. Bosnia and Herzegovina and Kosovo have no liquid day-ahead quote of their own. Every capacity figure in this table was also sourced for this issue. <b>Basis</b>: capacities are maximum net generating capacity, that is AC. ENTSO-E and IRENA both publish on that definition, and the Greek, Serbian and Macedonian solar figures are grid-connected capacity, which is the same side of the inverter. Wind and hydro are generator ratings and are AC by construction. The one exception is Romania, where RPIA does not state whether its solar total is DC or AC; it is marked accordingly. This matters: a DC module rating typically runs 10 to 30% above the AC rating of the same plant, so DC and AC totals are not interchangeable. Note also that ENTSO-E Transparency requires reporting only for units of 100 MW or more, so its national totals understate small and distributed capacity. <b>PV</b>: Bulgaria 5 984 MW (ENTSO-E via pv magazine 02.02.2026) · Romania above 8.5 GW (RPIA via pv magazine 04.08.2026) · Greece about 11.5 GW (Helapco via pv magazine 07.04.2026) · Serbia 379 MW at mid-2026 (RES Serbia) · North Macedonia about 1.2 GW (Solar Macedonia via pv magazine 18.02.2026) · Montenegro about 30 MW and Kosovo 21 MW (IRENA) · Bosnia and Herzegovina disputed, 212 MW (IRENA) against 608 MW (Bankwatch) for the same date, with 305.59 MW in larger plants per regulator DERK. <b>Wind</b>: Bulgaria 719 MW operating (Capital 17.07.2026) · Romania 3 GW (WindEurope) plus 330 MW added in 2025 (energynomics 24.02.2026) · Greece 6 017 MW at end H1 2026 (ELETAEN) · Serbia 807 MW (The Wind Power) · North Macedonia Bogdanci 36.8 MW, Bogoslovec 36 MW and Dren 2 at 9.6 MW (Bankwatch) · Montenegro Krnovo 72 MW and Mozura 46 MW, with Gvozd at 54 MW not confirmed in operation · Bosnia and Herzegovina 219 MW at end 2024 (Bankwatch) · Kosovo as the sum of the four named plants. <b>Hydro</b>: Bulgaria 2 713 MW in turbine mode across 30 NEK plants, excluding independent small hydro · Romania 6.4 GW across 188 plants (Hidroelectrica 11.08.2026) · Greece 3 217.4 MW (PPC, sole hydro operator) · Serbia 3 008 MW across 16 plants (EPS) · North Macedonia 587 MW large plus 128 MW small (Bankwatch) · Montenegro Perucica 307 MW and Piva 342 MW (EPCG), excluding small hydro · Bosnia and Herzegovina 2 129 MW large plus 169 MW small (Bankwatch) · Kosovo Ujmani 35 MW plus the small hydro built to date (Bankwatch).</div>
+  </section>
+
+  <!-- 03 BESS TRACKER -->
+  <section class="section">
+    <div class="section-label"><span>03 BESS Tracker</span><span class="sub">Active and under construction · September 2026</span></div>
+    <table class="tracker">
+      <thead>
+        <tr>
+          <th>Mkt</th>
+          <th>Project</th>
+          <th class="r">MW</th>
+          <th class="r">MWh</th>
+          <th>Status</th>
+          <th>Note</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="cc">BG</td><td>Total operational BESS</td>
+          <td class="num">3 432 / 4 823</td><td class="num">n/a</td>
+          <td class="st"><span class="status s-mid">Disputed</span></td>
+          <td class="note">ESO official reporting at 20.05.2026 gives 3 432 MW. Capital counted 4 823 MW in June 2026 project by project.</td>
+        </tr>
+        <tr>
+          <td class="cc">BG</td><td>Lovech, Balkan Industrial Zone</td>
+          <td class="num">124.1</td><td class="num">496.4</td>
+          <td class="st"><span class="status s-on">Operational</span></td>
+          <td class="note">Ministry of Energy calls it the largest in the EU. Co-located with 106.2 MWp PV on an 86.2 MW connection.</td>
+        </tr>
+        <tr>
+          <td class="cc">BG</td><td>IPS battery factory, Sofia</td>
+          <td class="num">n/a</td><td class="num">3 000/yr</td>
+          <td class="st"><span class="status s-on">In production</span></td>
+          <td class="note">Expanding to 5 GWh/yr. Domestic cell and pack supply is now a regional factor.</td>
+        </tr>
+        <tr>
+          <td class="cc">RO</td><td>Emergency fast-track approvals</td>
+          <td class="num">400+</td><td class="num">n/a</td>
+          <td class="st"><span class="status s-on">Authorised</span></td>
+          <td class="note">Completed projects awaiting operating permits, cleared within days under the energy alert. Around one third storage.</td>
+        </tr>
+        <tr>
+          <td class="cc">RO</td><td>Enery Ogrezeni, Giurgiu</td>
+          <td class="num">543</td><td class="num">1 000+</td>
+          <td class="st"><span class="status s-mid">Under construction</span></td>
+          <td class="note">Paired with 761 MWp PV. Targeted for completion by end 2027. Subsidised BESS component.</td>
+        </tr>
+        <tr>
+          <td class="cc">RO</td><td>Enery standalone BESS</td>
+          <td class="num">400</td><td class="num">400</td>
+          <td class="st"><span class="status s-mid">In development</span></td>
+          <td class="note">80 containers in 20 groups, one converter each. Grid connection via 400 kV underground cable.</td>
+        </tr>
+        <tr>
+          <td class="cc">RO</td><td>Nova Power and Gas, phase 1</td>
+          <td class="num">n/a</td><td class="num">200.6 of 802.4</td>
+          <td class="st"><span class="status s-mid">Setup authorisation</span></td>
+          <td class="note">Part of a scheme including a PV park and a 220/20 kV substation. Phase 1 clearing final approval.</td>
+        </tr>
+        <tr>
+          <td class="cc">RO</td><td>Premier Energy, Iasi</td>
+          <td class="num">200</td><td class="num">400</td>
+          <td class="st"><span class="status s-mid">Under construction</span></td>
+          <td class="note">Q4 2026 to Q1 2027 COD. EUR 100 million financing. Commissioning timing now carries system value.</td>
+        </tr>
+        <tr>
+          <td class="cc">RS</td><td>7 standalone, EMS contracts</td>
+          <td class="num">724</td><td class="num">n/a</td>
+          <td class="st"><span class="status s-mid">Grid contracts</span></td>
+          <td class="note">No construction start confirmed. Separately, Nocaj 1 (90 MW PV) is being paired with a 36 MWh system supplied by Pomega.</td>
+        </tr>
+        <tr>
+          <td class="cc">MK</td><td>2026 annual plan, standalone</td>
+          <td class="num">637.5</td><td class="num">1 495</td>
+          <td class="st"><span class="status s-mid">Cleared in plan</span></td>
+          <td class="note">19 standalone facilities cleared in the 2026 construction plan, plus 77 integrated systems at 3 466 MWh. Grant call open.</td>
+        </tr>
+        <tr>
+          <td class="cc">GR</td><td>3 tender programmes</td>
+          <td class="num">900</td><td class="num">n/a</td>
+          <td class="st"><span class="status s-off">0 MW connected</span></td>
+          <td class="note">Awarded across 2023, 2024 and 2025 rounds. None operational.</td>
+        </tr>
+        <tr>
+          <td class="cc">GR</td><td>Merchant standalone programme</td>
+          <td class="num">4 700</td><td class="num">n/a</td>
+          <td class="st"><span class="status s-mid">Open</span></td>
+          <td class="note">Utility-scale standalone projects with priority connection, merchant basis, no subsidy. Where developer attention has moved.</td>
+        </tr>
+        <tr>
+          <td class="cc">XK</td><td>NECP storage target</td>
+          <td class="num">170</td><td class="num">n/a</td>
+          <td class="st"><span class="status s-non">Target only</span></td>
+          <td class="note">Target set for 2031. No operational storage. Wind fleet reached four plants with Zatriq on 25.08.2026.</td>
+        </tr>
+        <tr>
+          <td class="cc">ME</td><td>No storage pipeline</td>
+          <td class="num">n/a</td><td class="num">n/a</td>
+          <td class="st"><span class="status s-non">None</span></td>
+          <td class="note">First solar premium auction annulled on procedural and grid eligibility grounds. Combined solar and wind round pending.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 04 DEAL FLOW -->
+  <section class="section">
+    <div class="section-label"><span>04 Deal Flow</span><span class="sub">Selected transactions, July to early September 2026</span></div>
+    <div class="deals">
+
+      <div class="deal">
+        <div><div class="size">2 307 MW</div><span class="cc">RO</span></div>
+        <div class="txt"><strong>Eurowind Energy Romania secures grid connection approvals.</strong> Technical grid connection approvals for 2 307.4 MW across seven wind, PV and BESS projects, issued in June and announced on 26.08.2026. The largest are 1 188 MW of wind in Botosani county and 900 MW in Albesti, Constanta. Delivery depends on grid reinforcement and building permits, with construction on the Botosani cluster scheduled from around 2031.</div>
+      </div>
+
+      <div class="deal">
+        <div><div class="size">EUR 112M</div><span class="cc">XK</span></div>
+        <div class="txt"><strong>Zatriq wind park energised in Kosovo, financing closed with a four-party package.</strong> Calik Renewables delivered first power on 25.08.2026 from a 70 MW plant using twelve GE Vernova 6.1 MW turbines at 900 to 1 000 m altitude, connected by a 110 kV overhead line. Estimated output 185 GWh/y. Backed by a PPA, financed by Helaba, Deutsche Bank, NEXI and GE Vernova, with SERV cover. Developed by Eurokos subsidiary EV Wind Park, which retained 25%.</div>
+      </div>
+
+      <div class="deal">
+        <div><div class="size">2.4 GWh</div><span class="cc">BG</span></div>
+        <div class="txt"><strong>Sunotec and Sungrow BESS supply agreement, plus RESTORE financing.</strong> Agreement signed in late July to deploy 2.4 GWh of BESS across co-located solar projects in Bulgaria and wider Europe. Sunotec separately secured financing for seven standalone BESS projects approved for RESTORE subsidies, held wholly or through the Solaris Holding joint venture.</div>
+      </div>
+
+      <div class="deal">
+        <div><div class="size">EUR 95M</div><span class="cc">BA</span></div>
+        <div class="txt"><strong>Hrgud tender halted twelve days after it opened.</strong> ERS launched an EPC plus finance tender in late August for the 60 MW plant near Berkovici, roughly 160 GWh/y, almost eleven years after obtaining the concession. Bidders had to bring the financing and show a wind farm of at least 30 MW worth at least EUR 25 million delivered in the past five years, plus substation and line experience. A formal complaint arrived twelve days in and the appeal has stopped the procedure on its original timetable. Eleven years to tender, twelve days to stop.</div>
+      </div>
+
+      <div class="deal">
+        <div><div class="size">EUR 16M</div><span class="cc">RO</span></div>
+        <div class="txt"><strong>MVM Energie Romania authorised for the Arcus PV park.</strong> ANRE issued the setup authorisation for a 24.6 MW plant in Arcus, Covasna county, on roughly 20 hectares, with maximum export capacity of 21.21 MW. Commissioning targeted for mid-2027. MVM Group is targeting more than 3 000 MW of new renewable capacity by 2035.</div>
+      </div>
+
+      <div class="deal">
+        <div><div class="size">Open call</div><span class="cc">RS</span></div>
+        <div class="txt"><strong>EPS moves to buy rather than build.</strong> Serbia's state utility issued a public call on 07.09.2026 to acquire or co-develop renewable energy projects. A utility buying developed pipeline instead of originating it is the clearest available signal on where permitting capacity sits in that market, and it puts a bid under every project that already holds a connection approval.</div>
+      </div>
+
+      <div class="deal">
+        <div><div class="size">EUR 4.3M</div><span class="cc">BA</span></div>
+        <div class="txt"><strong>Energoinvest wins grid contract in Bosnia and Herzegovina.</strong> Contract worth BAM 8.42 million reported on 20.08.2026. Small in absolute terms, notable as one of the few grid-side awards in the market.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 05 POLICY WATCH -->
+  <section class="section">
+    <div class="section-label"><span>05 Policy Watch</span><span class="sub">Regulatory developments, August to early September 2026</span></div>
+    <div class="policy">
+
+      <div class="pitem wide">
+        <div class="country">Romania</div>
+        <p><strong>The state of alert was extended, not lifted.</strong> Declared on 31.07.2026 by CNSU decision No 15/2026, Monitorul Oficial I No 637, and extended on 28.08.2026 by decision No 21/2026, Monitorul Oficial I No 722. The extending act records Cernavoda Unit 1 in safe shutdown since 27.07.2026 and Unit 2 operating on volatile parameters. Under the alert, ANRE and Transelectrica fast-track authorisation of completed projects waiting on operating permits, hydropower is prioritised during the evening peak and all available thermal capacity runs at full output. On 09.09.2026 the two promised support programmes were launched, worth EUR 650 million combined, for public institutions installing solar and batteries for self-consumption. On 08.09.2026 the government set out a target of 10 GW of new wind and solar by 2030 with storage as the stated focus. Acting PM Bolojan argued that batteries should become mandatory for future prosumers. The grid capacity auction on 30.10.2026 remains on schedule.</p>
+      </div>
+
+      <div class="pitem">
+        <div class="country">Region and EU</div>
+        <p><strong>Danube recovering, and the first Slovenian storage scheme lands.</strong> Hungary restarted a turbine at Paks on rising water levels and emergency works, reported 20.08.2026. Slovenia is launching its first state aid scheme for standalone BESS, announced 03.08.2026 and not yet published as a numbered act, making it the third market in the region to fund storage directly. The Energy Community Secretariat assessed the first NECP cycle on 17.08.2026 and put the transition funding requirement at EUR 151 billion.</p>
+      </div>
+
+      <div class="pitem">
+        <div class="country">Bulgaria</div>
+        <p><strong>The RESTORE commissioning deadline of 31.07.2026 has passed, with no third round announced.</strong> Round one ran as procedure BG-RRP-4.034 under investment C4.I8 of the national recovery plan and approved BGN 1 149 013 428, about EUR 587 million, for 82 projects totalling 9.71 GWh. Round two ran as BG-RRP-4.036 under C13.I2, closing for applications on 19.11.2025, and signed off BGN 228.9 million for 31 projects exceeding 4 GWh. Aurora Energy Research estimates that of roughly 5 GW of supported capacity in the pipeline, only about 1.8 GW will be operational in 2026, reaching 3 GW by 2030, and points to a shortage of contractors.</p>
+      </div>
+
+      <div class="pitem">
+        <div class="country alert">Greece</div>
+        <p><strong>A 30% cut in end-user electricity prices announced on 08.09.2026, and a EUR 4.8 billion Social Climate Plan approved on 27.08.2026.</strong> Both are aimed at the consumer. The three-year price plan and the Social Climate Plan together do nothing for the producer side: curtailment holds at 3.3 to 3.7 TWh for 2026, around 12% of renewable output, CfD parks lost roughly half their revenue year on year in April, and 724 MW was still added in May. None of the 900 MW awarded across three storage tenders is connected.</p>
+      </div>
+
+      <div class="pitem">
+        <div class="country">Bosnia and Herzegovina</div>
+        <p><strong>The Federation moved closer to issuing guarantees of origin, so far as an administrative step rather than a published act.</strong> Without them, corporate PPAs and green tariff products in the market have nothing to certify against. A small regulatory step with disproportionate commercial effect. Sarajevo Energy and Climate Week runs 21 to 25 September.</p>
+      </div>
+
+      <div class="pitem">
+        <div class="country">Serbia</div>
+        <p><strong>The Bistrica pumped storage construction tender is set for 2027, minister Dedovic Handanovic said on 09.09.2026.</strong> Engineering design and land expropriation are under way, with a consultant sought on 03.09.2026 to complete the tender documentation. Serbia is answering its flexibility problem with pumped storage on a decade horizon while 724 MW of contracted battery capacity has still not started construction.</p>
+      </div>
+
+      <div class="pitem">
+        <div class="country">Montenegro</div>
+        <p><strong>A draft law introduces investment screening in strategic sectors, energy included, reported 14.08.2026.</strong> Still a draft, so no promulgation number yet. A first formal screening mechanism. Relevant to any foreign-backed generation or storage entry into the market.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 06 ELEVAT ANGLE -->
+  <section class="section">
+    <div class="section-label"><span>06 Elevat Angle</span><span class="sub">Position</span></div>
+    <div class="angle">
+      <p><strong>A note on our own numbers first.</strong> The snapshot above carries twenty-four capacity figures. I sourced all twenty-four for this issue rather than carrying them forward, and six of them turned out to be wrong by more than a factor of two. North Macedonia was carried at 0.30 GW of solar and is nearer 1.2 GW, which makes it the largest solar base in the Western Balkans rather than one of the smallest. Kosovo was carried at 0.10 GW against 21 MW at IRENA, and its hydro was three times too high. Montenegro's solar was three times too high, while Bosnia's wind was less than half the real figure. Bosnia's solar I could not resolve at all: IRENA says 212 MW at end 2024, Bankwatch says 608 MW for the same date, and the regulator counts 305.59 MW in larger plants. It is printed above as disputed because that is what it is.</p>
+      <p><strong>Every figure now shows what it was checked against.</strong> That is the change I would ask other people in this market to make, because the errors above were not exotic. They came from carrying numbers forward without asking where they came from, which is the same habit that produces a 1 391 MW disagreement about how much storage Bulgaria has.</p>
+      <p><strong>Two markets printed the same inversion this month.</strong> In Bulgaria the reported average peak price for August came in below the baseload average, EUR 111.15 against EUR 143.15/MWh. In Serbia on 10.09 the off-peak average, EUR 188.2, sat above the peak average of EUR 160.5, with a maximum hour at EUR 350. When the expensive hours stop being the peak hours, a solar park is no longer selling into the shape it was modelled against. That is cannibalisation showing up in the settlement data rather than in a forecast, and it is the strongest argument I have seen this year for pairing an existing park with storage rather than building another one.</p>
+      <p><strong>The number that matters this month is not the Danube level. It is 1 391 MW.</strong> That is the gap between the 3 432 MW of battery storage ESO reported for 20.05.2026 and the 4 823 MW Capital counted in June from its own project-by-project list. Both numbers are defensible. They measure different things, one an operator register and the other a journalist's tally of what has been energised. I do not think either is wrong. I think the market has grown faster than the reporting around it, and an asset base nobody can count precisely is an asset base nobody can dispatch precisely.</p>
+      <p><strong>The RESTORE deadline passed on 31.07.2026 and the honest answer is that we do not yet know what was commissioned.</strong> Round one carried EUR 587 million across 82 projects and 9.71 GWh. Round two added BGN 228.9 million across 31 projects and more than 4 GWh. Aurora Energy Research puts only about 1.8 GW of a roughly 5 GW supported pipeline in operation during 2026. If that estimate holds, the binding constraint in Bulgaria was never the subsidy and never the equipment. It was the number of teams able to build.</p>
+      <p><strong>Romania proved the same point from the other direction.</strong> Over 400 MW moved from paperwork to authorised in days, not because anything was built but because somebody decided to clear the queue. In our own permitting and owner's engineer work the pattern is the same across all eight markets we cover: the technical file is rarely the delay. The delay is the administrative throughput sitting on top of it, and it is the one input no investor can price. Five weeks later Romania put EUR 650 million behind solar and batteries at public institutions. That money will meet the same queue the fast-track suspended, and there is no emergency running to suspend it a second time.</p>
+      <p><strong>The smaller markets made the same point with their own arithmetic this month.</strong> Kosovo energised 70 MW of wind on a EUR 112 million package assembled from four institutions and an export credit insurer, in a market with no storage at all. Republika Srpska tendered 60 MW and asked the bidder to bring the financing with it. Montenegro annulled its first solar auction because the bids did not survive procedural and grid eligibility checks. Greece, with 11.5 GW of PV installed, still has zero of 900 MW of awarded storage connected. None of those four outcomes was decided by technology or resource. All four were decided by whether the institutional side of the project was ready.</p>
+      <p><strong>What I would do with this going into 2027.</strong> Treat contractor availability, not module or cell pricing, as the scarce input in any BESS schedule signed from here. Assume commissioning slippage in merchant models rather than subsidy risk. And where the option exists, hybridising an existing amortised PV park with storage or wind beats greenfield on the only metric that is now genuinely tight, which is time to energisation. The grid connection is already there. That is worth more this year than it was last year.</p>
+      <div class="byline">
+        Venelin Dimitrov, Managing Consultant, Elevat Solar Consulting<br>
+        September 2026 · office@elevatsolar.eu · elevatsolar.eu
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="brief-footer">
+    <div class="disclaimer">Data sourced from ENTSO-E Transparency Platform, Balkan Green Energy News, Capital.bg, CEENERGYNEWS, pv magazine, Energy Storage News, Romania Insider, The Diplomat Bucharest, Atlantic Council, Balkan Insight, SEEnews, IRENA, Bankwatch, WindEurope, ELETAEN, Helapco, RPIA, RES Serbia, Solar Macedonia, energynomics, The Wind Power, DERK, Serbia Energy, Monitorul Oficial and the operators NEK, ESO, Hidroelectrica, PPC, EPS, ERS and EPCG. Each capacity figure in the Market Snapshot carries the date it was verified and the source it was checked against; those sources are named in full beneath that table. This brief is for informational purposes only and does not constitute investment advice.</div>
+    <div class="footer-right">
+      &copy; Elevat Solar Consulting 2026<br>
+      <a href="https://elevatsolar.eu">elevatsolar.eu</a><br>
+      Issue No 08 · 11 October 2026
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
