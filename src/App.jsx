@@ -1,16 +1,16 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 
-const sectionIds = ["about", "services", "projects", "contact"];
+const sectionIds = ["about", "services", "projects", "insights", "contact"];
 const NEWSLETTER_SUBSCRIBE_URL = "https://elevatsolar.eu/brief.html";
 const copy = {
   en: {
     brand: "elevat solar",
-    nav: ["about", "services", "projects", "contact"],
+    nav: ["about", "services", "projects", "insights", "contact"],
     lang: "language",
     heroTitle: "Independent solar engineering for developers, EPCs and investors",
     heroText: "Independent technical partner for solar and storage projects across design review, due diligence, and delivery support.",
     heroCta: "Review our scope",
-    eyebrows: { services: "What we do", projects: "Selected work", markets: "Where we operate", why: "Why elevat solar", contact: "Get in touch" },
+    eyebrows: { services: "What we do", projects: "Selected work", insights: "Insights", markets: "Where we operate", why: "Why elevat solar", contact: "Get in touch" },
     footerTagline: "independent engineering for solar and storage",
     whatTitle: "What we do",
     whatText: "We combine bankable engineering standards with practical project execution support from pre-development to commissioning.",
@@ -26,6 +26,22 @@ const copy = {
       { title: "South battery solar platform", meta: "Bulgaria · 42 MWp PV + 68 MWh BESS" },
       { title: "Merchant portfolio advisory", meta: "Romania · 120 MW pipeline technical DD" },
       { title: "C&I rooftop rollout program", meta: "Bulgaria · Multi-site design standardization" },
+    ],
+    insightsTitle: "Insights",
+    insightsText: "Technical analysis of the Southeast European solar and storage market.",
+    insightsCta: "Read the article",
+    insightsLangNote: "",
+    insights: [
+      {
+        title: "How to assess the bankability of a BESS project in Southeast Europe",
+        meta: "Article · September 2026",
+        href: "/bess-bankability-see.html",
+      },
+      {
+        title: "Green Energy Brief",
+        meta: "Monthly market and technical brief · archive",
+        href: "/brief.html",
+      },
     ],
     marketsTitle: "Markets",
     markets: [
@@ -84,12 +100,12 @@ const copy = {
   },
   bg: {
     brand: "elevat solar",
-    nav: ["за нас", "услуги", "проекти", "контакт"],
+    nav: ["за нас", "услуги", "проекти", "публикации", "контакт"],
     lang: "език",
     heroTitle: "Независимо соларно инженерство за developer-и, EPC и инвеститори",
     heroText: "Независим технически партньор за solar и storage проекти: design review, due diligence и подкрепа при изпълнение.",
     heroCta: "Вижте обхвата",
-    eyebrows: { services: "Какво правим", projects: "Избрани проекти", markets: "Където работим", why: "Защо elevat solar", contact: "Свържете се" },
+    eyebrows: { services: "Какво правим", projects: "Избрани проекти", insights: "Публикации", markets: "Където работим", why: "Защо elevat solar", contact: "Свържете се" },
     footerTagline: "независимо инженерство за solar и storage",
     whatTitle: "Какво правим",
     whatText: "Комбинираме банкируеми инженерни стандарти с практическа подкрепа от pre-development до commissioning.",
@@ -105,6 +121,24 @@ const copy = {
       { title: "South battery solar platform", meta: "България · 42 MWp PV + 68 MWh BESS" },
       { title: "Merchant portfolio advisory", meta: "Румъния · 120 MW pipeline technical DD" },
       { title: "C&I rooftop rollout program", meta: "България · Multi-site стандартизация на дизайна" },
+    ],
+    insightsTitle: "Публикации",
+    insightsText: "Технически анализи на пазара за solar и storage в Югоизточна Европа.",
+    insightsCta: "Прочети статията",
+    insightsLangNote: "на английски език",
+    insights: [
+      {
+        title: "Как се оценява банкируемостта на BESS проект в Югоизточна Европа",
+        meta: "Статия · септември 2026",
+        href: "/bess-bankability-see.html",
+        en: true,
+      },
+      {
+        title: "Green Energy Brief",
+        meta: "Месечен пазарен и технически бриф · архив",
+        href: "/brief.html",
+        en: true,
+      },
     ],
     marketsTitle: "Пазари",
     markets: [
@@ -441,6 +475,33 @@ function App() {
                     <span className="project-arrow" aria-hidden="true">↗</span>
                   </div>
                 </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section" id="insights">
+          <LogoBg size={220} rotate={18} dur="19s" delay="1.6s" style={{ top: "10%", right: "4%" }} />
+          <div className="wrap">
+            <div className="reveal">
+              <p className="section-eyebrow">{t.eyebrows.insights}</p>
+              <h2 className="section-heading">{t.insightsTitle}</h2>
+              <p className="section-lead">{t.insightsText}</p>
+            </div>
+            <div className="projects-stack">
+              {t.insights.map((item, i) => (
+                <a key={i} className="card-shell project-card reveal" href={item.href}>
+                  <div className="card-core">
+                    <div>
+                      <h3 className="card-title">{item.title}</h3>
+                      <p className="project-meta">
+                        {item.meta}
+                        {item.en && t.insightsLangNote ? ` · ${t.insightsLangNote}` : ""}
+                      </p>
+                    </div>
+                    <span className="project-arrow" aria-hidden="true">↗</span>
+                  </div>
+                </a>
               ))}
             </div>
           </div>
