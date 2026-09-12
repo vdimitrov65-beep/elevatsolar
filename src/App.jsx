@@ -37,11 +37,6 @@ const copy = {
         meta: "Article · September 2026",
         href: "/bess-bankability-see.html",
       },
-      {
-        title: "Green Energy Brief",
-        meta: "Monthly market and technical brief · archive",
-        href: "/brief.html",
-      },
     ],
     marketsTitle: "Markets",
     markets: [
@@ -131,12 +126,6 @@ const copy = {
         title: "Как се оценява банкируемостта на BESS проект в Югоизточна Европа",
         meta: "Статия · септември 2026",
         href: "/bess-bankability-see.html",
-        en: true,
-      },
-      {
-        title: "Green Energy Brief",
-        meta: "Месечен пазарен и технически бриф · архив",
-        href: "/brief.html",
         en: true,
       },
     ],
