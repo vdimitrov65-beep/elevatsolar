@@ -88,10 +88,14 @@ const copy = {
     briefTitle: "Monthly solar market brief",
     briefText: "One concise monthly update on market moves and technical risk signals.",
     briefCta: "Subscribe",
-    legal: { privacy: "Privacy policy", terms: "Terms of service" },
+    skip: "Skip to content",
+    linkedinLabel: "LinkedIn profile",
+    emailLabel: "Email address",
+    videoStatLabel: "advised across 7 countries",
     errors: {
       required: "Please fill in all required fields.",
       email: "Please enter a valid email address.",
+      subscribe: "The subscription could not be saved. Please try again or write to office@elevatsolar.eu.",
     },
     success: {
       review: "Brief received. We will contact you shortly.",
@@ -102,28 +106,28 @@ const copy = {
     brand: "elevat solar",
     nav: ["за нас", "услуги", "проекти", "публикации", "контакт"],
     lang: "език",
-    heroTitle: "Независимо соларно инженерство за developer-и, EPC и инвеститори",
-    heroText: "Независим технически партньор за solar и storage проекти: design review, due diligence и подкрепа при изпълнение.",
+    heroTitle: "Независимо соларно инженерство за разработчици, EPC изпълнители и инвеститори",
+    heroText: "Независим технически партньор за проекти със соларни централи и батерии: преглед на проекта, техническа проверка (due diligence) и подкрепа при изпълнението.",
     heroCta: "Вижте обхвата",
     eyebrows: { services: "Какво правим", projects: "Избрани проекти", insights: "Публикации", markets: "Където работим", why: "Защо elevat solar", contact: "Свържете се" },
-    footerTagline: "независимо инженерство за solar и storage",
+    footerTagline: "независимо инженерство за соларни централи и съхранение",
     whatTitle: "Какво правим",
-    whatText: "Комбинираме банкируеми инженерни стандарти с практическа подкрепа от pre-development до commissioning.",
+    whatText: "Съчетаваме инженерни стандарти, приемливи за финансиращите, с практическа подкрепа по изпълнението, от подготовката на проекта до въвеждането в експлоатация.",
     services: [
-      { title: "Соларно инженерство", text: "Предварителни и детайлни проектни анализи за utility и C&I системи." },
-      { title: "Owner's engineer", text: "Независим технически контрол на обхват, качество, срок и интерфейсни рискове." },
-      { title: "Technical due diligence", text: "Технически risk screening при финансиране, придобивания и портфолио решения." },
-      { title: "Преглед на проектен риск", text: "Структуриран преглед на мрежа, разрешителни, дизайн и доставки." },
+      { title: "Соларно инженерство", text: "Предварителни и детайлни проектни анализи за големи централи и системи за бизнеса (C&I)." },
+      { title: "Инженер на собственика (Owner's engineer)", text: "Независим технически контрол на обхвата, качеството, срока и рисковете по интерфейсите." },
+      { title: "Техническа проверка (due diligence)", text: "Технически преглед на риска при финансиране, придобиване и решения за портфейли." },
+      { title: "Преглед на проектния риск", text: "Структуриран преглед на присъединяването, разрешенията, проекта и доставките." },
     ],
     projectsTitle: "Проекти",
     projectsText: "Избрани референции от последни ангажименти.",
     projects: [
-      { title: "South battery solar platform", meta: "България · 42 MWp PV + 68 MWh BESS" },
-      { title: "Merchant portfolio advisory", meta: "Румъния · 120 MW pipeline technical DD" },
-      { title: "C&I rooftop rollout program", meta: "България · Multi-site стандартизация на дизайна" },
+      { title: "Южна соларна платформа с батерии", meta: "България · 42 MWp PV + 68 MWh BESS" },
+      { title: "Консултиране на портфейл от пазарни (merchant) проекти", meta: "Румъния · техническа проверка на портфейл от 120 MW в разработка" },
+      { title: "Програма за покривни системи за бизнеса (C&I)", meta: "България · стандартизация на проектирането за множество обекти" },
     ],
     insightsTitle: "Публикации",
-    insightsText: "Технически анализи на пазара за solar и storage в Югоизточна Европа.",
+    insightsText: "Технически анализи на пазара на соларна енергия и съхранение в Югоизточна Европа.",
     insightsCta: "Прочети статията",
     insightsLangNote: "на английски език",
     insights: [
@@ -141,17 +145,17 @@ const copy = {
     ],
     marketsTitle: "Пазари",
     markets: [
-      { title: "Utility", text: "Owner-side engineering и bankability ревюта." },
-      { title: "Storage", text: "PV+BESS интеграция и техническа валидация." },
-      { title: "Commercial & industrial", text: "Site screening и capex оптимизация." },
-      { title: "Portfolio acquisitions", text: "Инвестиционно ниво на техническо филтриране." },
+      { title: "Големи централи (utility-scale)", text: "Инженеринг от страната на собственика и прегледи на банкируемостта." },
+      { title: "Съхранение (BESS)", text: "Интеграция на PV+BESS в проекта и техническа валидация." },
+      { title: "Системи за бизнеса (C&I)", text: "Оценка на площадки и оптимизация на капиталовите разходи." },
+      { title: "Придобиване на портфейли", text: "Технически филтър на риска на инвестиционно ниво." },
     ],
     whyTitle: "Защо elevat solar",
-    whyText: "Инженерство с фокус върху изпълнението за спонсори, инвеститори и EPC интерфейси.",
+    whyText: "Инженерство, насочено към изпълнението, за спонсори, инвеститори и интерфейса с EPC изпълнителите.",
     stats: [
       { value: "250+ MW", label: "консултиран капацитет" },
       { value: "7 държави", label: "оперативен обхват" },
-      { value: "utility-scale + C&I", label: "микс на изпълнение" },
+      { value: "големи централи + C&I", label: "обхват на изпълнение" },
     ],
     pillars: [
       { title: "Независими", text: "Без обвързаност с EPC или доставчици на оборудване." },
@@ -161,14 +165,14 @@ const copy = {
     ],
     reviewTitle: "Заяви преглед на соларен проект",
     reviewText: "Изпрати основните параметри на проекта и получи независим технически преглед на риска.",
-    bullets: ["Локация", "Целева COD дата и статус", "Планиран DC/AC размер", "Основни ограничения"],
+    bullets: ["Местоположение", "Целева дата на въвеждане (COD) и статус", "Планирана мощност DC/AC", "Основни ограничения"],
     poc: {
       label: "Основно лице за контакт",
-      name: "Venelin Dimitrov",
-      role: "Managing Consultant - Elevat Solar Consulting",
+      name: "Венелин Димитров",
+      role: "Управляващ консултант, Elevat Solar Consulting",
       email: "office@elevatsolar.eu",
       linkedin: "https://www.linkedin.com/in/venelin-dimitrov-17296b3aa/",
-      location: "Sofia, Yavorov district, bl.73, ap.4, 1110",
+      location: "София 1110, ж.к. Яворов, бл. 73, ап. 4",
       phone: "+359 888 220 330",
     },
     form: {
@@ -177,20 +181,24 @@ const copy = {
       phone: "Телефон",
       company: "Компания",
       message: "Бележки по проекта",
-      messagePlaceholder: "Локация, целева COD дата и статус, планиран DC/AC размер, основни ограничения",
+      messagePlaceholder: "Местоположение, целева дата на въвеждане (COD) и статус, планирана мощност DC/AC, основни ограничения",
       submit: "Изпрати бриф",
       helper: "Задължителни полета: име, имейл и бележки по проекта.",
     },
-    briefTitle: "Месечен solar market brief",
+    briefTitle: "Месечен бюлетин за соларния пазар",
     briefText: "Едно месечно писмо с пазарни движения и сигнали за технически риск.",
     briefCta: "Абонирай се",
-    legal: { privacy: "Политика за поверителност", terms: "Общи условия" },
+    skip: "Към съдържанието",
+    linkedinLabel: "Профил в LinkedIn",
+    emailLabel: "Имейл адрес",
+    videoStatLabel: "консултиран капацитет в 7 държави",
     errors: {
-      required: "Моля попълнете всички задължителни полета.",
-      email: "Моля въведете валиден имейл адрес.",
+      required: "Моля, попълнете всички задължителни полета.",
+      email: "Моля, въведете валиден имейл адрес.",
+      subscribe: "Абонаментът не можа да бъде записан. Опитайте отново или пишете на office@elevatsolar.eu.",
     },
     success: {
-      review: "Брифът е получен. Ще се свържем с вас скоро.",
+      review: "Запитването е получено. Ще се свържем с вас скоро.",
       subscribe: "Абонаментът е потвърден.",
     },
   },
@@ -198,7 +206,7 @@ const copy = {
 
 const isValidEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 
-function ScrollVideoSection() {
+function ScrollVideoSection({ label }) {
   const sectionRef = useRef(null);
   const canvasRef = useRef(null);
   const framesRef = useRef([]);
@@ -284,7 +292,7 @@ function ScrollVideoSection() {
           <div className="scv-overlay">
             <div className="scv-overlay-content reveal">
               <p className="scv-stat">250+ MW</p>
-              <p className="scv-stat-label">advised across 7 countries</p>
+              <p className="scv-stat-label">{label}</p>
             </div>
           </div>
         </div>
@@ -308,7 +316,17 @@ function LogoBg({ size, rotate, dur, delay, style }) {
 }
 
 function App() {
-  const [lang, setLang] = useState("en");
+  const [lang, setLang] = useState(() => {
+    try {
+      const fromUrl = new URLSearchParams(window.location.search).get("lang");
+      if (fromUrl === "bg" || fromUrl === "en") return fromUrl;
+      const saved = window.localStorage.getItem("lang");
+      if (saved === "bg" || saved === "en") return saved;
+    } catch {
+      /* storage unavailable */
+    }
+    return "en";
+  });
   const [activeSection, setActiveSection] = useState("about");
   const [reviewData, setReviewData] = useState({ name: "", email: "", phone: "", company: "", message: "" });
   const [reviewState, setReviewState] = useState({ error: "", success: "" });
@@ -316,6 +334,27 @@ function App() {
   const [briefState, setBriefState] = useState({ loading: false, error: "", success: "" });
 
   const t = useMemo(() => copy[lang], [lang]);
+
+  useEffect(() => {
+    document.documentElement.lang = lang;
+    try {
+      window.localStorage.setItem("lang", lang);
+    } catch {
+      /* storage unavailable */
+    }
+  }, [lang]);
+
+  useEffect(() => {
+    const id = decodeURIComponent(window.location.hash.slice(1));
+    if (!id) return;
+    const go = () => document.getElementById(id)?.scrollIntoView({ block: "start" });
+    const raf = requestAnimationFrame(go);
+    const timer = setTimeout(go, 400);
+    return () => {
+      cancelAnimationFrame(raf);
+      clearTimeout(timer);
+    };
+  }, []);
 
   useEffect(() => {
     const sections = sectionIds.map((id) => document.getElementById(id)).filter(Boolean);
@@ -362,21 +401,34 @@ function App() {
     setReviewData({ name: "", email: "", phone: "", company: "", message: "" });
   };
 
-  const handleSubscribe = (e) => {
+  const handleSubscribe = async (e) => {
     e.preventDefault();
     setBriefState({ loading: false, error: "", success: "" });
     if (!isValidEmail(briefEmail)) {
       setBriefState({ loading: false, error: t.errors.email, success: "" });
       return;
     }
-    setBriefState({ loading: false, error: "", success: t.success.subscribe });
-    setBriefEmail("");
-    window.location.href = NEWSLETTER_SUBSCRIBE_URL;
+    setBriefState({ loading: true, error: "", success: "" });
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: briefEmail }),
+      });
+      if (!res.ok) throw new Error(String(res.status));
+      setBriefState({ loading: false, error: "", success: t.success.subscribe });
+      setBriefEmail("");
+      setTimeout(() => {
+        window.location.href = NEWSLETTER_SUBSCRIBE_URL;
+      }, 1200);
+    } catch {
+      setBriefState({ loading: false, error: t.errors.subscribe, success: "" });
+    }
   };
 
   return (
     <>
-      <a className="skip-link" href="#about">Skip to content</a>
+      <a className="skip-link" href="#about">{t.skip}</a>
       <nav className="nav" aria-label="Primary">
         <span className="nav-brand">
           <svg width="22" height="34" viewBox="0 0 28 42" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Elevat Solar">
@@ -413,7 +465,7 @@ function App() {
               <div className="hero-left">
                 <h1>
                   <span className="hero-title-main">{lang === "en" ? "Independent solar engineering" : "Независимо соларно инженерство"}</span>
-                  <span className="hero-title-sub">{lang === "en" ? "for developers, EPCs & investors" : "за developer-и, EPC и инвеститори"}</span>
+                  <span className="hero-title-sub">{lang === "en" ? "for developers, EPCs & investors" : "за разработчици, EPC изпълнители и инвеститори"}</span>
                 </h1>
               </div>
               <div className="hero-aside">
@@ -428,7 +480,7 @@ function App() {
         </div>
       </section>
 
-      <ScrollVideoSection />
+      <ScrollVideoSection label={t.videoStatLabel} />
 
       <main>
         <section className="section" id="services">
@@ -573,7 +625,7 @@ function App() {
                   <p className="poc-role">{t.poc.role}</p>
                   <div className="poc-links">
                     <a href={`mailto:${t.poc.email}`}>{t.poc.email}</a>
-                    <a href={t.poc.linkedin} target="_blank" rel="noreferrer">LinkedIn Profile</a>
+                    <a href={t.poc.linkedin} target="_blank" rel="noreferrer">{t.linkedinLabel}</a>
                     <a href={`tel:${t.poc.phone.replace(/\s+/g, "")}`}>{t.poc.phone}</a>
                   </div>
                   <p className="poc-location">{t.poc.location}</p>
@@ -596,7 +648,7 @@ function App() {
                   value={briefEmail}
                   onChange={(e) => setBriefEmail(e.target.value)}
                   required
-                  aria-label="Email address"
+                  aria-label={t.emailLabel}
                 />
                 <button className="btn btn-light" type="submit" disabled={briefState.loading}>
                   {briefState.loading ? "..." : t.briefCta}
@@ -613,10 +665,6 @@ function App() {
       <footer className="footer">
         <div className="wrap footer-inner">
           <span className="footer-brand">{t.brand} · {t.footerTagline}</span>
-          <div className="footer-links">
-            <a href="#privacy">{t.legal.privacy}</a>
-            <a href="#terms">{t.legal.terms}</a>
-          </div>
         </div>
       </footer>
     </>

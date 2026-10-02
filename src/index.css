@@ -79,6 +79,10 @@ a {
   margin-inline: auto;
 }
 
+section[id] {
+  scroll-margin-top: 5.5rem;
+}
+
 /* ──────────────────────────────
    NAV — Floating Glass Pill
    ────────────────────────────── */
@@ -1211,8 +1215,32 @@ a {
     grid-template-columns: 1fr;
   }
 
+  .nav {
+    flex-wrap: wrap;
+    row-gap: 0.15rem;
+    border-radius: 22px;
+  }
+
   .nav-links {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .nav-links::-webkit-scrollbar {
     display: none;
+  }
+
+  .nav-links a {
+    font-size: 0.6rem;
+    letter-spacing: 0.04em;
+    padding: 0.5rem 0.55rem;
+  }
+
+  section[id] {
+    scroll-margin-top: 7.5rem;
   }
 
   .subscribe-form {
