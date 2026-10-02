@@ -33,6 +33,11 @@ const copy = {
     insightsLangNote: "",
     insights: [
       {
+        title: "The old PV park holds the scarcest resource",
+        meta: "Article · October 2026 · in Bulgarian",
+        href: "/hibridizacia-pv-parkove.html",
+      },
+      {
         title: "How to assess the bankability of a BESS project in Southeast Europe",
         meta: "Article · September 2026",
         href: "/bess-bankability-see.html",
@@ -122,6 +127,11 @@ const copy = {
     insightsCta: "Прочети статията",
     insightsLangNote: "на английски език",
     insights: [
+      {
+        title: "Старият PV парк държи най-дефицитния ресурс",
+        meta: "Статия · октомври 2026",
+        href: "/hibridizacia-pv-parkove.html",
+      },
       {
         title: "Как се оценява банкируемостта на BESS проект в Югоизточна Европа",
         meta: "Статия · септември 2026",
