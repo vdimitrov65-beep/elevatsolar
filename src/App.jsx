@@ -34,8 +34,8 @@ const copy = {
     insights: [
       {
         title: "The old PV park holds the scarcest resource",
-        meta: "Article · October 2026 · in Bulgarian",
-        href: "/hibridizacia-pv-parkove.html",
+        meta: "Article · October 2026",
+        href: "/old-pv-park-scarcest-resource.html",
       },
       {
         title: "How to assess the bankability of a BESS project in Southeast Europe",
