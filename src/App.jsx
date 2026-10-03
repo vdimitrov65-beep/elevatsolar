@@ -405,7 +405,7 @@ function App() {
     e.preventDefault();
     setBriefState({ loading: false, error: "", success: "" });
     if (!isValidEmail(briefEmail)) {
-      setBriefState({ loading: false, error: t.errors.email, success: "" });
+      setBriefState({ loading: false, error: "email", success: "" });
       return;
     }
     setBriefState({ loading: true, error: "", success: "" });
@@ -416,13 +416,13 @@ function App() {
         body: JSON.stringify({ email: briefEmail }),
       });
       if (!res.ok) throw new Error(String(res.status));
-      setBriefState({ loading: false, error: "", success: t.success.subscribe });
+      setBriefState({ loading: false, error: "", success: "subscribe" });
       setBriefEmail("");
       setTimeout(() => {
         window.location.href = NEWSLETTER_SUBSCRIBE_URL;
       }, 1200);
     } catch {
-      setBriefState({ loading: false, error: t.errors.subscribe, success: "" });
+      setBriefState({ loading: false, error: "subscribe", success: "" });
     }
   };
 
@@ -655,8 +655,8 @@ function App() {
                   <span className="btn-arrow">↗</span>
                 </button>
               </form>
-              {briefState.error && <p className="subscribe-status error">{briefState.error}</p>}
-              {briefState.success && <p className="subscribe-status success">{briefState.success}</p>}
+              {briefState.error && <p className="subscribe-status error">{t.errors[briefState.error]}</p>}
+              {briefState.success && <p className="subscribe-status success">{t.success[briefState.success]}</p>}
             </div>
           </div>
         </section>
