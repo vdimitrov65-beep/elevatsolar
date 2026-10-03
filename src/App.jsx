@@ -328,6 +328,7 @@ function App() {
     return "en";
   });
   const [activeSection, setActiveSection] = useState("about");
+  const [navHidden, setNavHidden] = useState(false);
   const [reviewData, setReviewData] = useState({ name: "", email: "", phone: "", company: "", message: "" });
   const [reviewState, setReviewState] = useState({ error: "", success: "" });
   const [briefEmail, setBriefEmail] = useState("");
@@ -343,6 +344,18 @@ function App() {
       /* storage unavailable */
     }
   }, [lang]);
+
+  useEffect(() => {
+    let lastY = window.scrollY;
+    const onScroll = () => {
+      const y = window.scrollY;
+      if (Math.abs(y - lastY) < 8) return;
+      setNavHidden(y > lastY && y > 120);
+      lastY = y;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     const id = decodeURIComponent(window.location.hash.slice(1));
@@ -429,7 +442,7 @@ function App() {
   return (
     <>
       <a className="skip-link" href="#about">{t.skip}</a>
-      <nav className="nav" aria-label="Primary">
+      <nav className={navHidden ? "nav nav-hidden" : "nav"} aria-label="Primary">
         <span className="nav-brand">
           <svg width="22" height="34" viewBox="0 0 28 42" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Elevat Solar">
             <rect x="14" y="0" width="12" height="12" rx="2" fill="#e89a1d" />

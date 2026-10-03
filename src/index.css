@@ -105,6 +105,19 @@ section[id] {
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   white-space: nowrap;
+  transition: transform 350ms ease, opacity 350ms ease;
+}
+
+.nav.nav-hidden {
+  transform: translate(-50%, calc(-100% - 2rem));
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nav.nav-hidden:focus-within {
+  transform: translateX(-50%);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .nav-brand {
