@@ -88,6 +88,7 @@ const copy = {
     briefTitle: "Monthly solar market brief",
     briefText: "One concise monthly update on market moves and technical risk signals.",
     briefCta: "Subscribe",
+    legal: { privacy: "Privacy policy", cookies: "Cookie settings" },
     skip: "Skip to content",
     linkedinLabel: "LinkedIn profile",
     emailLabel: "Email address",
@@ -187,6 +188,7 @@ const copy = {
     briefTitle: "Месечен бюлетин за соларния пазар",
     briefText: "Едно месечно писмо с пазарни движения и сигнали за технически риск.",
     briefCta: "Абонирай се",
+    legal: { privacy: "Политика за поверителност", cookies: "Настройки на бисквитките" },
     skip: "Към съдържанието",
     linkedinLabel: "Профил в LinkedIn",
     emailLabel: "Имейл адрес",
@@ -677,6 +679,18 @@ function App() {
       <footer className="footer">
         <div className="wrap footer-inner">
           <span className="footer-brand">{t.brand} · {t.footerTagline}</span>
+          <div className="footer-links">
+            <a href={lang === "bg" ? "/politika-za-poveritelnost.html" : "/privacy-policy.html"}>{t.legal.privacy}</a>
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                if (window.openCookieSettings) window.openCookieSettings();
+              }}
+            >
+              {t.legal.cookies}
+            </a>
+          </div>
         </div>
       </footer>
     </>
