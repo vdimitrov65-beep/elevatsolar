@@ -1,6 +1,6 @@
 /* Cookie consent for elevatsolar.eu. Google Analytics loads only after the visitor accepts. */
 (function () {
-  var GA_ID = "G-Q5HHP98NM4";
+  var GA_ID = "G-GGVRY7NN1B";
   var KEY = "cookie-consent";
   var loaded = false;
   var langFromPage = false;
