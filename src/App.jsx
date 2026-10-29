@@ -7,7 +7,7 @@ const copy = {
     brand: "elevat solar",
     nav: ["about", "services", "projects", "insights", "contact"],
     lang: "language",
-    heroTitle: "Independent solar engineering for developers, EPCs and investors",
+    heroTitle: "Independent solar engineeringh for developers, EPCs and investors",
     heroText: "Independent technical partner for solar and storage projects across design review, due diligence, and delivery support.",
     heroCta: "Review our scope",
     eyebrows: { services: "What we do", projects: "Selected work", insights: "Insights", markets: "Where we operate", why: "Why elevat solar", contact: "Get in touch" },
@@ -53,8 +53,8 @@ const copy = {
     whyTitle: "Why elevat solar",
     whyText: "Execution-minded engineering built for sponsors, investors, and EPC interfaces.",
     stats: [
-      { value: "250+ MW", label: "advised" },
-      { value: "7 countries", label: "operational footprint" },
+      { value: "400+ MWp", label: "advisory portfolio" },
+      { value: "8 markets", label: "across Southeast Europe" },
       { value: "utility-scale + C&I", label: "delivery mix" },
     ],
     pillars: [
@@ -153,8 +153,8 @@ const copy = {
     whyTitle: "Защо elevat solar",
     whyText: "Инженерство, насочено към изпълнението, за спонсори, инвеститори и интерфейса с EPC изпълнителите.",
     stats: [
-      { value: "250+ MW", label: "консултиран капацитет" },
-      { value: "7 държави", label: "оперативен обхват" },
+      { value: "400+ MWp", label: "консултантско портфолио" },
+      { value: "8 пазара", label: "в Югоизточна Европа" },
       { value: "големи централи + C&I", label: "обхват на изпълнение" },
     ],
     pillars: [
