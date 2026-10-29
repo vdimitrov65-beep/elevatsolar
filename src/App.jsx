@@ -7,7 +7,7 @@ const copy = {
     brand: "elevat solar",
     nav: ["about", "services", "projects", "insights", "contact"],
     lang: "language",
-    heroTitle: "Independent solar engineeringh for developers, EPCs and investors",
+    heroTitle: "Independent solar engineering for developers, EPCs and investors",
     heroText: "Independent technical partner for solar and storage projects across design review, due diligence, and delivery support.",
     heroCta: "Review our scope",
     eyebrows: { services: "What we do", projects: "Selected work", insights: "Insights", markets: "Where we operate", why: "Why elevat solar", contact: "Get in touch" },
@@ -92,7 +92,7 @@ const copy = {
     skip: "Skip to content",
     linkedinLabel: "LinkedIn profile",
     emailLabel: "Email address",
-    videoStatLabel: "advised across 7 countries",
+    videoStatLabel: "advisory portfolio across 8 markets",
     errors: {
       required: "Please fill in all required fields.",
       email: "Please enter a valid email address.",
@@ -192,7 +192,7 @@ const copy = {
     skip: "Към съдържанието",
     linkedinLabel: "Профил в LinkedIn",
     emailLabel: "Имейл адрес",
-    videoStatLabel: "консултиран капацитет в 7 държави",
+    videoStatLabel: "консултантско портфолио в 8 пазара",
     errors: {
       required: "Моля, попълнете всички задължителни полета.",
       email: "Моля, въведете валиден имейл адрес.",
@@ -292,7 +292,7 @@ function ScrollVideoSection({ label }) {
           <canvas ref={canvasRef} className="scv-canvas" />
           <div className="scv-overlay">
             <div className="scv-overlay-content reveal">
-              <p className="scv-stat">250+ MW</p>
+              <p className="scv-stat">400+ MWp</p>
               <p className="scv-stat-label">{label}</p>
             </div>
           </div>
