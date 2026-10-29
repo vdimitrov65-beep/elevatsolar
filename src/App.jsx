@@ -531,7 +531,7 @@ function App() {
             </div>
             <div className="projects-stack">
               {t.projects.map((item, i) => (
-                <div key={i} className="card-shell project-card reveal">
+                <a key={i} className="card-shell project-card reveal" href="/portfolio.html">
                   <div className="card-core">
                     <div>
                       <h3 className="card-title">{item.title}</h3>
@@ -539,7 +539,7 @@ function App() {
                     </div>
                     <span className="project-arrow" aria-hidden="true">↗</span>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </div>
