@@ -9,6 +9,48 @@
   </url>
 
   <url>
+    <loc>https://elevatsolar.eu/portfolio.html</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://elevatsolar.eu/consulting-references.html</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://elevatsolar.eu/konsultantski-angazhimenti.html</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://elevatsolar.eu/case_studies/case-industrial-rooftop-3mwp-south-bg.html</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://elevatsolar.eu/case_studies/case-ci-250kw-pv-bess-northeast-bg.html</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://elevatsolar.eu/case_studies/case-industrial-700kw-pv-bess-west-bg.html</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://elevatsolar.eu/old-pv-park-scarcest-resource.html</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>yearly</changefreq>
@@ -37,20 +79,6 @@
   </url>
 
   <url>
-    <loc>https://elevatsolar.eu/portfolio.html</loc>
-    <lastmod>2026-10-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://elevatsolar.eu/consulting-references.html</loc>
-    <lastmod>2026-10-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
     <loc>https://elevatsolar.eu/privacy-policy.html</loc>
     <lastmod>2026-10-03</lastmod>
     <changefreq>yearly</changefreq>
@@ -64,13 +92,13 @@
     <priority>0.3</priority>
   </url>
 
-    <url>
+  <url>
     <loc>https://elevatsolar.eu/brief.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <url><loc>https://elevatsolar.eu/brief8.html</loc><lastmod>2026-10-10</lastmod><priority>0.7</priority></url>
+  <url><loc>https://elevatsolar.eu/brief8.html</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://elevatsolar.eu/brief7.html</loc><lastmod>2026-09-11</lastmod><priority>0.6</priority></url>
   <url><loc>https://elevatsolar.eu/brief6.html</loc><priority>0.6</priority></url>
   <url><loc>https://elevatsolar.eu/brief5.html</loc><priority>0.6</priority></url>
