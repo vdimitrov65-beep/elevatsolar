@@ -1,6 +1,6 @@
-/* Cookie consent for elevatsolar.eu. Google Analytics loads only after the visitor accepts. */
+h/* Cookie consent for elevatsolar.eu. Google Analytics loads only after the visitor accepts. */
 (function () {
-  var GA_ID = "G-GGVRY7NN1B";
+  var GA_ID = "G-Q5HHP98NM4";
   var KEY = "cookie-consent";
   var loaded = false;
   var langFromPage = false;
@@ -73,7 +73,7 @@
     var t = text();
     var style = document.getElementById("cc-style") || document.createElement("style");
     style.id = "cc-style";
-    style.textContent =
+    style.textContent =h
       "#cc-banner{position:fixed;left:16px;right:16px;bottom:16px;z-index:2147483000;max-width:640px;margin:0 auto;" +
       "background:#1c1a17;color:#f8f7f2;border-radius:14px;padding:18px 20px;box-shadow:0 10px 30px rgba(0,0,0,.25);" +
       "font:14px/1.5 -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;}" +
