@@ -418,7 +418,8 @@ function App() {
   const handleSubscribe = async (e) => {
     e.preventDefault();
     setBriefState({ loading: false, error: "", success: "" });
-    if (!isValidEmail(briefEmail)) {
+    const email = briefEmail.replace(/\s+/g, "");
+    if (!isValidEmail(email)) {
       setBriefState({ loading: false, error: "email", success: "" });
       return;
     }
@@ -427,7 +428,7 @@ function App() {
       const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: briefEmail }),
+        body: JSON.stringify({ email }),
       });
       if (!res.ok) throw new Error(String(res.status));
       setBriefState({ loading: false, error: "", success: "subscribe" });
@@ -660,7 +661,12 @@ function App() {
                   type="email"
                   placeholder="your@email.com"
                   value={briefEmail}
-                  onChange={(e) => setBriefEmail(e.target.value)}
+                  onChange={(e) => setBriefEmail(e.target.value.replace(/\s+/g, ""))}
+                  autoComplete="email"
+                  autoCapitalize="off"
+                  autoCorrect="off"
+                  spellCheck={false}
+                  inputMode="email"
                   required
                   aria-label={t.emailLabel}
                 />
