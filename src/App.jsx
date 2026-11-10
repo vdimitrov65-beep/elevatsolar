@@ -33,6 +33,11 @@ const copy = {
     insightsLangNote: "",
     insights: [
       {
+        title: "What does an Owner's Engineer do for your solar project?",
+        meta: "Guide · October 2026",
+        href: "/owners-engineer-solar-complete-guide.html",
+      },
+      {
         title: "The old PV park holds the scarcest resource",
         meta: "Article · October 2026",
         href: "/old-pv-park-scarcest-resource.html",
@@ -132,6 +137,11 @@ const copy = {
     insightsCta: "Прочети статията",
     insightsLangNote: "на английски език",
     insights: [
+      {
+        title: "Какво прави инженерът на собственика за вашия соларен проект?",
+        meta: "Наръчник · октомври 2026",
+        href: "/inzhener-na-sobstvenika-solaren-proekt.html",
+      },
       {
         title: "Старият PV парк държи най-дефицитния ресурс",
         meta: "Статия · октомври 2026",
