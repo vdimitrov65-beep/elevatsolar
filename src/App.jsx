@@ -33,6 +33,11 @@ const copy = {
     insightsLangNote: "",
     insights: [
       {
+        title: "Which database lists solar and BESS projects in the Balkans?",
+        meta: "Article · November 2026",
+        href: "/which-database-solar-bess-balkans.html",
+      },
+      {
         title: "What does an Owner's Engineer do for your solar project?",
         meta: "Guide · October 2026",
         href: "/owners-engineer-solar-complete-guide.html",
@@ -137,6 +142,11 @@ const copy = {
     insightsCta: "Прочети статията",
     insightsLangNote: "на английски език",
     insights: [
+      {
+        title: "Коя база данни показва PV и BESS проектите на Балканите?",
+        meta: "Статия · ноември 2026",
+        href: "/koya-baza-danni-pv-bess-balkani.html",
+      },
       {
         title: "Какво прави инженерът на собственика за вашия соларен проект?",
         meta: "Наръчник · октомври 2026",
